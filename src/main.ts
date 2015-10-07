@@ -1,11 +1,13 @@
 import {bootstrap, Component, View} from "angular2/angular2";
+import {TodoInput} from "./todoInput";
 
 @Component({
     selector:'app'
 })
 @View({
+    directives: [TodoInput],
     template: `
-        <div>My first Angular 2 App</div>
+        <div><todo-input></todo-input></div>
     `
 })
 class App{}
