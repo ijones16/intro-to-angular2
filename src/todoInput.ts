@@ -1,4 +1,4 @@
-import {Component, View, Inject} from "angular2/angular2";
+import {Component, View} from "angular2/angular2";
 import {TodoService} from "./todoService";
 @Component({
     selector: 'todo-input'
@@ -10,11 +10,10 @@ import {TodoService} from "./todoService";
     `
 })
 export class TodoInput{
-    todoService;
+
     constructor(
-        @Inject(TodoService) todoService
+        public todoService:TodoService
     ){
-        this.todoService = todoService;
         console.log(todoService);
     }
 
