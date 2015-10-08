@@ -5,7 +5,12 @@ import {Component, View} from "angular2/angular2";
 })
 @View({
     template: `
-        <input type="text">
+        <input type="text" #log-me>
+        <button (click)="onClick(logMe.value)">Log Input</button>
     `
 })
-export class TodoInput{}
+export class TodoInput{
+    onClick(value){
+        console.log(value);
+    }
+}
