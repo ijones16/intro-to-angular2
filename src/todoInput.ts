@@ -1,5 +1,5 @@
 import {Component, View} from "angular2/angular2";
-
+import {TodoService} from "./todoService";
 @Component({
     selector: 'todo-input'
 })
@@ -10,7 +10,15 @@ import {Component, View} from "angular2/angular2";
     `
 })
 export class TodoInput{
+
+    constructor(
+        public todoService:TodoService
+    ){
+        console.log(todoService);
+    }
+
     onClick(event, value){
-        console.log(event, value);
+        this.todoService.addTodo(value);
+        console.log(this.todoService.todos);
     }
 }
