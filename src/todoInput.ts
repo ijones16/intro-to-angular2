@@ -6,11 +6,11 @@ import {Component, View} from "angular2/angular2";
 @View({
     template: `
         <input type="text" #log-me>
-        <button (click)="onClick(logMe.value)">Log Input</button>
+        <button on-click="onClick($event, logMe.value)">Log Input</button>
     `
 })
 export class TodoInput{
-    onClick(value){
-        console.log(value);
+    onClick(event, value){
+        console.log(event, value);
     }
 }
