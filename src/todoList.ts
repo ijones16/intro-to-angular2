@@ -9,7 +9,7 @@ import {TodoService} from "./todoService";
     template:`
         <div>
             <div *ng-for="#todo of todoService.todos">
-            {{todo}}
+            {{todo.title}}
             </div>
         </div>
     `
