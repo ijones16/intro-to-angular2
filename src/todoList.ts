@@ -9,7 +9,8 @@ import {TodoService} from "./todoService";
     template:`
         <div>
             <div *ng-for="#todo of todoService.todos">
-            {{todo.title}}
+            <span [hidden]="todo.status == 'completed'">{{todo.title}}</span>
+            <button (click)="todo.toggle()">Toggle</button>
             </div>
         </div>
     `
