@@ -1,17 +1,19 @@
 import {Component, View, NgFor} from "angular2/angular2";
 import {TodoService} from "./todoService";
+import {TodoItemRenderer} from "./todoItemRenderer";
 
 @Component({
     selector: 'todo-list'
 })
 @View({
-    directives: [NgFor],
+    directives: [NgFor, TodoItemRenderer],
     template:`
         <div>
-            <div *ng-for="#todo of todoService.todos">
-            <span [hidden]="todo.status == 'completed'">{{todo.title}}</span>
-            <button (click)="todo.toggle()">Toggle</button>
-            </div>
+            <todo-item-renderer
+             *ng-for="#todo of todoService.todos"
+             [todo]="todo"
+             >
+            </todo-item-renderer>
         </div>
     `
 })
