@@ -4,6 +4,11 @@ export class TodoModel{
     constructor(
         public title:string = ""
     ){}
+
+    toggle():void{
+        if(this.status == "started") this.status = "completed";
+        else this.status = "started";
+    }
 }
 
 
