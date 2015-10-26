@@ -23,4 +23,3 @@ System.config({
     "typescript": "lib/typescript"
   }
 });
-

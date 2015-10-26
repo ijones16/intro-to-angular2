@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // Type definitions for Angular v2.0.0-39
+=======
+// Type definitions for Angular v2.0.0-local_sha.9fc24b9
+>>>>>>> upstream/master
 // Project: http://angular.io/
 // Definitions by: angular team <https://github.com/angular/>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
@@ -9,6 +13,7 @@
 // modifying this file.
 // ***********************************************************
 
+<<<<<<< HEAD
 // angular2/angular2 depends transitively on these libraries.
 // If you don't have them installed you can install them using TSD
 // https://github.com/DefinitelyTyped/tsd
@@ -24,6 +29,11 @@
 // https://github.com/DefinitelyTyped/tsd
 
 ///<reference path="../es6-shim/es6-shim.d.ts"/>
+=======
+
+
+
+>>>>>>> upstream/master
 
 
 interface Map<K,V> {}
@@ -86,15 +96,22 @@ declare module ng {
    *   selector: 'pane',
    *   inputs: ['title']
    * })
+<<<<<<< HEAD
    * @View(...)
+=======
+>>>>>>> upstream/master
    * class Pane {
    *   title:string;
    * }
    * 
    * @Component({
+<<<<<<< HEAD
    *   selector: 'tabs'
    * })
    * @View({
+=======
+   *  selector: 'tabs',
+>>>>>>> upstream/master
    *  template: `
    *    <ul>
    *      <li *ng-for="#pane of panes">{{pane.title}}</li>
@@ -118,10 +135,14 @@ declare module ng {
    *   <div #findme>...</div>
    * </seeker>
    * 
+<<<<<<< HEAD
    * @Component({
    *   selector: 'foo'
    * })
    * @View(...)
+=======
+   * @Component({ selector: 'foo' })
+>>>>>>> upstream/master
    * class seeker {
    *   constructor(@Query('findme') elList: QueryList<ElementRef>) {...}
    * }
@@ -141,7 +162,10 @@ declare module ng {
    *  @Component({
    *   selector: 'foo'
    * })
+<<<<<<< HEAD
    * @View(...)
+=======
+>>>>>>> upstream/master
    * class Seeker {
    *   constructor(@Query('findMe, findMeToo') elList: QueryList<ElementRef>) {...}
    * }
@@ -278,9 +302,16 @@ declare module ng {
    * 
    * ```
    * @Component({
+<<<<<<< HEAD
    *   selector: 'someDir'
    * })
    * @View({templateUrl: 'someTemplate', directives: [ItemDirective]})
+=======
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+>>>>>>> upstream/master
    * class SomeDir {
    *   @ViewChildren(ItemDirective) viewChildren: QueryList<ItemDirective>;
    * 
@@ -355,9 +386,16 @@ declare module ng {
    * 
    * ```
    * @Component({
+<<<<<<< HEAD
    *   selector: 'someDir'
    * })
    * @View({templateUrl: 'someTemplate', directives: [ItemDirective]})
+=======
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+>>>>>>> upstream/master
    * class SomeDir {
    *   @ViewChild(ItemDirective) viewChild:ItemDirective;
    * 
@@ -424,7 +462,11 @@ declare module ng {
    * When a component is instantiated, Angular
    * - creates a shadow DOM for the component.
    * - loads the selected template into the shadow DOM.
+<<<<<<< HEAD
    * - creates all the injectable objects configured with `bindings` and `viewBindings`.
+=======
+   * - creates all the injectable objects configured with `providers` and `viewProviders`.
+>>>>>>> upstream/master
    * 
    * All template expressions and statements are then evaluated against the component instance.
    * 
@@ -439,9 +481,13 @@ declare module ng {
    * 
    * ```
    * @Component({
+<<<<<<< HEAD
    *   selector: 'greet'
    * })
    * @View({
+=======
+   *   selector: 'greet',
+>>>>>>> upstream/master
    *   template: 'Hello {{name}}!'
    * })
    * class Greet {
@@ -456,19 +502,43 @@ declare module ng {
   class ComponentMetadata extends DirectiveMetadata {
     
     constructor({selector, inputs, outputs, properties, events, host, exportAs, moduleId, bindings,
+<<<<<<< HEAD
                    viewBindings, changeDetection, queries}?: {
+=======
+                   providers, viewBindings, viewProviders,
+                   changeDetection, queries, templateUrl, template,
+                   styleUrls, styles, directives, pipes, encapsulation}?: {
+>>>>>>> upstream/master
         selector?: string,
         inputs?: string[],
         outputs?: string[],
         properties?: string[],
         events?: string[],
         host?: {[key: string]: string},
+<<<<<<< HEAD
         bindings?: any[],
         exportAs?: string,
         moduleId?: string,
         viewBindings?: any[],
         queries?: {[key: string]: any},
         changeDetection?: ChangeDetectionStrategy,
+=======
+        /** @deprecated */ bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        /** @deprecated */ viewBindings?: any[],
+        viewProviders?: any[],
+        queries?: {[key: string]: any},
+        changeDetection?: ChangeDetectionStrategy,
+        templateUrl?: string,
+        template?: string,
+        styleUrls?: string[],
+        styles?: string[],
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation
+>>>>>>> upstream/master
       });
     
     /**
@@ -509,11 +579,17 @@ declare module ng {
      * 
      * @Component({
      *   selector: 'greet',
+<<<<<<< HEAD
      *   viewBindings: [
      *     Greeter
      *   ]
      * })
      * @View({
+=======
+     *   viewProviders: [
+     *     Greeter
+     *   ],
+>>>>>>> upstream/master
      *   template: `<needs-greeter></needs-greeter>`,
      *   directives: [NeedsGreeter]
      * })
@@ -522,8 +598,29 @@ declare module ng {
      * 
      * ```
      */
+<<<<<<< HEAD
     viewBindings: any[];
     
+=======
+    viewProviders: any[];
+    
+    viewBindings: any[];
+    
+    templateUrl: string;
+    
+    template: string;
+    
+    styleUrls: string[];
+    
+    styles: string[];
+    
+    directives: Array<Type | any[]>;
+    
+    pipes: Array<Type | any[]>;
+    
+    encapsulation: ViewEncapsulation;
+    
+>>>>>>> upstream/master
   }
 
     
@@ -907,15 +1004,25 @@ declare module ng {
    */
   class DirectiveMetadata extends InjectableMetadata {
     
+<<<<<<< HEAD
     constructor({selector, inputs, outputs, properties, events, host, bindings, exportAs, moduleId,
                    queries}?: {
+=======
+    constructor({selector, inputs, outputs, properties, events, host, bindings, providers, exportAs,
+                   moduleId, queries}?: {
+>>>>>>> upstream/master
         selector?: string,
         inputs?: string[],
         outputs?: string[],
         properties?: string[],
         events?: string[],
         host?: {[key: string]: string},
+<<<<<<< HEAD
         bindings?: any[],
+=======
+        providers?: any[],
+        /** @deprecated */ bindings?: any[],
+>>>>>>> upstream/master
         exportAs?: string,
         moduleId?: string,
         queries?: {[key: string]: any}
@@ -974,9 +1081,13 @@ declare module ng {
      * ```typescript
      * @Component({
      *   selector: 'bank-account',
+<<<<<<< HEAD
      *   inputs: ['bankName', 'id: account-id']
      * })
      * @View({
+=======
+     *   inputs: ['bankName', 'id: account-id'],
+>>>>>>> upstream/master
      *   template: `
      *     Bank Name: {{bankName}}
      *     Account Id: {{id}}
@@ -990,8 +1101,13 @@ declare module ng {
      *   normalizedBankName: string;
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'app'})
      * @View({
+=======
+     * @Component({
+     *   selector: 'app',
+>>>>>>> upstream/master
      *   template: `
      *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
      *   `,
@@ -1004,10 +1120,13 @@ declare module ng {
      */
     inputs: string[];
     
+<<<<<<< HEAD
     /**
      * @deprecated
      * Same as `inputs`. This is to enable easier migration.
      */
+=======
+>>>>>>> upstream/master
     properties: string[];
     
     /**
@@ -1039,8 +1158,13 @@ declare module ng {
      *   }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'app'})
      * @View({
+=======
+     * @Component({
+     *   selector: 'app',
+>>>>>>> upstream/master
      *   template: `
      *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
      *     </interval-dir>
@@ -1056,10 +1180,13 @@ declare module ng {
      */
     outputs: string[];
     
+<<<<<<< HEAD
     /**
      * @deprecated
      * Same as `outputs`. This is to enable easier migration.
      */
+=======
+>>>>>>> upstream/master
     events: string[];
     
     /**
@@ -1100,8 +1227,13 @@ declare module ng {
      *   }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'app'})
      * @View({
+=======
+     * @Component({
+     *   selector: 'app',
+>>>>>>> upstream/master
      *   template: `<button counting>Increment</button>`,
      *   directives: [CountClicks]
      * })
@@ -1136,8 +1268,13 @@ declare module ng {
      *   get invalid { return this.control.invalid; }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'app'})
      * @View({
+=======
+     * @Component({
+     *   selector: 'app',
+>>>>>>> upstream/master
      *   template: `<input [(ng-model)]="prop">`,
      *   directives: [FORM_DIRECTIVES, NgModelStatus]
      * })
@@ -1200,6 +1337,14 @@ declare module ng {
      * }
      * ```
      */
+<<<<<<< HEAD
+=======
+    providers: any[];
+    
+    /**
+     * @deprecated
+     */
+>>>>>>> upstream/master
     bindings: any[];
     
     /**
@@ -1217,8 +1362,11 @@ declare module ng {
      * 
      * @Component({
      *   selector: 'main',
+<<<<<<< HEAD
      * })
      * @View({
+=======
+>>>>>>> upstream/master
      *   template: `<child-dir #c="child"></child-dir>`,
      *   directives: [ChildDir]
      * })
@@ -1263,9 +1411,13 @@ declare module ng {
      *   queries: {
      *     contentChildren: new ContentChildren(ChildDirective),
      *     viewChildren: new ViewChildren(ChildDirective)
+<<<<<<< HEAD
      *   }
      * })
      * @View({
+=======
+     *   },
+>>>>>>> upstream/master
      *   template: '<child-directive></child-directive>',
      *   directives: [ChildDirective]
      * })
@@ -1327,8 +1479,13 @@ declare module ng {
    * The following example creates a component with two input properties.
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'bank-account'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'bank-account',
+>>>>>>> upstream/master
    *   template: `
    *     Bank Name: {{bankName}}
    *     Account Id: {{id}}
@@ -1342,8 +1499,13 @@ declare module ng {
    *   normalizedBankName: string;
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
    *   `,
@@ -1392,8 +1554,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
    *     </interval-dir>
@@ -1439,8 +1606,13 @@ declare module ng {
    *   @HostBinding('[class.invalid]') get invalid { return this.control.invalid; }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `<input [(ng-model)]="prop">`,
    *   directives: [FORM_DIRECTIVES, NgModelStatus]
    * })
@@ -1484,8 +1656,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `<button counting>Increment</button>`,
    *   directives: [CountClicks]
    * })
@@ -1521,9 +1698,13 @@ declare module ng {
    * 
    * ```
    * @Component({
+<<<<<<< HEAD
    *   selector: 'greet'
    * })
    * @View({
+=======
+   *   selector: 'greet',
+>>>>>>> upstream/master
    *   template: 'Hello {{name}}!',
    *   directives: [GreetUser, Bold]
    * })
@@ -1585,9 +1766,13 @@ declare module ng {
      * 
      * ```javascript
      * @Component({
+<<<<<<< HEAD
      *     selector: 'my-component'
      *   })
      * @View({
+=======
+     *   selector: 'my-component',
+>>>>>>> upstream/master
      *   directives: [NgFor]
      *   template: '
      *   <ul>
@@ -1752,6 +1937,10 @@ declare module ng {
         events?: string[],
         host?: {[key: string]: string},
         bindings?: any[],
+<<<<<<< HEAD
+=======
+        providers?: any[],
+>>>>>>> upstream/master
         exportAs?: string,
         moduleId?: string,
         queries?: {[key: string]: any}
@@ -1765,6 +1954,10 @@ declare module ng {
         events?: string[],
         host?: {[key: string]: string},
         bindings?: any[],
+<<<<<<< HEAD
+=======
+        providers?: any[],
+>>>>>>> upstream/master
         exportAs?: string,
         moduleId?: string,
         queries?: {[key: string]: any}
@@ -1779,10 +1972,16 @@ declare module ng {
    * ## Example as TypeScript Decorator
    * 
    * ```
+<<<<<<< HEAD
    * import {Component, View} from "angular2/angular2";
    * 
    * @Component({...})
    * @View({...})
+=======
+   * import {Component} from "angular2/angular2";
+   * 
+   * @Component({...})
+>>>>>>> upstream/master
    * class MyComponent {
    *   constructor() {
    *     ...
@@ -1795,7 +1994,10 @@ declare module ng {
    * ```
    * var MyComponent = ng
    *   .Component({...})
+<<<<<<< HEAD
    *   .View({...})
+=======
+>>>>>>> upstream/master
    *   .Class({
    *     constructor: function() {
    *       ...
@@ -1811,8 +2013,12 @@ declare module ng {
    * };
    * 
    * MyComponent.annotations = [
+<<<<<<< HEAD
    *   new ng.Component({...}),
    *   new ng.View({...})
+=======
+   *   new ng.Component({...})
+>>>>>>> upstream/master
    * ]
    * ```
    */
@@ -1825,12 +2031,32 @@ declare module ng {
         properties?: string[],
         events?: string[],
         host?: {[key: string]: string},
+<<<<<<< HEAD
         bindings?: any[],
         exportAs?: string,
         moduleId?: string,
         queries?: {[key: string]: any},
         viewBindings?: any[],
         changeDetection?: ChangeDetectionStrategy,
+=======
+        /* @deprecated */
+        bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        queries?: {[key: string]: any},
+        /* @deprecated */
+        viewBindings?: any[],
+        viewProviders?: any[],
+        changeDetection?: ChangeDetectionStrategy,
+        templateUrl?: string,
+        template?: string,
+        styleUrls?: string[],
+        styles?: string[],
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation
+>>>>>>> upstream/master
       }): ComponentMetadata;
     
     (obj: {
@@ -1840,12 +2066,30 @@ declare module ng {
         properties?: string[],
         events?: string[],
         host?: {[key: string]: string},
+<<<<<<< HEAD
         bindings?: any[],
+=======
+        /* @deprecated */
+        bindings?: any[],
+        providers?: any[],
+>>>>>>> upstream/master
         exportAs?: string,
         moduleId?: string,
         queries?: {[key: string]: any},
         viewBindings?: any[],
+<<<<<<< HEAD
         changeDetection?: ChangeDetectionStrategy,
+=======
+        viewProviders?: any[],
+        changeDetection?: ChangeDetectionStrategy,
+        templateUrl?: string,
+        template?: string,
+        styleUrls?: string[],
+        styles?: string[],
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation
+>>>>>>> upstream/master
       }): ComponentDecorator;
     
   }
@@ -1925,10 +2169,16 @@ declare module ng {
    * ## Example as TypeScript Decorator
    * 
    * ```
+<<<<<<< HEAD
    * import {Attribute, Component, View} from "angular2/angular2";
    * 
    * @Component({...})
    * @View({...})
+=======
+   * import {Attribute, Component} from "angular2/angular2";
+   * 
+   * @Component({...})
+>>>>>>> upstream/master
    * class MyComponent {
    *   constructor(@Attribute('title') title: string) {
    *     ...
@@ -1941,7 +2191,10 @@ declare module ng {
    * ```
    * var MyComponent = ng
    *   .Component({...})
+<<<<<<< HEAD
    *   .View({...})
+=======
+>>>>>>> upstream/master
    *   .Class({
    *     constructor: [new ng.Attribute('title'), function(title) {
    *       ...
@@ -1957,8 +2210,12 @@ declare module ng {
    * };
    * 
    * MyComponent.annotations = [
+<<<<<<< HEAD
    *   new ng.Component({...}),
    *   new ng.View({...})
+=======
+   *   new ng.Component({...})
+>>>>>>> upstream/master
    * ]
    * MyComponent.parameters = [
    *   [new ng.Attribute('title')]
@@ -1980,10 +2237,16 @@ declare module ng {
    * ### Example as TypeScript Decorator
    * 
    * ```
+<<<<<<< HEAD
    * import {Query, QueryList, Component, View} from "angular2/angular2";
    * 
    * @Component({...})
    * @View({...})
+=======
+   * import {Query, QueryList, Component} from "angular2/angular2";
+   * 
+   * @Component({...})
+>>>>>>> upstream/master
    * class MyComponent {
    *   constructor(@Query(SomeType) queryList: QueryList<SomeType>) {
    *     ...
@@ -1996,7 +2259,10 @@ declare module ng {
    * ```
    * var MyComponent = ng
    *   .Component({...})
+<<<<<<< HEAD
    *   .View({...})
+=======
+>>>>>>> upstream/master
    *   .Class({
    *     constructor: [new ng.Query(SomeType), function(queryList) {
    *       ...
@@ -2012,8 +2278,12 @@ declare module ng {
    * };
    * 
    * MyComponent.annotations = [
+<<<<<<< HEAD
    *   new ng.Component({...}),
    *   new ng.View({...})
+=======
+   *   new ng.Component({...})
+>>>>>>> upstream/master
    * ]
    * MyComponent.parameters = [
    *   [new ng.Query(SomeType)]
@@ -2145,6 +2415,7 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * {@link ComponentMetadata} factory function.
    */
   var Component: ComponentFactory;
@@ -2696,10 +2967,433 @@ declare module ng {
    * ```
    */
   function forwardRef(forwardRefFn: ForwardRefFn): Type;
+=======
+   * Declare reusable UI building blocks for an application.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@Component`
+   * annotation specifies when a component is instantiated, and which properties and hostListeners it
+   * binds to.
+   * 
+   * When a component is instantiated, Angular
+   * - creates a shadow DOM for the component.
+   * - loads the selected template into the shadow DOM.
+   * - creates all the injectable objects configured with `providers` and `viewProviders`.
+   * 
+   * All template expressions and statements are then evaluated against the component instance.
+   * 
+   * For details on the `@View` annotation, see {@link ViewMetadata}.
+   * 
+   * ## Lifecycle hooks
+   * 
+   * When the component class implements some {@link angular2/lifecycle_hooks} the callbacks are
+   * called by the change detection at defined points in time during the life of the component.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!'
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+   */
+  var Component: ComponentFactory;
   
 
     
   /**
+   * Directives allow you to attach behavior to elements in the DOM.
+   * 
+   * {@link DirectiveMetadata}s with an embedded view are called {@link ComponentMetadata}s.
+   * 
+   * A directive consists of a single directive annotation and a controller class. When the
+   * directive's `selector` matches
+   * elements in the DOM, the following steps occur:
+   * 
+   * 1. For each directive, the `ElementInjector` attempts to resolve the directive's constructor
+   * arguments.
+   * 2. Angular instantiates directives for each matched element using `ElementInjector` in a
+   * depth-first order,
+   *    as declared in the HTML.
+   * 
+   * ## Understanding How Injection Works
+   * 
+   * There are three stages of injection resolution.
+   * - *Pre-existing Injectors*:
+   *   - The terminal {@link Injector} cannot resolve dependencies. It either throws an error or, if
+   * the dependency was
+   *     specified as `@Optional`, returns `null`.
+   *   - The platform injector resolves browser singleton resources, such as: cookies, title,
+   * location, and others.
+   * - *Component Injectors*: Each component instance has its own {@link Injector}, and they follow
+   * the same parent-child hierarchy
+   *     as the component instances in the DOM.
+   * - *Element Injectors*: Each component instance has a Shadow DOM. Within the Shadow DOM each
+   * element has an `ElementInjector`
+   *     which follow the same parent-child hierarchy as the DOM elements themselves.
+   * 
+   * When a template is instantiated, it also must instantiate the corresponding directives in a
+   * depth-first order. The
+   * current `ElementInjector` resolves the constructor dependencies for each directive.
+   * 
+   * Angular then resolves dependencies as follows, according to the order in which they appear in the
+   * {@link ViewMetadata}:
+   * 
+   * 1. Dependencies on the current element
+   * 2. Dependencies on element injectors and their parents until it encounters a Shadow DOM boundary
+   * 3. Dependencies on component injectors and their parents until it encounters the root component
+   * 4. Dependencies on pre-existing injectors
+   * 
+   * 
+   * The `ElementInjector` can inject other directives, element-specific special objects, or it can
+   * delegate to the parent
+   * injector.
+   * 
+   * To inject other directives, declare the constructor parameter as:
+   * - `directive:DirectiveType`: a directive on the current element only
+   * - `@Host() directive:DirectiveType`: any directive that matches the type between the current
+   * element and the
+   *    Shadow DOM root.
+   * - `@Query(DirectiveType) query:QueryList<DirectiveType>`: A live collection of direct child
+   * directives.
+   * - `@QueryDescendants(DirectiveType) query:QueryList<DirectiveType>`: A live collection of any
+   * child directives.
+   * 
+   * To inject element-specific special objects, declare the constructor parameter as:
+   * - `element: ElementRef` to obtain a reference to logical element in the view.
+   * - `viewContainer: ViewContainerRef` to control child template instantiation, for
+   * {@link DirectiveMetadata} directives only
+   * - `bindingPropagation: BindingPropagation` to control change detection in a more granular way.
+   * 
+   * ## Example
+   * 
+   * The following example demonstrates how dependency injection resolves constructor arguments in
+   * practice.
+   * 
+   * 
+   * Assume this HTML template:
+   * 
+   * ```
+   * <div dependency="1">
+   *   <div dependency="2">
+   *     <div dependency="3" my-directive>
+   *       <div dependency="4">
+   *         <div dependency="5"></div>
+   *       </div>
+   *       <div dependency="6"></div>
+   *     </div>
+   *   </div>
+   * </div>
+   * ```
+   * 
+   * With the following `dependency` decorator and `SomeService` injectable class.
+   * 
+   * ```
+   * @Injectable()
+   * class SomeService {
+   * }
+   * 
+   * @Directive({
+   *   selector: '[dependency]',
+   *   inputs: [
+   *     'id: dependency'
+   *   ]
+   * })
+   * class Dependency {
+   *   id:string;
+   * }
+   * ```
+   * 
+   * Let's step through the different ways in which `MyDirective` could be declared...
+   * 
+   * 
+   * ### No injection
+   * 
+   * Here the constructor is declared with no arguments, therefore nothing is injected into
+   * `MyDirective`.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor() {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with no dependencies.
+   * 
+   * 
+   * ### Component-level injection
+   * 
+   * Directives can inject any injectable instance from the closest component injector or any of its
+   * parents.
+   * 
+   * Here, the constructor declares a parameter, `someService`, and injects the `SomeService` type
+   * from the parent
+   * component's injector.
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(someService: SomeService) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a dependency on `SomeService`.
+   * 
+   * 
+   * ### Injecting a directive from the current element
+   * 
+   * Directives can inject other directives declared on the current element.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(dependency: Dependency) {
+   *     expect(dependency.id).toEqual(3);
+   *   }
+   * }
+   * ```
+   * This directive would be instantiated with `Dependency` declared at the same element, in this case
+   * `dependency="3"`.
+   * 
+   * ### Injecting a directive from any ancestor elements
+   * 
+   * Directives can inject other directives declared on any ancestor element (in the current Shadow
+   * DOM), i.e. on the current element, the
+   * parent element, or its parents.
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Host() dependency: Dependency) {
+   *     expect(dependency.id).toEqual(2);
+   *   }
+   * }
+   * ```
+   * 
+   * `@Host` checks the current element, the parent, as well as its parents recursively. If
+   * `dependency="2"` didn't
+   * exist on the direct parent, this injection would
+   * have returned
+   * `dependency="1"`.
+   * 
+   * 
+   * ### Injecting a live collection of direct child directives
+   * 
+   * 
+   * A directive can also query for other child directives. Since parent directives are instantiated
+   * before child directives, a directive can't simply inject the list of child directives. Instead,
+   * the directive injects a {@link QueryList}, which updates its contents as children are added,
+   * removed, or moved by a directive that uses a {@link ViewContainerRef} such as a `ng-for`, an
+   * `ng-if`, or an `ng-switch`.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Query(Dependency) dependencies:QueryList<Dependency>) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a {@link QueryList} which contains `Dependency` 4 and
+   * 6. Here, `Dependency` 5 would not be included, because it is not a direct child.
+   * 
+   * ### Injecting a live collection of descendant directives
+   * 
+   * By passing the descendant flag to `@Query` above, we can include the children of the child
+   * elements.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Query(Dependency, {descendants: true}) dependencies:QueryList<Dependency>) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a Query which would contain `Dependency` 4, 5 and 6.
+   * 
+   * ### Optional injection
+   * 
+   * The normal behavior of directives is to return an error when a specified dependency cannot be
+   * resolved. If you
+   * would like to inject `null` on unresolved dependency instead, you can annotate that dependency
+   * with `@Optional()`.
+   * This explicitly permits the author of a template to treat some of the surrounding directives as
+   * optional.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Optional() dependency:Dependency) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a `Dependency` directive found on the current element.
+   * If none can be
+   * found, the injector supplies `null` instead of throwing an error.
+   * 
+   * ## Example
+   * 
+   * Here we use a decorator directive to simply define basic tool-tip behavior.
+   * 
+   * ```
+   * @Directive({
+   *   selector: '[tooltip]',
+   *   inputs: [
+   *     'text: tooltip'
+   *   ],
+   *   host: {
+   *     '(mouseenter)': 'onMouseEnter()',
+   *     '(mouseleave)': 'onMouseLeave()'
+   *   }
+   * })
+   * class Tooltip{
+   *   text:string;
+   *   overlay:Overlay; // NOT YET IMPLEMENTED
+   *   overlayManager:OverlayManager; // NOT YET IMPLEMENTED
+   * 
+   *   constructor(overlayManager:OverlayManager) {
+   *     this.overlay = overlay;
+   *   }
+   * 
+   *   onMouseEnter() {
+   *     // exact signature to be determined
+   *     this.overlay = this.overlayManager.open(text, ...);
+   *   }
+   * 
+   *   onMouseLeave() {
+   *     this.overlay.close();
+   *     this.overlay = null;
+   *   }
+   * }
+   * ```
+   * In our HTML template, we can then add this behavior to a `<div>` or any other element with the
+   * `tooltip` selector,
+   * like so:
+   * 
+   * ```
+   * <div tooltip="some text here"></div>
+   * ```
+   * 
+   * Directives can also control the instantiation, destruction, and positioning of inline template
+   * elements:
+   * 
+   * A directive uses a {@link ViewContainerRef} to instantiate, insert, move, and destroy views at
+   * runtime.
+   * The {@link ViewContainerRef} is created as a result of `<template>` element, and represents a
+   * location in the current view
+   * where these actions are performed.
+   * 
+   * Views are always created as children of the current {@link ViewMetadata}, and as siblings of the
+   * `<template>` element. Thus a
+   * directive in a child view cannot inject the directive that created it.
+   * 
+   * Since directives that create views via ViewContainers are common in Angular, and using the full
+   * `<template>` element syntax is wordy, Angular
+   * also supports a shorthand notation: `<li *foo="bar">` and `<li template="foo: bar">` are
+   * equivalent.
+   * 
+   * Thus,
+   * 
+   * ```
+   * <ul>
+   *   <li *foo="bar" title="text"></li>
+   * </ul>
+   * ```
+   * 
+   * Expands in use to:
+   * 
+   * ```
+   * <ul>
+   *   <template [foo]="bar">
+   *     <li title="text"></li>
+   *   </template>
+   * </ul>
+   * ```
+   * 
+   * Notice that although the shorthand places `*foo="bar"` within the `<li>` element, the binding for
+   * the directive
+   * controller is correctly instantiated on the `<template>` element rather than the `<li>` element.
+   * 
+   * ## Lifecycle hooks
+   * 
+   * When the directive class implements some {@link angular2/lifecycle_hooks} the callbacks are
+   * called by the change detection at defined points in time during the life of the directive.
+   * 
+   * ## Example
+   * 
+   * Let's suppose we want to implement the `unless` behavior, to conditionally include a template.
+   * 
+   * Here is a simple directive that triggers on an `unless` selector:
+   * 
+   * ```
+   * @Directive({
+   *   selector: '[unless]',
+   *   inputs: ['unless']
+   * })
+   * export class Unless {
+   *   viewContainer: ViewContainerRef;
+   *   templateRef: TemplateRef;
+   *   prevCondition: boolean;
+   * 
+   *   constructor(viewContainer: ViewContainerRef, templateRef: TemplateRef) {
+   *     this.viewContainer = viewContainer;
+   *     this.templateRef = templateRef;
+   *     this.prevCondition = null;
+   *   }
+   * 
+   *   set unless(newCondition) {
+   *     if (newCondition && (isBlank(this.prevCondition) || !this.prevCondition)) {
+   *       this.prevCondition = true;
+   *       this.viewContainer.clear();
+   *     } else if (!newCondition && (isBlank(this.prevCondition) || this.prevCondition)) {
+   *       this.prevCondition = false;
+   *       this.viewContainer.create(this.templateRef);
+   *     }
+   *   }
+   * }
+   * ```
+   * 
+   * We can then use this `unless` selector in a template:
+   * ```
+   * <ul>
+   *   <li *unless="expr"></li>
+   * </ul>
+   * ```
+   * 
+   * Once the directive instantiates the child view, the shorthand notation for the template expands
+   * and the result is:
+   * 
+   * ```
+   * <ul>
+   *   <template [unless]="exp">
+   *     <li></li>
+   *   </template>
+   *   <li></li>
+   * </ul>
+   * ```
+   * 
+   * Note also that although the `<li></li>` template still exists inside the `<template></template>`,
+   * the instantiated
+   * view occurs on the second `<li></li>` which is a sibling to the `<template>` element.
+   */
+  var Directive: DirectiveFactory;
+>>>>>>> upstream/master
+  
+
+    
+  /**
+<<<<<<< HEAD
    * Lazily retrieves the reference value from a forwardRef.
    * 
    * Acts as the identity function when given a non-forward-ref value.
@@ -2715,10 +3409,42 @@ declare module ng {
    * See: {@link forwardRef}
    */
   function resolveForwardRef(type: any): any;
+=======
+   * Metadata properties available for configuring Views.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@View` annotation specifies the HTML template to use, and lists the directives that are active
+   * within the template.
+   * 
+   * When a component is instantiated, the template is loaded into the component's shadow root, and
+   * the expressions and statements in the template are evaluated against the component.
+   * 
+   * For details on the `@Component` annotation, see {@link ComponentMetadata}.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!',
+   *   directives: [GreetUser, Bold]
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+   */
+  var View: ViewFactory;
+>>>>>>> upstream/master
   
 
     
   /**
+<<<<<<< HEAD
    * An interface that a function passed into {@link forwardRef} has to implement.
    * 
    * ### Example
@@ -2813,6 +3539,1031 @@ declare module ng {
      * 
      * The passed-in bindings can be an array of `Type`, {@link Binding},
      * or a recursive array of more bindings.
+=======
+   * Metadata properties available for configuring Views.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@View` annotation specifies the HTML template to use, and lists the directives that are active
+   * within the template.
+   * 
+   * When a component is instantiated, the template is loaded into the component's shadow root, and
+   * the expressions and statements in the template are evaluated against the component.
+   * 
+   * For details on the `@Component` annotation, see {@link ComponentMetadata}.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!',
+   *   directives: [GreetUser, Bold]
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+   */
+  var Attribute: AttributeFactory;
+  
+
+    
+  /**
+   * Declares an injectable parameter to be a live list of directives or variable
+   * bindings from the content children of a directive.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/lY9m8HLy7z06vDoUaSN2?p=preview))
+   * 
+   * Assume that `<tabs>` component would like to get a list its children `<pane>`
+   * components as shown in this example:
+   * 
+   * ```html
+   * <tabs>
+   *   <pane title="Overview">...</pane>
+   *   <pane *ng-for="#o of objects" [title]="o.title">{{o.text}}</pane>
+   * </tabs>
+   * ```
+   * 
+   * The preferred solution is to query for `Pane` directives using this decorator.
+   * 
+   * ```javascript
+   * @Component({
+   *   selector: 'pane',
+   *   inputs: ['title']
+   * })
+   * class Pane {
+   *   title:string;
+   * }
+   * 
+   * @Component({
+   *  selector: 'tabs',
+   *  template: `
+   *    <ul>
+   *      <li *ng-for="#pane of panes">{{pane.title}}</li>
+   *    </ul>
+   *    <content></content>
+   *  `
+   * })
+   * class Tabs {
+   *   panes: QueryList<Pane>;
+   *   constructor(@Query(Pane) panes:QueryList<Pane>) {
+   *     this.panes = panes;
+   *   }
+   * }
+   * ```
+   * 
+   * A query can look for variable bindings by passing in a string with desired binding symbol.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/sT2j25cH1dURAyBRCKx1?p=preview))
+   * ```html
+   * <seeker>
+   *   <div #findme>...</div>
+   * </seeker>
+   * 
+   * @Component({ selector: 'foo' })
+   * class seeker {
+   *   constructor(@Query('findme') elList: QueryList<ElementRef>) {...}
+   * }
+   * ```
+   * 
+   * In this case the object that is injected depend on the type of the variable
+   * binding. It can be an ElementRef, a directive or a component.
+   * 
+   * Passing in a comma separated list of variable bindings will query for all of them.
+   * 
+   * ```html
+   * <seeker>
+   *   <div #find-me>...</div>
+   *   <div #find-me-too>...</div>
+   * </seeker>
+   * 
+   *  @Component({
+   *   selector: 'foo'
+   * })
+   * class Seeker {
+   *   constructor(@Query('findMe, findMeToo') elList: QueryList<ElementRef>) {...}
+   * }
+   * ```
+   * 
+   * Configure whether query looks for direct children or all descendants
+   * of the querying element, by using the `descendants` parameter.
+   * It is set to `false` by default.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/wtGeB977bv7qvA5FTYl9?p=preview))
+   * ```html
+   * <container #first>
+   *   <item>a</item>
+   *   <item>b</item>
+   *   <container #second>
+   *     <item>c</item>
+   *   </container>
+   * </container>
+   * ```
+   * 
+   * When querying for items, the first container will see only `a` and `b` by default,
+   * but with `Query(TextDirective, {descendants: true})` it will see `c` too.
+   * 
+   * The queried directives are kept in a depth-first pre-order with respect to their
+   * positions in the DOM.
+   * 
+   * Query does not look deep into any subcomponent views.
+   * 
+   * Query is updated as part of the change-detection cycle. Since change detection
+   * happens after construction of a directive, QueryList will always be empty when observed in the
+   * constructor.
+   * 
+   * The injected object is an unmodifiable live list.
+   * See {@link QueryList} for more details.
+   */
+  var Query: QueryFactory;
+  
+
+    
+  /**
+   * Configures a content query.
+   * 
+   * Content queries are set before the `afterContentInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Directive({
+   *   selector: 'someDir'
+   * })
+   * class SomeDir {
+   *   @ContentChildren(ChildDirective) contentChildren: QueryList<ChildDirective>;
+   * 
+   *   afterContentInit() {
+   *     // contentChildren is set
+   *   }
+   * }
+   * ```
+   */
+  var ContentChildren: ContentChildrenFactory;
+  
+
+    
+  /**
+   * Configures a content query.
+   * 
+   * Content queries are set before the `afterContentInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Directive({
+   *   selector: 'someDir'
+   * })
+   * class SomeDir {
+   *   @ContentChild(ChildDirective) contentChild;
+   * 
+   *   afterContentInit() {
+   *     // contentChild is set
+   *   }
+   * }
+   * ```
+   */
+  var ContentChild: ContentChildFactory;
+  
+
+    
+  /**
+   * Configures a view query.
+   * 
+   * View queries are set before the `afterViewInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+   * class SomeDir {
+   *   @ViewChildren(ItemDirective) viewChildren: QueryList<ItemDirective>;
+   * 
+   *   afterViewInit() {
+   *     // viewChildren is set
+   *   }
+   * }
+   * ```
+   */
+  var ViewChildren: ViewChildrenFactory;
+  
+
+    
+  /**
+   * Configures a view query.
+   * 
+   * View queries are set before the `afterViewInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+   * class SomeDir {
+   *   @ViewChild(ItemDirective) viewChild:ItemDirective;
+   * 
+   *   afterViewInit() {
+   *     // viewChild is set
+   *   }
+   * }
+   * ```
+   */
+  var ViewChild: ViewChildFactory;
+  
+
+    
+  /**
+   * Similar to {@link QueryMetadata}, but querying the component view, instead of
+   * the content children.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/eNsFHDf7YjyM6IzKxM1j?p=preview))
+   * 
+   * ```javascript
+   * @Component({...})
+   * @View({
+   *   template: `
+   *     <item> a </item>
+   *     <item> b </item>
+   *     <item> c </item>
+   *   `
+   * })
+   * class MyComponent {
+   *   shown: boolean;
+   * 
+   *   constructor(private @Query(Item) items:QueryList<Item>) {
+   *     items.onChange(() => console.log(items.length));
+   *   }
+   * }
+   * ```
+   * 
+   * Supports the same querying parameters as {@link QueryMetadata}, except
+   * `descendants`. This always queries the whole view.
+   * 
+   * As `shown` is flipped between true and false, items will contain zero of one
+   * items.
+   * 
+   * Specifies that a {@link QueryList} should be injected.
+   * 
+   * The injected object is an iterable and observable live list.
+   * See {@link QueryList} for more details.
+   */
+  var ViewQuery: QueryFactory;
+  
+
+    
+  /**
+   * Declare reusable pipe function.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Pipe({
+   *   name: 'lowercase'
+   * })
+   * class Lowercase {
+   *   transform(v, args) { return v.toLowerCase(); }
+   * }
+   * ```
+   */
+  var Pipe: PipeFactory;
+  
+
+    
+  /**
+   * Declares a data-bound input property.
+   * 
+   * Angular automatically updates data-bound properties during change detection.
+   * 
+   * `InputMetadata` takes an optional parameter that specifies the name
+   * used when instantiating a component in the template. When not provided,
+   * the name of the decorated property is used.
+   * 
+   * ### Example
+   * 
+   * The following example creates a component with two input properties.
+   * 
+   * ```typescript
+   * @Component({
+   *   selector: 'bank-account',
+   *   template: `
+   *     Bank Name: {{bankName}}
+   *     Account Id: {{id}}
+   *   `
+   * })
+   * class BankAccount {
+   *   @Input() bankName: string;
+   *   @Input('account-id') id: string;
+   * 
+   *   // this property is not bound, and won't be automatically updated by Angular
+   *   normalizedBankName: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
+   *   `,
+   *   directives: [BankAccount]
+   * })
+   * class App {}
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  var Input: InputFactory;
+  
+
+    
+  /**
+   * Declares an event-bound output property.
+   * 
+   * When an output property emits an event, an event handler attached to that event
+   * the template is invoked.
+   * 
+   * `OutputMetadata` takes an optional parameter that specifies the name
+   * used when instantiating a component in the template. When not provided,
+   * the name of the decorated property is used.
+   * 
+   * ### Example
+   * 
+   * ```typescript
+   * @Directive({
+   *   selector: 'interval-dir',
+   * })
+   * class IntervalDir {
+   *   @Output() everySecond = new EventEmitter();
+   *   @Output('everyFiveSeconds') five5Secs = new EventEmitter();
+   * 
+   *   constructor() {
+   *     setInterval(() => this.everySecond.next("event"), 1000);
+   *     setInterval(() => this.five5Secs.next("event"), 5000);
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
+   *     </interval-dir>
+   *   `,
+   *   directives: [IntervalDir]
+   * })
+   * class App {
+   *   everySecond() { console.log('second'); }
+   *   everyFiveSeconds() { console.log('five seconds'); }
+   * }
+   * bootstrap(App);
+   * ```
+   */
+  var Output: OutputFactory;
+  
+
+    
+  /**
+   * Declares a host property binding.
+   * 
+   * Angular automatically checks host property bindings during change detection.
+   * If a binding changes, it will update the host element of the directive.
+   * 
+   * `HostBindingMetadata` takes an optional parameter that specifies the property
+   * name of the host element that will be updated. When not provided,
+   * the class property name is used.
+   * 
+   * ### Example
+   * 
+   * The following example creates a directive that sets the `valid` and `invalid` classes
+   * on the DOM element that has ng-model directive on it.
+   * 
+   * ```typescript
+   * @Directive({selector: '[ng-model]'})
+   * class NgModelStatus {
+   *   constructor(public control:NgModel) {}
+   *   @HostBinding('[class.valid]') get valid { return this.control.valid; }
+   *   @HostBinding('[class.invalid]') get invalid { return this.control.invalid; }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `<input [(ng-model)]="prop">`,
+   *   directives: [FORM_DIRECTIVES, NgModelStatus]
+   * })
+   * class App {
+   *   prop;
+   * }
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  var HostBinding: HostBindingFactory;
+  
+
+    
+  /**
+   * Declares a host listener.
+   * 
+   * Angular will invoke the decorated method when the host element emits the specified event.
+   * 
+   * If the decorated method returns `false`, then `preventDefault` is applied on the DOM
+   * event.
+   * 
+   * ### Example
+   * 
+   * The following example declares a directive that attaches a click listener to the button and
+   * counts clicks.
+   * 
+   * ```typescript
+   * @Directive({selector: 'button[counting]'})
+   * class CountClicks {
+   *   numberOfClicks = 0;
+   * 
+   *   @HostListener('click', ['$event.target'])
+   *   onClick(btn) {
+   *     console.log("button", btn, "number of clicks:", this.numberOfClicks++);
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `<button counting>Increment</button>`,
+   *   directives: [CountClicks]
+   * })
+   * class App {}
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  var HostListener: HostListenerFactory;
+  
+
+    
+  /**
+   * Provides a way for expressing ES6 classes with parameter annotations in ES5.
+   * 
+   * ## Basic Example
+   * 
+   * ```
+   * var Greeter = ng.Class({
+   *   constructor: function(name) {
+   *     this.name = name;
+   *   },
+   * 
+   *   greet: function() {
+   *     alert('Hello ' + this.name + '!');
+   *   }
+   * });
+   * ```
+   * 
+   * is equivalent to ES6:
+   * 
+   * ```
+   * class Greeter {
+   *   constructor(name) {
+   *     this.name = name;
+   *   }
+   * 
+   *   greet() {
+   *     alert('Hello ' + this.name + '!');
+   *   }
+   * }
+   * ```
+   * 
+   * or equivalent to ES5:
+   * 
+   * ```
+   * var Greeter = function (name) {
+   *   this.name = name;
+   * }
+   * 
+   * Greeter.prototype.greet = function () {
+   *   alert('Hello ' + this.name + '!');
+   * }
+   * ```
+   * 
+   * ## Example with parameter annotations
+   * 
+   * ```
+   * var MyService = ng.Class({
+   *   constructor: [String, [new Query(), QueryList], function(name, queryList) {
+   *     ...
+   *   }]
+   * });
+   * ```
+   * 
+   * is equivalent to ES6:
+   * 
+   * ```
+   * class MyService {
+   *   constructor(name: string, @Query() queryList: QueryList) {
+   *     ...
+   *   }
+   * }
+   * ```
+   * 
+   * ## Example with inheritance
+   * 
+   * ```
+   * var Shape = ng.Class({
+   *   constructor: (color) {
+   *     this.color = color;
+   *   }
+   * });
+   * 
+   * var Square = ng.Class({
+   *   extends: Shape,
+   *   constructor: function(color, size) {
+   *     Shape.call(this, color);
+   *     this.size = size;
+   *   }
+   * });
+   * ```
+   */
+  function Class(clsDef: ClassDefinition): ConcreteType;
+  
+
+    
+  /**
+   * Declares the interface to be used with {@link Class}.
+   */
+  interface ClassDefinition {
+    
+    /**
+     * Optional argument for specifying the superclass.
+     */
+    extends?: Type;
+    
+    /**
+     * Required constructor function for a class.
+     * 
+     * The function may be optionally wrapped in an `Array`, in which case additional parameter
+     * annotations may be specified.
+     * The number of arguments and the number of parameter annotations must match.
+     * 
+     * See {@link Class} for example of usage.
+     */
+    constructor: Function | any[];
+    
+  }
+
+    
+  /**
+   * An interface implemented by all Angular type decorators, which allows them to be used as ES7
+   * decorators as well as
+   * Angular DSL syntax.
+   * 
+   * DSL syntax:
+   * 
+   * ```
+   * var MyClass = ng
+   *   .Component({...})
+   *   .View({...})
+   *   .Class({...});
+   * ```
+   * 
+   * ES7 syntax:
+   * 
+   * ```
+   * @ng.Component({...})
+   * @ng.View({...})
+   * class MyClass {...}
+   * ```
+   */
+  interface TypeDecorator {
+    
+    /**
+     * Invoke as ES7 decorator.
+     */
+    <T extends Type>(type: T): T;
+    
+    /**
+     * Storage for the accumulated annotations so far used by the DSL syntax.
+     * 
+     * Used by {@link Class} to annotate the generated class.
+     */
+    annotations: any[];
+    
+    /**
+     * Generate a class from the definition and annotate it with {@link TypeDecorator#annotations}.
+     */
+    Class(obj: ClassDefinition): ConcreteType;
+    
+  }
+
+    
+  /**
+   * A parameter metadata that specifies a dependency.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/6uHYJK?p=preview))
+   * 
+   * ```typescript
+   * class Engine {}
+   * 
+   * @Injectable()
+   * class Car {
+   *   engine;
+   *   constructor(@Inject("MyEngine") engine:Engine) {
+   *     this.engine = engine;
+   *   }
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([
+   *  provide("MyEngine", {useClass: Engine}),
+   *  Car
+   * ]);
+   * 
+   * expect(injector.get(Car).engine instanceof Engine).toBe(true);
+   * ```
+   * 
+   * When `@Inject()` is not present, {@link Injector} will use the type annotation of the parameter.
+   * 
+   * ### Example
+   * 
+   * ```typescript
+   * class Engine {}
+   * 
+   * @Injectable()
+   * class Car {
+   *   constructor(public engine: Engine) {} //same as constructor(@Inject(Engine) engine:Engine)
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([Engine, Car]);
+   * expect(injector.get(Car).engine instanceof Engine).toBe(true);
+   * ```
+   */
+  class InjectMetadata {
+    
+    constructor(token: any);
+    
+    token: any;
+    
+    toString(): string;
+    
+  }
+
+    
+  /**
+   * A parameter metadata that marks a dependency as optional. {@link Injector} provides `null` if
+   * the dependency is not found.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/AsryOm?p=preview))
+   * 
+   * ```typescript
+   * class Engine {}
+   * 
+   * @Injectable()
+   * class Car {
+   *   engine;
+   *   constructor(@Optional() engine:Engine) {
+   *     this.engine = engine;
+   *   }
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([Car]);
+   * expect(injector.get(Car).engine).toBeNull();
+   * ```
+   */
+  class OptionalMetadata {
+    
+    toString(): string;
+    
+  }
+
+    
+  /**
+   * A marker metadata that marks a class as available to {@link Injector} for creation.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/Wk4DMQ?p=preview))
+   * 
+   * ```typescript
+   * @Injectable()
+   * class UsefulService {}
+   * 
+   * @Injectable()
+   * class NeedsService {
+   *   constructor(public service:UsefulService) {}
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([NeedsService, UsefulService]);
+   * expect(injector.get(NeedsService).service instanceof UsefulService).toBe(true);
+   * ```
+   * {@link Injector} will throw {@link NoAnnotationError} when trying to instantiate a class that
+   * does not have `@Injectable` marker, as shown in the example below.
+   * 
+   * ```typescript
+   * class UsefulService {}
+   * 
+   * class NeedsService {
+   *   constructor(public service:UsefulService) {}
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([NeedsService, UsefulService]);
+   * expect(() => injector.get(NeedsService)).toThrowError();
+   * ```
+   */
+  class InjectableMetadata {
+    
+    constructor();
+    
+  }
+
+    
+  /**
+   * Specifies that an {@link Injector} should retrieve a dependency only from itself.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/NeagAg?p=preview))
+   * 
+   * ```typescript
+   * class Dependency {
+   * }
+   * 
+   * @Injectable()
+   * class NeedsDependency {
+   *   dependency;
+   * 
+   *   dependency;
+   *   constructor(@Self() dependency:Dependency) {
+   *     this.dependency = dependency;
+   *   }
+   * }
+   * 
+   * var inj = Injector.resolveAndCreate([Dependency, NeedsDependency]);
+   * var nd = inj.get(NeedsDependency);
+   * 
+   * expect(nd.dependency instanceof Dependency).toBe(true);
+   * 
+   * var inj = Injector.resolveAndCreate([Dependency]);
+   * var child = inj.resolveAndCreateChild([NeedsDependency]);
+   * expect(() => child.get(NeedsDependency)).toThrowError();
+   * ```
+   */
+  class SelfMetadata {
+    
+    toString(): string;
+    
+  }
+
+    
+  /**
+   * Specifies that an injector should retrieve a dependency from any injector until reaching the
+   * closest host.
+   * 
+   * In Angular, a component element is automatically declared as a host for all the injectors in
+   * its view.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/GX79pV?p=preview))
+   * 
+   * In the following example `App` contains `ParentCmp`, which contains `ChildDirective`.
+   * So `ParentCmp` is the host of `ChildDirective`.
+   * 
+   * `ChildDirective` depends on two services: `HostService` and `OtherService`.
+   * `HostService` is defined at `ParentCmp`, and `OtherService` is defined at `App`.
+   * 
+   * ```typescript
+   * class OtherService {}
+   * class HostService {}
+   * 
+   * @Directive({
+   *   selector: 'child-directive'
+   * })
+   * class ChildDirective {
+   *   constructor(@Optional() @Host() os:OtherService, @Optional() @Host() hs:HostService){
+   *     console.log("os is null", os);
+   *     console.log("hs is NOT null", hs);
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+   *   providers: [HostService],
+   *   template: `
+   *     Dir: <child-directive></child-directive>
+   *   `,
+   *   directives: [ChildDirective]
+   * })
+   * class ParentCmp {
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   providers: [OtherService],
+   *   template: `
+   *     Parent: <parent-cmp></parent-cmp>
+   *   `,
+   *   directives: [ParentCmp]
+   * })
+   * class App {
+   * }
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  class HostMetadata {
+    
+    toString(): string;
+    
+  }
+
+    
+  /**
+   * Specifies that the dependency resolution should start from the parent injector.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/Wchdzb?p=preview))
+   * 
+   * ```typescript
+   * class Dependency {
+   * }
+   * 
+   * @Injectable()
+   * class NeedsDependency {
+   *   dependency;
+   *   constructor(@SkipSelf() dependency:Dependency) {
+   *     this.dependency = dependency;
+   *   }
+   * }
+   * 
+   * var parent = Injector.resolveAndCreate([Dependency]);
+   * var child = parent.resolveAndCreateChild([NeedsDependency]);
+   * expect(child.get(NeedsDependency).dependency instanceof Depedency).toBe(true);
+   * 
+   * var inj = Injector.resolveAndCreate([Dependency, NeedsDependency]);
+   * expect(() => inj.get(NeedsDependency)).toThrowError();
+   * ```
+   */
+  class SkipSelfMetadata {
+    
+    toString(): string;
+    
+  }
+
+    
+  /**
+   * `DependencyMetadata` is used by the framework to extend DI.
+   * This is internal to Angular and should not be used directly.
+   */
+  class DependencyMetadata {
+    
+    token: any;
+    
+  }
+
+    
+  /**
+   * Allows to refer to references which are not yet defined.
+   * 
+   * For instance, `forwardRef` is used when the `token` which we need to refer to for the purposes of
+   * DI is declared,
+   * but not yet defined. It is also used when the `token` which we use when creating a query is not
+   * yet defined.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/bRs0SX2OTQiJzqvjgl8P?p=preview))
+   * 
+   * ```typescript
+   * class Door {
+   *   lock: Lock;
+   *   constructor(@Inject(forwardRef(() => Lock)) lock:Lock) {
+   *     this.lock = lock;
+   *   }
+   * }
+   * 
+   * // Only at this point Lock is defined.
+   * class Lock {
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([Door, Lock]);
+   * var door = injector.get(Door);
+   * expect(door instanceof Door).toBe(true);
+   * expect(door.lock instanceof Lock).toBe(true);
+   * ```
+   */
+  function forwardRef(forwardRefFn: ForwardRefFn): Type;
+  
+
+    
+  /**
+   * Lazily retrieves the reference value from a forwardRef.
+   * 
+   * Acts as the identity function when given a non-forward-ref value.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/GU72mJrk1fiodChcmiDR?p=preview))
+   * 
+   * ```typescript
+   * var ref = forwardRef(() => "refValue");
+   * expect(resolveForwardRef(ref)).toEqual("refValue");
+   * expect(resolveForwardRef("regularValue")).toEqual("regularValue");
+   * ```
+   * 
+   * See: {@link forwardRef}
+   */
+  function resolveForwardRef(type: any): any;
+  
+
+    
+  /**
+   * An interface that a function passed into {@link forwardRef} has to implement.
+   * 
+   * ### Example
+   * 
+   * ```typescript
+   * var fn:ForwardRefFn = forwardRef(() => Lock);
+   * ```
+   */
+  interface ForwardRefFn {
+    
+    (): any;
+    
+  }
+
+    
+  /**
+   * A dependency injection container used for instantiating objects and resolving dependencies.
+   * 
+   * An `Injector` is a replacement for a `new` operator, which can automatically resolve the
+   * constructor dependencies.
+   * 
+   * In typical use, application code asks for the dependencies in the constructor and they are
+   * resolved by the `Injector`.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/jzjec0?p=preview))
+   * 
+   * The following example creates an `Injector` configured to create `Engine` and `Car`.
+   * 
+   * ```typescript
+   * @Injectable()
+   * class Engine {
+   * }
+   * 
+   * @Injectable()
+   * class Car {
+   *   constructor(public engine:Engine) {}
+   * }
+   * 
+   * var injector = Injector.resolveAndCreate([Car, Engine]);
+   * var car = injector.get(Car);
+   * expect(car instanceof Car).toBe(true);
+   * expect(car.engine instanceof Engine).toBe(true);
+   * ```
+   * 
+   * Notice, we don't use the `new` operator because we explicitly want to have the `Injector`
+   * resolve all of the object's dependencies automatically.
+   */
+  class Injector {
+    
+    /**
+     * Private
+     */
+    constructor(_proto: any, _parent?: Injector, _depProvider?: any, _debugContext?: Function);
+    
+    /**
+     * Turns an array of provider definitions into an array of resolved providers.
+     * 
+     * A resolution is a process of flattening multiple nested arrays and converting individual
+     * providers into an array of {@link ResolvedProvider}s.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/AiXTHi?p=preview))
+     * 
+     * ```typescript
+     * @Injectable()
+     * class Engine {
+     * }
+     * 
+     * @Injectable()
+     * class Car {
+     *   constructor(public engine:Engine) {}
+     * }
+     * 
+     * var providers = Injector.resolve([Car, [[Engine]]]);
+     * 
+     * expect(providers.length).toEqual(2);
+     * 
+     * expect(providers[0] instanceof ResolvedProvider).toBe(true);
+     * expect(providers[0].key.displayName).toBe("Car");
+     * expect(providers[0].dependencies.length).toEqual(1);
+     * expect(providers[0].factory).toBeDefined();
+     * 
+     * expect(providers[1].key.displayName).toBe("Engine");
+     * });
+     * ```
+     * 
+     * See {@link Injector#fromResolvedProviders} for more info.
+     */
+    static resolve(providers: Array<Type | Provider | any[]>): ResolvedProvider[];
+    
+    /**
+     * Resolves an array of providers and creates an injector from those providers.
+     * 
+     * The passed-in providers can be an array of `Type`, {@link Provider},
+     * or a recursive array of more providers.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/ePOccA?p=preview))
      * 
@@ -2830,6 +4581,7 @@ declare module ng {
      * expect(injector.get(Car) instanceof Car).toBe(true);
      * ```
      * 
+<<<<<<< HEAD
      * This function is slower than the corresponding `fromResolvedBindings`
      * because it needs to resolve the passed-in bindings first.
      * See {@link resolve} and {@link fromResolvedBindings}.
@@ -2838,6 +4590,16 @@ declare module ng {
     
     /**
      * Creates an injector from previously resolved bindings.
+=======
+     * This function is slower than the corresponding `fromResolvedProviders`
+     * because it needs to resolve the passed-in providers first.
+     * See {@link Injector#resolve} and {@link Injector#fromResolvedProviders}.
+     */
+    static resolveAndCreate(providers: Array<Type | Provider | any[]>): Injector;
+    
+    /**
+     * Creates an injector from previously resolved providers.
+>>>>>>> upstream/master
      * 
      * This API is the recommended way to construct injectors in performance-sensitive parts.
      * 
@@ -2853,6 +4615,7 @@ declare module ng {
      *   constructor(public engine:Engine) {}
      * }
      * 
+<<<<<<< HEAD
      * var bindings = Injector.resolve([Car, Engine]);
      * var injector = Injector.fromResolvedBindings(bindings);
      * expect(injector.get(Car) instanceof Car).toBe(true);
@@ -2863,12 +4626,33 @@ declare module ng {
     /**
      * Retrieves an instance from the injector based on the provided token.
      * Throws {@link NoBindingError} if not found.
+=======
+     * var providers = Injector.resolve([Car, Engine]);
+     * var injector = Injector.fromResolvedProviders(providers);
+     * expect(injector.get(Car) instanceof Car).toBe(true);
+     * ```
+     */
+    static fromResolvedProviders(providers: ResolvedProvider[]): Injector;
+    
+    /**
+     * @deprecated
+     */
+    static fromResolvedBindings(providers: ResolvedProvider[]): Injector;
+    
+    /**
+     * Retrieves an instance from the injector based on the provided token.
+     * Throws {@link NoProviderError} if not found.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/HeXSHg?p=preview))
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   bind("validToken").toValue("Value")
+=======
+     *   provide("validToken", {useValue: "Value"})
+>>>>>>> upstream/master
      * ]);
      * expect(injector.get("validToken")).toEqual("Value");
      * expect(() => injector.get("invalidToken")).toThrowError();
@@ -2891,7 +4675,11 @@ declare module ng {
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   bind("validToken").toValue("Value")
+=======
+     *   provide("validToken", {useValue: "Value"})
+>>>>>>> upstream/master
      * ]);
      * expect(injector.getOptional("validToken")).toEqual("Value");
      * expect(injector.getOptional("invalidToken")).toBe(null);
@@ -2923,17 +4711,27 @@ declare module ng {
     parent: Injector;
     
     /**
+<<<<<<< HEAD
      * Resolves an array of bindings and creates a child injector from those bindings.
+=======
+     * Resolves an array of providers and creates a child injector from those providers.
+>>>>>>> upstream/master
      * 
      * <!-- TODO: Add a link to the section of the user guide talking about hierarchical injection.
      * -->
      * 
+<<<<<<< HEAD
      * The passed-in bindings can be an array of `Type`, {@link Binding},
      * or a recursive array of more bindings.
+=======
+     * The passed-in providers can be an array of `Type`, {@link Provider},
+     * or a recursive array of more providers.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/opB3T4?p=preview))
      * 
      * ```typescript
+<<<<<<< HEAD
      * class ParentBinding {}
      * class ChildBinding {}
      * 
@@ -2953,6 +4751,27 @@ declare module ng {
     
     /**
      * Creates a child injector from previously resolved bindings.
+=======
+     * class ParentProvider {}
+     * class ChildProvider {}
+     * 
+     * var parent = Injector.resolveAndCreate([ParentProvider]);
+     * var child = parent.resolveAndCreateChild([ChildProvider]);
+     * 
+     * expect(child.get(ParentProvider) instanceof ParentProvider).toBe(true);
+     * expect(child.get(ChildProvider) instanceof ChildProvider).toBe(true);
+     * expect(child.get(ParentProvider)).toBe(parent.get(ParentProvider));
+     * ```
+     * 
+     * This function is slower than the corresponding `createChildFromResolved`
+     * because it needs to resolve the passed-in providers first.
+     * See {@link Injector#resolve} and {@link Injector#createChildFromResolved}.
+     */
+    resolveAndCreateChild(providers: Array<Type | Provider | any[]>): Injector;
+    
+    /**
+     * Creates a child injector from previously resolved providers.
+>>>>>>> upstream/master
      * 
      * <!-- TODO: Add a link to the section of the user guide talking about hierarchical injection.
      * -->
@@ -2962,6 +4781,7 @@ declare module ng {
      * ### Example ([live demo](http://plnkr.co/edit/VhyfjN?p=preview))
      * 
      * ```typescript
+<<<<<<< HEAD
      * class ParentBinding {}
      * class ChildBinding {}
      * 
@@ -2980,6 +4800,26 @@ declare module ng {
     
     /**
      * Resolves a binding and instantiates an object in the context of the injector.
+=======
+     * class ParentProvider {}
+     * class ChildProvider {}
+     * 
+     * var parentProviders = Injector.resolve([ParentProvider]);
+     * var childProviders = Injector.resolve([ChildProvider]);
+     * 
+     * var parent = Injector.fromResolvedProviders(parentProviders);
+     * var child = parent.createChildFromResolved(childProviders);
+     * 
+     * expect(child.get(ParentProvider) instanceof ParentProvider).toBe(true);
+     * expect(child.get(ChildProvider) instanceof ChildProvider).toBe(true);
+     * expect(child.get(ParentProvider)).toBe(parent.get(ParentProvider));
+     * ```
+     */
+    createChildFromResolved(providers: ResolvedProvider[]): Injector;
+    
+    /**
+     * Resolves a provider and instantiates an object in the context of the injector.
+>>>>>>> upstream/master
      * 
      * The created object does not get cached by the injector.
      * 
@@ -3002,10 +4842,17 @@ declare module ng {
      * expect(car).not.toBe(injector.resolveAndInstantiate(Car));
      * ```
      */
+<<<<<<< HEAD
     resolveAndInstantiate(binding: Type | Binding): any;
     
     /**
      * Instantiates an object using a resolved binding in the context of the injector.
+=======
+    resolveAndInstantiate(provider: Type | Provider): any;
+    
+    /**
+     * Instantiates an object using a resolved provider in the context of the injector.
+>>>>>>> upstream/master
      * 
      * The created object does not get cached by the injector.
      * 
@@ -3022,6 +4869,7 @@ declare module ng {
      * }
      * 
      * var injector = Injector.resolveAndCreate([Engine]);
+<<<<<<< HEAD
      * var carBinding = Injector.resolve([Car])[0];
      * var car = injector.instantiateResolved(carBinding);
      * expect(car.engine).toBe(injector.get(Engine));
@@ -3029,6 +4877,15 @@ declare module ng {
      * ```
      */
     instantiateResolved(binding: ResolvedBinding): any;
+=======
+     * var carProvider = Injector.resolve([Car])[0];
+     * var car = injector.instantiateResolved(carProvider);
+     * expect(car.engine).toBe(injector.get(Engine));
+     * expect(car).not.toBe(injector.instantiateResolved(carProvider));
+     * ```
+     */
+    instantiateResolved(provider: ResolvedProvider): any;
+>>>>>>> upstream/master
     
     displayName: string;
     
@@ -3038,40 +4895,107 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Describes how the {@link Injector} should instantiate a given token.
    * 
    * See {@link bind}.
-   * 
-   * ### Example ([live demo](http://plnkr.co/edit/GNAyj6K6PfYg2NBzgwZ5?p%3Dpreview&p=preview))
-   * 
-   * ```javascript
-   * var injector = Injector.resolveAndCreate([
-   *   new Binding("message", { toValue: 'Hello' })
-   * ]);
-   * 
-   * expect(injector.get("message")).toEqual('Hello');
-   * ```
+=======
+   * @deprecated
    */
-  class Binding {
+  class Binding extends Provider {
     
     constructor(token: any, {toClass, toValue, toAlias, toFactory, deps, multi}: {
         toClass?: Type,
         toValue?: any,
         toAlias?: any,
-        toFactory?: Function,
-        deps?: Object[],
-        multi?: boolean
+        toFactory: Function, deps?: Object[], multi?: boolean
       });
     
     /**
-     * Token used when retrieving this binding. Usually, it is a type {@link `Type`}.
+     * @deprecated
      */
+    toClass: any;
+    
+    /**
+     * @deprecated
+     */
+    toAlias: any;
+    
+    /**
+     * @deprecated
+     */
+    toFactory: any;
+    
+    /**
+     * @deprecated
+     */
+    toValue: any;
+    
+  }
+
+    
+  /**
+   * Helper class for the {@link bind} function.
+   */
+  class ProviderBuilder {
+    
+    constructor(token: any);
+    
     token: any;
     
     /**
-     * Binds a DI token to an implementation class.
+     * Binds a DI token to a class.
      * 
-     * ### Example ([live demo](http://plnkr.co/edit/RSTG86qgmoxCyj9SWPwY?p=preview))
+     * ### Example ([live demo](http://plnkr.co/edit/ZpBCSYqv6e2ud5KXLdxQ?p=preview))
+     * 
+     * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
+     * easy comparison.
+     * 
+     * ```typescript
+     * class Vehicle {}
+     * 
+     * class Car extends Vehicle {}
+     * 
+     * var injectorClass = Injector.resolveAndCreate([
+     *   Car,
+     *   provide(Vehicle, {useClass: Car})
+     * ]);
+     * var injectorAlias = Injector.resolveAndCreate([
+     *   Car,
+     *   provide(Vehicle, {useExisting: Car})
+     * ]);
+     * 
+     * expect(injectorClass.get(Vehicle)).not.toBe(injectorClass.get(Car));
+     * expect(injectorClass.get(Vehicle) instanceof Car).toBe(true);
+     * 
+     * expect(injectorAlias.get(Vehicle)).toBe(injectorAlias.get(Car));
+     * expect(injectorAlias.get(Vehicle) instanceof Car).toBe(true);
+     * ```
+     */
+    toClass(type: Type): Provider;
+    
+    /**
+     * Binds a DI token to a value.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/G024PFHmDL0cJFgfZK8O?p=preview))
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   provide('message', {useValue: 'Hello'})
+     * ]);
+     * 
+     * expect(injector.get('message')).toEqual('Hello');
+     * ```
+     */
+    toValue(value: any): Provider;
+    
+    /**
+     * Binds a DI token to an existing token.
+     * 
+     * Angular will return the same instance as if the provided token was used. (This is
+     * in contrast to `useClass` where a separate instance of `useClass` will be returned.)
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/uBaoF2pN5cfc5AfZapNw?p=preview))
      * 
      * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
      * easy
@@ -3082,13 +5006,190 @@ declare module ng {
      * 
      * class Car extends Vehicle {}
      * 
+     * var injectorAlias = Injector.resolveAndCreate([
+     *   Car,
+     *   provide(Vehicle, {useExisting: Car})
+     * ]);
      * var injectorClass = Injector.resolveAndCreate([
      *   Car,
+     *   provide(Vehicle, {useClass: Car})
+     * ]);
+     * 
+     * expect(injectorAlias.get(Vehicle)).toBe(injectorAlias.get(Car));
+     * expect(injectorAlias.get(Vehicle) instanceof Car).toBe(true);
+     * 
+     * expect(injectorClass.get(Vehicle)).not.toBe(injectorClass.get(Car));
+     * expect(injectorClass.get(Vehicle) instanceof Car).toBe(true);
+     * ```
+     */
+    toAlias(aliasToken: /*Type*/ any): Provider;
+    
+    /**
+     * Binds a DI token to a function which computes the value.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/OejNIfTT3zb1iBxaIYOb?p=preview))
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   provide(Number, {useFactory: () => { return 1+2; }}),
+     *   provide(String, {useFactory: (v) => { return "Value: " + v; }, deps: [Number]})
+     * ]);
+     * 
+     * expect(injector.get(Number)).toEqual(3);
+     * expect(injector.get(String)).toEqual('Value: 3');
+     * ```
+     */
+    toFactory(factory: Function, dependencies?: any[]): Provider;
+    
+  }
+
+    
+  /**
+   * @deprecated
+   */
+  interface ResolvedBinding extends ResolvedProvider {
+    
+  }
+
+    
+  /**
+   * An internal resolved representation of a factory function created by resolving {@link Provider}.
+   */
+  class ResolvedFactory {
+    
+    constructor(factory: Function, dependencies: Dependency[]);
+    
+    /**
+     * Factory function which can return an instance of an object represented by a key.
+     */
+    factory: Function;
+    
+    /**
+     * Arguments (dependencies) to the `factory` function.
+     */
+    dependencies: Dependency[];
+    
+  }
+
+    
+  class Dependency {
+    
+    constructor(key: Key, optional: boolean, lowerBoundVisibility: any, upperBoundVisibility: any, properties: any[]);
+    
+    static fromKey(key: Key): Dependency;
+    
+    key: Key;
+    
+    optional: boolean;
+    
+    lowerBoundVisibility: any;
+    
+    upperBoundVisibility: any;
+    
+    properties: any[];
+    
+  }
+
+    
+  /**
+   * @deprecated
+   * Creates a {@link Provider}.
+   * 
+   * To construct a {@link Provider}, bind a `token` to either a class, a value, a factory function,
+   * or
+   * to an existing `token`.
+   * See {@link ProviderBuilder} for more details.
+   * 
+   * The `token` is most commonly a class or {@link angular2/di/OpaqueToken}.
+   */
+  function bind(token: any): ProviderBuilder;
+  
+
+    
+  /**
+   * Describes how the {@link Injector} should instantiate a given token.
+   * 
+   * See {@link provide}.
+>>>>>>> upstream/master
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/GNAyj6K6PfYg2NBzgwZ5?p%3Dpreview&p=preview))
+   * 
+   * ```javascript
+   * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
+   *   new Binding("message", { toValue: 'Hello' })
+=======
+   *   new Provider("message", { useValue: 'Hello' })
+>>>>>>> upstream/master
+   * ]);
+   * 
+   * expect(injector.get("message")).toEqual('Hello');
+   * ```
+   */
+<<<<<<< HEAD
+  class Binding {
+    
+    constructor(token: any, {toClass, toValue, toAlias, toFactory, deps, multi}: {
+        toClass?: Type,
+        toValue?: any,
+        toAlias?: any,
+        toFactory?: Function,
+=======
+  class Provider {
+    
+    constructor(token: any, {useClass, useValue, useExisting, useFactory, deps, multi}: {
+        useClass?: Type,
+        useValue?: any,
+        useExisting?: any,
+        useFactory?: Function,
+>>>>>>> upstream/master
+        deps?: Object[],
+        multi?: boolean
+      });
+    
+    /**
+<<<<<<< HEAD
+     * Token used when retrieving this binding. Usually, it is a type {@link `Type`}.
+=======
+     * Token used when retrieving this provider. Usually, it is a type {@link Type}.
+>>>>>>> upstream/master
+     */
+    token: any;
+    
+    /**
+     * Binds a DI token to an implementation class.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/RSTG86qgmoxCyj9SWPwY?p=preview))
+     * 
+<<<<<<< HEAD
+     * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
+=======
+     * Because `useExisting` and `useClass` are often confused, the example contains both use cases
+     * for
+>>>>>>> upstream/master
+     * easy
+     * comparison.
+     * 
+     * ```typescript
+     * class Vehicle {}
+     * 
+     * class Car extends Vehicle {}
+     * 
+     * var injectorClass = Injector.resolveAndCreate([
+     *   Car,
+<<<<<<< HEAD
      *   new Binding(Vehicle, { toClass: Car })
      * ]);
      * var injectorAlias = Injector.resolveAndCreate([
      *   Car,
      *   new Binding(Vehicle, { toAlias: Car })
+=======
+     *   new Provider(Vehicle, { useClass: Car })
+     * ]);
+     * var injectorAlias = Injector.resolveAndCreate([
+     *   Car,
+     *   new Provider(Vehicle, { useExisting: Car })
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injectorClass.get(Vehicle)).not.toBe(injectorClass.get(Car));
@@ -3098,7 +5199,11 @@ declare module ng {
      * expect(injectorAlias.get(Vehicle) instanceof Car).toBe(true);
      * ```
      */
+<<<<<<< HEAD
     toClass: Type;
+=======
+    useClass: Type;
+>>>>>>> upstream/master
     
     /**
      * Binds a DI token to a value.
@@ -3107,12 +5212,17 @@ declare module ng {
      * 
      * ```javascript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   new Binding("message", { toValue: 'Hello' })
+=======
+     *   new Provider("message", { useValue: 'Hello' })
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injector.get("message")).toEqual('Hello');
      * ```
      */
+<<<<<<< HEAD
     toValue: any;
     
     /**
@@ -3124,6 +5234,20 @@ declare module ng {
      * ### Example ([live demo](http://plnkr.co/edit/QsatsOJJ6P8T2fMe9gr8?p=preview))
      * 
      * Because `toAlias` and `toClass` are often confused the example contains both use cases for easy
+=======
+    useValue: any;
+    
+    /**
+     * Binds a DI token to an existing token.
+     * 
+     * {@link Injector} returns the same instance as if the provided token was used.
+     * This is in contrast to `useClass` where a separate instance of `useClass` is returned.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/QsatsOJJ6P8T2fMe9gr8?p=preview))
+     * 
+     * Because `useExisting` and `useClass` are often confused the example contains both use cases for
+     * easy
+>>>>>>> upstream/master
      * comparison.
      * 
      * ```typescript
@@ -3133,11 +5257,19 @@ declare module ng {
      * 
      * var injectorAlias = Injector.resolveAndCreate([
      *   Car,
+<<<<<<< HEAD
      *   new Binding(Vehicle, { toAlias: Car })
      * ]);
      * var injectorClass = Injector.resolveAndCreate([
      *   Car,
      *   new Binding(Vehicle, { toClass: Car })
+=======
+     *   new Provider(Vehicle, { useExisting: Car })
+     * ]);
+     * var injectorClass = Injector.resolveAndCreate([
+     *   Car,
+     *   new Provider(Vehicle, { useClass: Car })
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injectorAlias.get(Vehicle)).toBe(injectorAlias.get(Car));
@@ -3147,7 +5279,11 @@ declare module ng {
      * expect(injectorClass.get(Vehicle) instanceof Car).toBe(true);
      * ```
      */
+<<<<<<< HEAD
     toAlias: any;
+=======
+    useExisting: any;
+>>>>>>> upstream/master
     
     /**
      * Binds a DI token to a function which computes the value.
@@ -3156,8 +5292,13 @@ declare module ng {
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   new Binding(Number, { toFactory: () => { return 1+2; }}),
      *   new Binding(String, { toFactory: (value) => { return "Value: " + value; },
+=======
+     *   new Provider(Number, { useFactory: () => { return 1+2; }}),
+     *   new Provider(String, { useFactory: (value) => { return "Value: " + value; },
+>>>>>>> upstream/master
      *                       deps: [Number] })
      * ]);
      * 
@@ -3167,7 +5308,11 @@ declare module ng {
      * 
      * Used in conjuction with dependencies.
      */
+<<<<<<< HEAD
     toFactory: Function;
+=======
+    useFactory: Function;
+>>>>>>> upstream/master
     
     /**
      * Specifies a set of dependencies
@@ -3177,8 +5322,13 @@ declare module ng {
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   new Binding(Number, { toFactory: () => { return 1+2; }}),
      *   new Binding(String, { toFactory: (value) => { return "Value: " + value; },
+=======
+     *   new Provider(Number, { useFactory: () => { return 1+2; }}),
+     *   new Provider(String, { useFactory: (value) => { return "Value: " + value; },
+>>>>>>> upstream/master
      *                       deps: [Number] })
      * ]);
      * 
@@ -3186,36 +5336,62 @@ declare module ng {
      * expect(injector.get(String)).toEqual('Value: 3');
      * ```
      * 
+<<<<<<< HEAD
      * Used in conjunction with `toFactory`.
+=======
+     * Used in conjunction with `useFactory`.
+>>>>>>> upstream/master
      */
     dependencies: Object[];
     
     /**
+<<<<<<< HEAD
      * Creates multiple bindings matching the same token (a multi-binding).
      * 
      * Multi-bindings are used for creating pluggable service, where the system comes
      * with some default bindings, and the user can register additonal bindings.
      * The combination of the default bindings and the additional bindings will be
+=======
+     * Creates multiple providers matching the same token (a multi-provider).
+     * 
+     * Multi-providers are used for creating pluggable service, where the system comes
+     * with some default providers, and the user can register additonal providers.
+     * The combination of the default providers and the additional providers will be
+>>>>>>> upstream/master
      * used to drive the behavior of the system.
      * 
      * ### Example
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   new Binding("Strings", { toValue: "String1", multi: true}),
      *   new Binding("Strings", { toValue: "String2", multi: true})
+=======
+     *   new Provider("Strings", { useValue: "String1", multi: true}),
+     *   new Provider("Strings", { useValue: "String2", multi: true})
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injector.get("Strings")).toEqual(["String1", "String2"]);
      * ```
      * 
+<<<<<<< HEAD
      * Multi-bindings and regular bindings cannot be mixed. The following
+=======
+     * Multi-providers and regular providers cannot be mixed. The following
+>>>>>>> upstream/master
      * will throw an exception:
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   new Binding("Strings", { toValue: "String1", multi: true }),
      *   new Binding("Strings", { toValue: "String2"})
+=======
+     *   new Provider("Strings", { useValue: "String1", multi: true }),
+     *   new Provider("Strings", { useValue: "String2"})
+>>>>>>> upstream/master
      * ]);
      * ```
      */
@@ -3225,6 +5401,7 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Helper class for the {@link bind} function.
    */
   class BindingBuilder {
@@ -3336,6 +5513,9 @@ declare module ng {
     
   /**
    * An internal resolved representation of a {@link Binding} used by the {@link Injector}.
+=======
+   * An internal resolved representation of a {@link Provider} used by the {@link Injector}.
+>>>>>>> upstream/master
    * 
    * It is usually created automatically by `Injector.resolveAndCreate`.
    * 
@@ -3344,19 +5524,29 @@ declare module ng {
    * ### Example ([live demo](http://plnkr.co/edit/RfEnhh8kUEI0G3qsnIeT?p%3Dpreview&p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * var resolvedBindings = Injector.resolve([new Binding('message', {toValue: 'Hello'})]);
    * var injector = Injector.fromResolvedBindings(resolvedBindings);
+=======
+   * var resolvedProviders = Injector.resolve([new Provider('message', {useValue: 'Hello'})]);
+   * var injector = Injector.fromResolvedProviders(resolvedProviders);
+>>>>>>> upstream/master
    * 
    * expect(injector.get('message')).toEqual('Hello');
    * ```
    */
+<<<<<<< HEAD
   interface ResolvedBinding {
+=======
+  interface ResolvedProvider {
+>>>>>>> upstream/master
     
     /**
      * A key, usually a `Type`.
      */
     key: Key;
     
+<<<<<<< HEAD
   }
 
     
@@ -3399,11 +5589,23 @@ declare module ng {
     upperBoundVisibility: any;
     
     properties: any[];
+=======
+    /**
+     * Factory function which can return an instance of an object represented by a key.
+     */
+    resolvedFactories: ResolvedFactory[];
+    
+    /**
+     * Indicates if the provider is a multi-provider or a regular provider.
+     */
+    multiProvider: boolean;
+>>>>>>> upstream/master
     
   }
 
     
   /**
+<<<<<<< HEAD
    * Creates a {@link Binding}.
    * 
    * To construct a {@link Binding}, bind a `token` to either a class, a value, a factory function, or
@@ -3413,6 +5615,22 @@ declare module ng {
    * The `token` is most commonly a class or {@link angular2/di/OpaqueToken}.
    */
   function bind(token: any): BindingBuilder;
+=======
+   * Creates a {@link Provider}.
+   * 
+   * See {@link Provider} for more details.
+   * 
+   * <!-- TODO: improve the docs -->
+   */
+  function provide(token: any, {useClass, useValue, useExisting, useFactory, deps, multi}: {
+    useClass?: Type,
+    useValue?: any,
+    useExisting?: any,
+    useFactory?: Function,
+    deps?: Object[],
+    multi?: boolean
+  }): Provider;
+>>>>>>> upstream/master
   
 
     
@@ -3427,7 +5645,11 @@ declare module ng {
    * injector to store created objects in a more efficient way.
    * 
    * `Key` should not be created directly. {@link Injector} creates keys automatically when resolving
+<<<<<<< HEAD
    * bindings.
+=======
+   * providers.
+>>>>>>> upstream/master
    */
   class Key {
     
@@ -3459,7 +5681,10 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * @private
+=======
+>>>>>>> upstream/master
    * Type literals is a Dart-only feature. This is here only so we can x-compile
    * to multiple languages.
    */
@@ -3472,7 +5697,11 @@ declare module ng {
     
   /**
    * Thrown when trying to retrieve a dependency by `Key` from {@link Injector}, but the
+<<<<<<< HEAD
    * {@link Injector} does not have a {@link Binding} for {@link Key}.
+=======
+   * {@link Injector} does not have a {@link Provider} for {@link Key}.
+>>>>>>> upstream/master
    * 
    * ### Example ([live demo](http://plnkr.co/edit/vq8D3FRB9aGbnWJqtEPE?p=preview))
    * 
@@ -3484,7 +5713,11 @@ declare module ng {
    * expect(() => Injector.resolveAndCreate([A])).toThrowError();
    * ```
    */
+<<<<<<< HEAD
   class NoBindingError extends AbstractBindingError {
+=======
+  class NoProviderError extends AbstractProviderError {
+>>>>>>> upstream/master
     
     constructor(injector: Injector, key: Key);
     
@@ -3492,9 +5725,15 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Base class for all errors arising from misconfigured bindings.
    */
   class AbstractBindingError extends BaseException {
+=======
+   * Base class for all errors arising from misconfigured providers.
+   */
+  class AbstractProviderError extends BaseException {
+>>>>>>> upstream/master
     
     constructor(injector: Injector, key: Key, constructResolvingMessage: Function);
     
@@ -3512,8 +5751,13 @@ declare module ng {
    * 
    * ```typescript
    * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
    *   bind("one").toFactory((two) => "two", [[new Inject("two")]]),
    *   bind("two").toFactory((one) => "one", [[new Inject("one")]])
+=======
+   *   provide("one", {useFactory: (two) => "two", deps: [[new Inject("two")]]}),
+   *   provide("two", {useFactory: (one) => "one", deps: [[new Inject("one")]]})
+>>>>>>> upstream/master
    * ]);
    * 
    * expect(() => injector.get("one")).toThrowError();
@@ -3521,7 +5765,11 @@ declare module ng {
    * 
    * Retrieving `A` or `B` throws a `CyclicDependencyError` as the graph above cannot be constructed.
    */
+<<<<<<< HEAD
   class CyclicDependencyError extends AbstractBindingError {
+=======
+  class CyclicDependencyError extends AbstractProviderError {
+>>>>>>> upstream/master
     
     constructor(injector: Injector, key: Key);
     
@@ -3554,7 +5802,13 @@ declare module ng {
    * }
    * ```
    */
+<<<<<<< HEAD
   interface InstantiationError extends WrappedException {
+=======
+  class InstantiationError extends WrappedException {
+    
+    constructor(injector: Injector, originalException: any, originalStack: any, key: Key);
+>>>>>>> upstream/master
     
     addKey(injector: Injector, key: Key): void;
     
@@ -3568,7 +5822,11 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Thrown when an object other then {@link Binding} (or `Type`) is passed to {@link Injector}
+=======
+   * Thrown when an object other then {@link Provider} (or `Type`) is passed to {@link Injector}
+>>>>>>> upstream/master
    * creation.
    * 
    * ### Example ([live demo](http://plnkr.co/edit/YatCFbPAMCL0JSSQ4mvH?p=preview))
@@ -3577,9 +5835,15 @@ declare module ng {
    * expect(() => Injector.resolveAndCreate(["not a type"])).toThrowError();
    * ```
    */
+<<<<<<< HEAD
   class InvalidBindingError extends BaseException {
     
     constructor(binding: any);
+=======
+  class InvalidProviderError extends BaseException {
+    
+    constructor(provider: any);
+>>>>>>> upstream/master
     
   }
 
@@ -3600,7 +5864,11 @@ declare module ng {
    * expect(() => Injector.resolveAndCreate([A])).toThrowError();
    * ```
    * 
+<<<<<<< HEAD
    * This error is also thrown when the class not marked with {@link @Injectable} has parameter types.
+=======
+   * This error is also thrown when the class not marked with {@link Injectable} has parameter types.
+>>>>>>> upstream/master
    * 
    * ```typescript
    * class B {}
@@ -3640,22 +5908,37 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Creates a token that can be used in a DI Binding.
+=======
+   * Creates a token that can be used in a DI Provider.
+>>>>>>> upstream/master
    * 
    * ### Example ([live demo](http://plnkr.co/edit/Ys9ezXpj2Mnoy3Uc8KBp?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * var t = new OpaqueToken("binding");
    * 
    * var injector = Injector.resolveAndCreate([
    *   bind(t).toValue("bindingValue")
+=======
+   * var t = new OpaqueToken("value");
+   * 
+   * var injector = Injector.resolveAndCreate([
+   *   provide(t, {useValue: "providedValue"})
+>>>>>>> upstream/master
    * ]);
    * 
    * expect(injector.get(t)).toEqual("bindingValue");
    * ```
    * 
    * Using an `OpaqueToken` is preferable to using strings as tokens because of possible collisions
+<<<<<<< HEAD
    * caused by multiple bindings using the same string as two different tokens.
+=======
+   * caused by multiple providers using the same string as two different tokens.
+>>>>>>> upstream/master
    * 
    * Using an `OpaqueToken` is preferable to using an `Object` as tokens because it provides better
    * error messages.
@@ -3795,9 +6078,13 @@ declare module ng {
    * ```
    * import {Observable} from 'angular2/core';
    * @Component({
+<<<<<<< HEAD
    *   selector: "task-cmp"
    * })
    * @View({
+=======
+   *   selector: "task-cmp",
+>>>>>>> upstream/master
    *   template: "Time: {{ time | async }}"
    * })
    * class Task {
@@ -3885,7 +6172,11 @@ declare module ng {
   }
 
     
+<<<<<<< HEAD
   let DEFAULT_PIPES: Binding;
+=======
+  let DEFAULT_PIPES: Provider;
+>>>>>>> upstream/master
   
 
     
@@ -3902,9 +6193,13 @@ declare module ng {
    * 
    *  ```
    * @Component({
+<<<<<<< HEAD
    *   selector: "user-cmp"
    * })
    * @View({
+=======
+   *   selector: "user-cmp",
+>>>>>>> upstream/master
    *   template: "User: {{ user | json }}"
    * })
    * class Username {
@@ -3999,9 +6294,13 @@ declare module ng {
    * 
    *  ```
    * @Component({
+<<<<<<< HEAD
    *   selector: "username-cmp"
    * })
    * @View({
+=======
+   *   selector: "username-cmp",
+>>>>>>> upstream/master
    *   template: "Username: {{ user | lowercase }}"
    * })
    * class Username {
@@ -4108,9 +6407,13 @@ declare module ng {
    * 
    *  ```
    * @Component({
+<<<<<<< HEAD
    *   selector: "username-cmp"
    * })
    * @View({
+=======
+   *   selector: "username-cmp",
+>>>>>>> upstream/master
    *   template: "Username: {{ user | uppercase }}"
    * })
    * class Username {
@@ -4126,6 +6429,16 @@ declare module ng {
   }
 
     
+<<<<<<< HEAD
+=======
+  interface ConcreteType extends Type {
+    
+    new(...args: any[]): any;
+    
+  }
+
+    
+>>>>>>> upstream/master
   /**
    * 
    * Runtime representation a type that a Component or other object is instances of.
@@ -4135,8 +6448,11 @@ declare module ng {
    */
   interface Type extends Function {
     
+<<<<<<< HEAD
     new(...args: any[]): any;
     
+=======
+>>>>>>> upstream/master
   }
 
     
@@ -4156,8 +6472,14 @@ declare module ng {
    * title gets clicked:
    * 
    * ```
+<<<<<<< HEAD
    * @Component({selector: 'zippy'})
    * @View({template: `
+=======
+   * @Component({
+   *   selector: 'zippy',
+   *   template: `
+>>>>>>> upstream/master
    *   <div class="zippy">
    *     <div (click)="toggle()">Toggle</div>
    *     <div [hidden]="!visible">
@@ -4234,7 +6556,10 @@ declare module ng {
    * 
    * ```
    * @Component(...)
+<<<<<<< HEAD
    * @View(...)
+=======
+>>>>>>> upstream/master
    * class MyApp {
    *   ...
    * }
@@ -4255,7 +6580,11 @@ declare module ng {
    * {@link ViewEncapsulation#Emulated} is being used.
    * 
    * If you need to avoid randomly generated value to be used as an application id, you can provide
+<<<<<<< HEAD
    * a custom value via a DI binding <!-- TODO: provider --> configuring the root {@link Injector}
+=======
+   * a custom value via a DI provider <!-- TODO: provider --> configuring the root {@link Injector}
+>>>>>>> upstream/master
    * using this token.
    */
   let APP_ID: OpaqueToken;
@@ -4267,13 +6596,20 @@ declare module ng {
    * 
    * See {@link PlatformRef} for details on the Angular platform.
    * 
+<<<<<<< HEAD
    * # Without specified bindings
    * 
    * If no bindings are specified, `platform`'s behavior depends on whether an existing
+=======
+   * # Without specified providers
+   * 
+   * If no providers are specified, `platform`'s behavior depends on whether an existing
+>>>>>>> upstream/master
    * platform exists:
    * 
    * If no platform exists, a new one will be created with the default {@link platformBindings}.
    * 
+<<<<<<< HEAD
    * If a platform already exists, it will be returned (regardless of what bindings it
    * was created with). This is a convenience feature, allowing for multiple applications
    * to be loaded into the same platform without awareness of each other.
@@ -4281,11 +6617,24 @@ declare module ng {
    * # With specified bindings
    * 
    * It is also possible to specify bindings to be made in the new platform. These bindings
+=======
+   * If a platform already exists, it will be returned (regardless of what providers it
+   * was created with). This is a convenience feature, allowing for multiple applications
+   * to be loaded into the same platform without awareness of each other.
+   * 
+   * # With specified providers
+   * 
+   * It is also possible to specify providers to be made in the new platform. These providers
+>>>>>>> upstream/master
    * will be shared between all applications on the page. For example, an abstraction for
    * the browser cookie jar should be bound at the platform level, because there is only one
    * cookie jar regardless of how many applications on the age will be accessing it.
    * 
+<<<<<<< HEAD
    * If bindings are specified directly, `platform` will create the Angular platform with
+=======
+   * If providers are specified directly, `platform` will create the Angular platform with
+>>>>>>> upstream/master
    * them if a platform did not exist already. If it did exist, however, an error will be
    * thrown.
    * 
@@ -4295,7 +6644,11 @@ declare module ng {
    * DOM access. Web-worker applications should call `platform` from
    * `src/web_workers/worker/application_common` instead.
    */
+<<<<<<< HEAD
   function platform(bindings?: Array<Type | Binding | any[]>): PlatformRef;
+=======
+  function platform(bindings?: Array<Type | Provider | any[]>): PlatformRef;
+>>>>>>> upstream/master
   
 
     
@@ -4307,11 +6660,19 @@ declare module ng {
    * A page's platform is initialized implicitly when {@link bootstrap}() is called, or
    * explicitly by calling {@link platform}().
    */
+<<<<<<< HEAD
   interface PlatformRef {
     
     /**
      * Retrieve the platform {@link Injector}, which is the parent injector for
      * every Angular application on the page and provides singleton bindings.
+=======
+  abstract class PlatformRef {
+    
+    /**
+     * Retrieve the platform {@link Injector}, which is the parent injector for
+     * every Angular application on the page and provides singleton providers.
+>>>>>>> upstream/master
      */
     injector: Injector;
     
@@ -4326,10 +6687,17 @@ declare module ng {
      * 
      * # Application Bindings
      * 
+<<<<<<< HEAD
      * Angular applications require numerous bindings to be properly instantiated.
      * When using `application()` to create a new app on the page, these bindings
      * must be provided. Fortunately, there are helper functions to configure
      * typical bindings, as shown in the example below.
+=======
+     * Angular applications require numerous providers to be properly instantiated.
+     * When using `application()` to create a new app on the page, these providers
+     * must be provided. Fortunately, there are helper functions to configure
+     * typical providers, as shown in the example below.
+>>>>>>> upstream/master
      * 
      * # Example
      * ```
@@ -4343,22 +6711,37 @@ declare module ng {
      * 
      * See the {@link bootstrap} documentation for more details.
      */
+<<<<<<< HEAD
     application(bindings: Array<Type | Binding | any[]>): ApplicationRef;
     
     /**
      * Instantiate a new Angular application on the page, using bindings which
+=======
+    application(bindings: Array<Type | Provider | any[]>): ApplicationRef;
+    
+    /**
+     * Instantiate a new Angular application on the page, using providers which
+>>>>>>> upstream/master
      * are only available asynchronously. One such use case is to initialize an
      * application running in a web worker.
      * 
      * # Usage
      * 
      * `bindingFn` is a function that will be called in the new application's zone.
+<<<<<<< HEAD
      * It should return a {@link Promise} to a list of bindings to be used for the
      * new application. Once this promise resolves, the application will be
      * constructed in the same manner as a normal `application()`.
      */
     asyncApplication(bindingFn: (zone: NgZone) =>
                            Promise<Array<Type | Binding | any[]>>): Promise<ApplicationRef>;
+=======
+     * It should return a `Promise` to a list of providers to be used for the
+     * new application. Once this promise resolves, the application will be
+     * constructed in the same manner as a normal `application()`.
+     */
+    asyncApplication(bindingFn: (zone: NgZone) => Promise<Array<Type | Provider | any[]>>): Promise<ApplicationRef>;
+>>>>>>> upstream/master
     
     /**
      * Destroy the Angular platform and all Angular applications on the page.
@@ -4373,7 +6756,11 @@ declare module ng {
    * 
    * For more about Angular applications, see the documentation for {@link bootstrap}.
    */
+<<<<<<< HEAD
   interface ApplicationRef {
+=======
+  abstract class ApplicationRef {
+>>>>>>> upstream/master
     
     /**
      * Register a listener to be called each time `bootstrap()` is called to bootstrap
@@ -4392,18 +6779,30 @@ declare module ng {
      * 
      * # Optional Bindings
      * 
+<<<<<<< HEAD
      * Bindings for the given component can optionally be overridden via the `bindings`
      * parameter. These bindings will only apply for the root component being added and any
+=======
+     * Bindings for the given component can optionally be overridden via the `providers`
+     * parameter. These providers will only apply for the root component being added and any
+>>>>>>> upstream/master
      * child components under it.
      * 
      * # Example
      * ```
      * var app = platform.application([applicationCommonBindings(), applicationDomBindings()];
      * app.bootstrap(FirstRootComponent);
+<<<<<<< HEAD
      * app.bootstrap(SecondRootComponent, [bind(OverrideBinding).toClass(OverriddenBinding)]);
      * ```
      */
     bootstrap(componentType: Type, bindings?: Array<Type | Binding | any[]>): Promise<ComponentRef>;
+=======
+     * app.bootstrap(SecondRootComponent, [provide(OverrideBinding, {useClass: OverriddenBinding})]);
+     * ```
+     */
+    bootstrap(componentType: Type, bindings?: Array<Type | Provider | any[]>): Promise<ComponentRef>;
+>>>>>>> upstream/master
     
     /**
      * Retrieve the application {@link Injector}.
@@ -4420,14 +6819,29 @@ declare module ng {
      */
     dispose(): void;
     
+<<<<<<< HEAD
+=======
+    /**
+     * Get a list of component types registered to this application.
+     */
+    componentTypes: Type[];
+    
+>>>>>>> upstream/master
   }
 
     
   /**
+<<<<<<< HEAD
    * Construct a default set of bindings which should be included in any Angular
    * application, regardless of whether it runs on the UI thread or in a web worker.
    */
   function applicationCommonBindings(): Array<Type | Binding | any[]>;
+=======
+   * Construct a default set of providers which should be included in any Angular
+   * application, regardless of whether it runs on the UI thread or in a web worker.
+   */
+  function applicationCommonBindings(): Array<Type | Provider | any[]>;
+>>>>>>> upstream/master
   
 
     
@@ -4438,14 +6852,19 @@ declare module ng {
   
 
     
+<<<<<<< HEAD
   /**
    * @private
    */
   function platformCommon(bindings?: Array<Type | Binding | any[]>, initializer?: () => void): PlatformRef;
+=======
+  function platformCommon(bindings?: Array<Type | Provider | any[]>, initializer?: () => void): PlatformRef;
+>>>>>>> upstream/master
   
 
     
   /**
+<<<<<<< HEAD
    * Constructs the set of bindings meant for use at the platform level.
    * 
    * These are bindings that should be singletons shared among all Angular applications
@@ -4456,6 +6875,18 @@ declare module ng {
 
     
   function bootstrap(appComponentType: /*Type*/ any, appBindings?: Array<Type | Binding | any[]>): Promise<ComponentRef>;
+=======
+   * Constructs the set of providers meant for use at the platform level.
+   * 
+   * These are providers that should be singletons shared among all Angular applications
+   * running on the page.
+   */
+  function platformBindings(): Array<Type | Provider | any[]>;
+  
+
+    
+  function bootstrap(appComponentType: /*Type*/ any, appBindings?: Array<Type | Provider | any[]>): Promise<ComponentRef>;
+>>>>>>> upstream/master
   
 
     
@@ -4472,10 +6903,14 @@ declare module ng {
     
     constructor(value: string);
     
+<<<<<<< HEAD
     /**
      * Returns the base URL of the currently running application.
      */
     value: any;
+=======
+    value: string;
+>>>>>>> upstream/master
     
   }
 
@@ -4538,6 +6973,7 @@ declare module ng {
    * ### Example ([live demo](http://plnkr.co/edit/plamXUpsLQbIXpViZhUO?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -4546,6 +6982,20 @@ declare module ng {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({template: `<ng-content></ng-content>`})
+=======
+   * @Component({
+   *   selector: 'child-cmp',
+   *   template: `{{where}} child`
+   * })
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+   *   template: `<ng-content></ng-content>`
+   * })
+>>>>>>> upstream/master
    * class ParentComponent implements AfterContentInit {
    *   @ContentChild(ChildComponent) contentChild: ChildComponent;
    * 
@@ -4564,8 +7014,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <parent-cmp>
    *       <child-cmp where="content"></child-cmp>
@@ -4591,6 +7046,7 @@ declare module ng {
    * ### Example ([live demo](http://plnkr.co/edit/tGdrytNEKQnecIPkD7NU?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -4599,6 +7055,14 @@ declare module ng {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({template: `<ng-content></ng-content>`})
+=======
+   * @Component({selector: 'child-cmp', template: `{{where}} child`})
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({selector: 'parent-cmp', template: `<ng-content></ng-content>`})
+>>>>>>> upstream/master
    * class ParentComponent implements AfterContentChecked {
    *   @ContentChild(ChildComponent) contentChild: ChildComponent;
    * 
@@ -4617,8 +7081,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <parent-cmp>
    *       <button (click)="hasContent = !hasContent">Toggle content child</button>
@@ -4646,6 +7115,7 @@ declare module ng {
    * ### Example ([live demo](http://plnkr.co/edit/LhTKVMEM0fkJgyp4CI1W?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -4654,6 +7124,15 @@ declare module ng {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({
+=======
+   * @Component({selector: 'child-cmp', template: `{{where}} child`})
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+>>>>>>> upstream/master
    *   template: `<child-cmp where="view"></child-cmp>`,
    *   directives: [ChildComponent]
    * })
@@ -4675,8 +7154,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `<parent-cmp></parent-cmp>`,
    *   directives: [ParentComponent]
    * })
@@ -4699,6 +7183,7 @@ declare module ng {
    * ### Example ([live demo](http://plnkr.co/edit/0qDGHcPQkc25CXhTNzKU?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -4707,6 +7192,15 @@ declare module ng {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({
+=======
+   * @Component({selector: 'child-cmp', template: `{{where}} child`})
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+>>>>>>> upstream/master
    *   template: `
    *     <button (click)="showView = !showView">Toggle view child</button>
    *     <child-cmp *ng-if="showView" where="view"></child-cmp>`,
@@ -4731,8 +7225,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `<parent-cmp></parent-cmp>`,
    *   directives: [ParentComponent]
    * })
@@ -4770,18 +7269,32 @@ declare module ng {
    * ### Example ([live example](http://plnkr.co/edit/AHrB6opLqHDBPkt4KpdT?p=preview)):
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'my-cmp'})
    * @View({template: `<p>myProp = {{myProp}}</p>`})
    * class MyComponent implements OnChanges {
    *   @Property() myProp: any;
+=======
+   * @Component({
+   *   selector: 'my-cmp',
+   *   template: `<p>myProp = {{myProp}}</p>`
+   * })
+   * class MyComponent implements OnChanges {
+   *   @Input() myProp: any;
+>>>>>>> upstream/master
    * 
    *   onChanges(changes: {[propName: string]: SimpleChange}) {
    *     console.log('onChanges - myProp = ' + changes['myProp'].currentValue);
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <button (click)="value = value + 1">Change MyComponent</button>
    *     <my-cmp [my-prop]="value"></my-cmp>`,
@@ -4810,8 +7323,15 @@ declare module ng {
    * ### Example ([live example](http://plnkr.co/edit/1MBypRryXd64v4pV03Yn?p=preview))
    * 
    * ```typesript
+<<<<<<< HEAD
    * @Component({selector: 'my-cmp'})
    * @View({template: `<p>my-component</p>`})
+=======
+   * @Component({
+   *   selector: 'my-cmp',
+   *   template: `<p>my-component</p>`
+   * })
+>>>>>>> upstream/master
    * class MyComponent implements OnInit, OnDestroy {
    *   onInit() {
    *     console.log('onInit');
@@ -4822,8 +7342,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <button (click)="hasChild = !hasChild">
    *       {{hasChild ? 'Destroy' : 'Create'}} MyComponent
@@ -4856,8 +7381,15 @@ declare module ng {
    * ### Example ([live example](http://plnkr.co/edit/1MBypRryXd64v4pV03Yn?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'my-cmp'})
    * @View({template: `<p>my-component</p>`})
+=======
+   * @Component({
+   *   selector: 'my-cmp',
+   *   template: `<p>my-component</p>`
+   * })
+>>>>>>> upstream/master
    * class MyComponent implements OnInit, OnDestroy {
    *   onInit() {
    *     console.log('onInit');
@@ -4868,8 +7400,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <button (click)="hasChild = !hasChild">
    *       {{hasChild ? 'Destroy' : 'Create'}} MyComponent
@@ -4915,8 +7452,13 @@ declare module ng {
    * array `list`:
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'custom-check'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'custom-check',
+>>>>>>> upstream/master
    *   template: `
    *     <p>Changes:</p>
    *     <ul>
@@ -4925,7 +7467,11 @@ declare module ng {
    *   directives: [NgFor]
    * })
    * class CustomCheckComponent implements DoCheck {
+<<<<<<< HEAD
    *   @Property() list: any[];
+=======
+   *   @Input() list: any[];
+>>>>>>> upstream/master
    *   differ: any;
    *   logs = [];
    * 
@@ -4943,8 +7489,13 @@ declare module ng {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <button (click)="list.push(list.length)">Push</button>
    *     <button (click)="list.pop()">Pop</button>
@@ -4980,7 +7531,11 @@ declare module ng {
    * Most applications should instead use higher-level {@link DynamicComponentLoader} service, which
    * both compiles and instantiates a Component.
    */
+<<<<<<< HEAD
   interface Compiler {
+=======
+  abstract class Compiler {
+>>>>>>> upstream/master
     
     compileInHost(componentType: Type): Promise<ProtoViewRef>;
     
@@ -4995,7 +7550,11 @@ declare module ng {
    * Most applications should use higher-level abstractions like {@link DynamicComponentLoader} and
    * {@link ViewContainerRef} instead.
    */
+<<<<<<< HEAD
   interface AppViewManager {
+=======
+  abstract class AppViewManager {
+>>>>>>> upstream/master
     
     /**
      * Returns a {@link ViewContainerRef} of the View Container at the specified location.
@@ -5111,7 +7670,11 @@ declare module ng {
      * 
      * Use {@link AppViewManager#destroyViewInContainer} to destroy the created Host View.
      */
+<<<<<<< HEAD
     createHostViewInContainer(viewContainerLocation: ElementRef, index: number, protoViewRef: ProtoViewRef, imperativelyCreatedInjector: ResolvedBinding[]): HostViewRef;
+=======
+    createHostViewInContainer(viewContainerLocation: ElementRef, index: number, protoViewRef: ProtoViewRef, imperativelyCreatedInjector: ResolvedProvider[]): HostViewRef;
+>>>>>>> upstream/master
     
     /**
      * Destroys an Embedded or Host View attached to a View Container at the specified `index`.
@@ -5180,7 +7743,11 @@ declare module ng {
   /**
    * Service for instantiating a Component and attaching it to a View at a specified location.
    */
+<<<<<<< HEAD
   interface DynamicComponentLoader {
+=======
+  abstract class DynamicComponentLoader {
+>>>>>>> upstream/master
     
     /**
      * Creates an instance of a Component `type` and attaches it to the first element in the
@@ -5252,7 +7819,11 @@ declare module ng {
      * location within the Component View of this Component Instance is specified via `anchorName`
      * Template Variable Name.
      * 
+<<<<<<< HEAD
      * You can optionally provide `bindings` to configure the {@link Injector} provisioned for this
+=======
+     * You can optionally provide `providers` to configure the {@link Injector} provisioned for this
+>>>>>>> upstream/master
      * Component Instance.
      * 
      * Returns a promise for the {@link ComponentRef} representing the newly created Component.
@@ -5299,13 +7870,21 @@ declare module ng {
      * </my-app>
      * ```
      */
+<<<<<<< HEAD
     loadIntoLocation(type: Type, hostLocation: ElementRef, anchorName: string, bindings?: ResolvedBinding[]): Promise<ComponentRef>;
+=======
+    loadIntoLocation(type: Type, hostLocation: ElementRef, anchorName: string, providers?: ResolvedProvider[]): Promise<ComponentRef>;
+>>>>>>> upstream/master
     
     /**
      * Creates an instance of a Component and attaches it to the View Container found at the
      * `location` specified as {@link ElementRef}.
      * 
+<<<<<<< HEAD
      * You can optionally provide `bindings` to configure the {@link Injector} provisioned for this
+=======
+     * You can optionally provide `providers` to configure the {@link Injector} provisioned for this
+>>>>>>> upstream/master
      * Component Instance.
      * 
      * Returns a promise for the {@link ComponentRef} representing the newly created Component.
@@ -5346,7 +7925,11 @@ declare module ng {
      * <child-component>Child</child-component>
      * ```
      */
+<<<<<<< HEAD
     loadNextToLocation(type: Type, location: ElementRef, bindings?: ResolvedBinding[]): Promise<ComponentRef>;
+=======
+    loadNextToLocation(type: Type, location: ElementRef, providers?: ResolvedProvider[]): Promise<ComponentRef>;
+>>>>>>> upstream/master
     
   }
 
@@ -5361,7 +7944,11 @@ declare module ng {
    * An `ElementRef` is backed by a render-specific element. In the browser, this is usually a DOM
    * element.
    */
+<<<<<<< HEAD
   interface ElementRef extends RenderElementRef {
+=======
+  abstract class ElementRef implements RenderElementRef {
+>>>>>>> upstream/master
     
     /**
      * The underlying native element or `null` if direct access to native elements is not supported
@@ -5384,6 +7971,11 @@ declare module ng {
      */
     nativeElement: any;
     
+<<<<<<< HEAD
+=======
+    renderView: RenderViewRef;
+    
+>>>>>>> upstream/master
   }
 
     
@@ -5399,7 +7991,11 @@ declare module ng {
    * {@link ViewContainerRef#createEmbeddedView}, which will create the View and attach it to the
    * View Container.
    */
+<<<<<<< HEAD
   interface TemplateRef {
+=======
+  abstract class TemplateRef {
+>>>>>>> upstream/master
     
     /**
      * The location in the View where the Embedded View logically belongs to.
@@ -5474,13 +8070,22 @@ declare module ng {
    * <!-- /ViewRef: outer-0 -->
    * ```
    */
+<<<<<<< HEAD
   interface ViewRef extends HostViewRef {
+=======
+  abstract class ViewRef implements HostViewRef {
+>>>>>>> upstream/master
     
     /**
      * Sets `value` of local variable called `variableName` in this View.
      */
     setLocal(variableName: string, value: any): void;
     
+<<<<<<< HEAD
+=======
+    changeDetectorRef: ChangeDetectorRef;
+    
+>>>>>>> upstream/master
   }
 
     
@@ -5537,7 +8142,11 @@ declare module ng {
    * 
    * Notice that the original template is broken down into two separate ProtoViews.
    */
+<<<<<<< HEAD
   interface ProtoViewRef {
+=======
+  abstract class ProtoViewRef {
+>>>>>>> upstream/master
     
   }
 
@@ -5562,7 +8171,11 @@ declare module ng {
    * 
    * <!-- TODO(i): we are also considering ElementRef#viewContainer api -->
    */
+<<<<<<< HEAD
   interface ViewContainerRef {
+=======
+  abstract class ViewContainerRef {
+>>>>>>> upstream/master
     
     /**
      * Anchor element that specifies the location of this container in the containing View.
@@ -5604,12 +8217,20 @@ declare module ng {
      * 
      * If `index` is not specified, the new View will be inserted as the last View in the container.
      * 
+<<<<<<< HEAD
      * You can optionally specify `dynamicallyCreatedBindings`, which configure the {@link Injector}
+=======
+     * You can optionally specify `dynamicallyCreatedProviders`, which configure the {@link Injector}
+>>>>>>> upstream/master
      * that will be created for the Host View.
      * 
      * Returns the {@link HostViewRef} of the Host View created for the newly instantiated Component.
      */
+<<<<<<< HEAD
     createHostView(protoViewRef?: ProtoViewRef, index?: number, dynamicallyCreatedBindings?: ResolvedBinding[]): HostViewRef;
+=======
+    createHostView(protoViewRef?: ProtoViewRef, index?: number, dynamicallyCreatedProviders?: ResolvedProvider[]): HostViewRef;
+>>>>>>> upstream/master
     
     /**
      * Inserts a View identified by a {@link ViewRef} into the container at the specified `index`.
@@ -5650,7 +8271,19 @@ declare module ng {
    * Component Instance and allows you to destroy the Component Instance via the {@link #dispose}
    * method.
    */
+<<<<<<< HEAD
   interface ComponentRef {
+=======
+  abstract class ComponentRef {
+    
+    /**
+     * The injector provided {@link DynamicComponentLoader#loadAsRoot}.
+     * 
+     * TODO(i): this api is useless and should be replaced by an injector retrieved from
+     *     the HostElementRef, which is currently not possible.
+     */
+    injector: Injector;
+>>>>>>> upstream/master
     
     /**
      * Location of the Host Element of this Component Instance.
@@ -5710,7 +8343,11 @@ declare module ng {
    * });
    * ```
    */
+<<<<<<< HEAD
   interface LifeCycle {
+=======
+  abstract class LifeCycle {
+>>>>>>> upstream/master
     
     /**
      * Invoke this method to explicitly process change detection and its side-effects.
@@ -5749,9 +8386,13 @@ declare module ng {
    * import {Component, View, NgIf, NgZone} from 'angular2/angular2';
    * 
    * @Component({
+<<<<<<< HEAD
    *   selector: 'ng-zone-demo'
    * })
    * @View({
+=======
+   *   selector: 'ng-zone-demo'.
+>>>>>>> upstream/master
    *   template: `
    *     <h2>Demo: NgZone</h2>
    * 
@@ -5803,7 +8444,59 @@ declare module ng {
    * }
    * ```
    */
+<<<<<<< HEAD
   interface NgZone {
+=======
+  class NgZone {
+    
+    /**
+     * @param {bool} enableLongStackTrace whether to enable long stack trace. They should only be
+     *               enabled in development mode as they significantly impact perf.
+     */
+    constructor({enableLongStackTrace}: any);
+    
+    /**
+     * Sets the zone hook that is called just before a browser task that is handled by Angular
+     * executes.
+     * 
+     * The hook is called once per browser task that is handled by Angular.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnTurnStart(onTurnStartHook: () => void): void;
+    
+    /**
+     * Sets the zone hook that is called immediately after Angular zone is done processing the current
+     * task and any microtasks scheduled from that task.
+     * 
+     * This is where we typically do change-detection.
+     * 
+     * The hook is called once per browser task that is handled by Angular.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnTurnDone(onTurnDoneHook: () => void): void;
+    
+    /**
+     * Sets the zone hook that is called immediately after the `onTurnDone` callback is called and any
+     * microstasks scheduled from within that callback are drained.
+     * 
+     * `onEventDoneFn` is executed outside Angular zone, which means that we will no longer attempt to
+     * sync the UI with any model changes that occur within this callback.
+     * 
+     * This hook is useful for validating application state (e.g. in a test).
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnEventDone(onEventDoneFn: () => void, opt_waitForAsync?: boolean): void;
+    
+    /**
+     * Sets the zone hook that is called when an error is thrown in the Angular zone.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnErrorHandler(errorHandler: (error: Error, stack: string) => void): void;
+>>>>>>> upstream/master
     
     /**
      * Executes the `fn` function synchronously within the Angular zone and returns value returned by
@@ -5870,7 +8563,11 @@ declare module ng {
    * 
    * The default Renderer implementation is {@link DomRenderer}. Also see {@link WebWorkerRenderer}.
    */
+<<<<<<< HEAD
   interface Renderer {
+=======
+  abstract class Renderer {
+>>>>>>> upstream/master
     
     /**
      * Registers a component template represented as arrays of {@link RenderTemplateCmd}s and styles
@@ -6041,6 +8738,7 @@ declare module ng {
      */
     renderView: RenderViewRef;
     
+<<<<<<< HEAD
     /**
      * Index of the Element (in the depth-first order) inside the Render View.
      * 
@@ -6048,6 +8746,8 @@ declare module ng {
      */
     boundElementIndex: number;
     
+=======
+>>>>>>> upstream/master
   }
 
     
@@ -6081,7 +8781,11 @@ declare module ng {
    * 
    * <!-- TODO: this is created by Renderer#createProtoView in the new compiler -->
    */
+<<<<<<< HEAD
   interface RenderProtoViewRef {
+=======
+  class RenderProtoViewRef {
+>>>>>>> upstream/master
     
   }
 
@@ -6168,6 +8872,11 @@ declare module ng {
     
   interface RenderNgContentCmd {
     
+<<<<<<< HEAD
+=======
+    index: number;
+    
+>>>>>>> upstream/master
     ngContentIndex: number;
     
   }
@@ -6212,6 +8921,7 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Adds and removes CSS classes based on an {expression} value.
    * 
    * The result of expression is used to add and remove CSS classes using the following logic,
@@ -6229,6 +8939,63 @@ declare module ng {
    * <div class="message" [ng-class]="{error: errorCount > 0}">
    *     Please check errors.
    * </div>
+=======
+   * The `NgClass` directive conditionally adds and removes CSS classes on an HTML element based on
+   * an expression's evaluation result.
+   * 
+   * The result of an expression evaluation is interpreted differently depending on type of
+   * the expression evaluation result:
+   * - `string` - all the CSS classes listed in a string (space delimited) are added
+   * - `Array` - all the CSS classes (Array elements) are added
+   * - `Object` - each key corresponds to a CSS class name while values are interpreted as expressions
+   * evaluating to `Boolean`. If a given expression evaluates to `true` a corresponding CSS class
+   * is added - otherwise it is removed.
+   * 
+   * While the `NgClass` directive can interpret expressions evaluating to `string`, `Array`
+   * or `Object`, the `Object`-based version is the most often used and has an advantage of keeping
+   * all the CSS class names in a template.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/a4YdtmWywhJ33uqfpPPn?p=preview)):
+   * 
+   * ```
+   * import {Component, NgClass} from 'angular2/angular2';
+   * 
+   * @Component({
+   *   selector: 'toggle-button',
+   *   inputs: ['isDisabled'],
+   *   template: `
+   *      <div class="button" [ng-class]="{active: isOn, disabled: isDisabled}"
+   *          (click)="toggle(!isOn)">
+   *          Click me!
+   *      </div>`,
+   *   styles: [`
+   *     .button {
+   *       width: 120px;
+   *       border: medium solid black;
+   *     }
+   * 
+   *     .active {
+   *       background-color: red;
+   *    }
+   * 
+   *     .disabled {
+   *       color: gray;
+   *       border: medium solid gray;
+   *     }
+   *   `]
+   *   directives: [NgClass]
+   * })
+   * class ToggleButton {
+   *   isOn = false;
+   *   isDisabled = false;
+   * 
+   *   toggle(newState) {
+   *     if (!this.isDisabled) {
+   *       this.isOn = newState;
+   *     }
+   *   }
+   * }
+>>>>>>> upstream/master
    * ```
    */
   class NgClass implements DoCheck,  OnDestroy {
@@ -6283,6 +9050,11 @@ declare module ng {
     
     ngForOf: any;
     
+<<<<<<< HEAD
+=======
+    ngForTemplate: any;
+    
+>>>>>>> upstream/master
     doCheck(): void;
     
   }
@@ -6320,6 +9092,7 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Adds or removes styles based on an {expression}.
    * 
    * When the expression assigned to `ng-style` evaluates to an object, the corresponding element
@@ -6339,6 +9112,56 @@ declare module ng {
    * 
    * - `<div [ng-style]="{'text-align': alignExp}"></div>`
    * - `<div [ng-style]="styleExp"></div>`
+=======
+   * The `NgStyle` directive changes styles based on a result of expression evaluation.
+   * 
+   * An expression assigned to the `ng-style` property must evaluate to an object and the
+   * corresponding element styles are updated based on changes to this object. Style names to update
+   * are taken from the object's keys, and values - from the corresponding object's values.
+   * 
+   * # Syntax
+   * 
+   * - `<div [ng-style]="{'font-style': style}"></div>`
+   * - `<div [ng-style]="styleExp"></div>` - here the `styleExp` must evaluate to an object
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/YamGS6GkUh9GqWNQhCyM?p=preview)):
+   * 
+   * ```
+   * import {Component, NgStyle} from 'angular2/angular2';
+   * 
+   * @Component({
+   *  selector: 'ng-style-example',
+   *  template: `
+   *    <h1 [ng-style]="{'font-style': style, 'font-size': size, 'font-weight': weight}">
+   *      Change style of this text!
+   *    </h1>
+   * 
+   *    <hr>
+   * 
+   *    <label>Italic: <input type="checkbox" (change)="changeStyle($event)"></label>
+   *    <label>Bold: <input type="checkbox" (change)="changeWeight($event)"></label>
+   *    <label>Size: <input type="text" [value]="size" (change)="size = $event.target.value"></label>
+   *  `,
+   *  directives: [NgStyle]
+   * })
+   * export class NgStyleExample {
+   *    style = 'normal';
+   *    weight = 'normal';
+   *    size = '20px';
+   * 
+   *    changeStyle($event: any) {
+   *      this.style = $event.target.checked ? 'italic' : 'normal';
+   *    }
+   * 
+   *    changeWeight($event: any) {
+   *      this.weight = $event.target.checked ? 'bold' : 'normal';
+   *    }
+   * }
+   * ```
+   * 
+   * In this example the `font-style`, `font-size` and `font-weight` styles will be updated
+   * based on the `style` property's value changes.
+>>>>>>> upstream/master
    */
   class NgStyle implements DoCheck {
     
@@ -6441,9 +9264,13 @@ declare module ng {
    * import {OtherDirective} from './myDirectives';
    * 
    * @Component({
+<<<<<<< HEAD
    *  selector: 'my-component'
    * })
    * @View({
+=======
+   *   selector: 'my-component',
+>>>>>>> upstream/master
    *   templateUrl: 'myComponent.html',
    *   directives: [NgClass, NgIf, NgFor, NgSwitch, NgSwitchWhen, NgSwitchDefault, OtherDirective]
    * })
@@ -6458,9 +9285,13 @@ declare module ng {
    * import {OtherDirective} from './myDirectives';
    * 
    * @Component({
+<<<<<<< HEAD
    *  selector: 'my-component'
    * })
    * @View({
+=======
+   *   selector: 'my-component',
+>>>>>>> upstream/master
    *   templateUrl: 'myComponent.html',
    *   directives: [CORE_DIRECTIVES, OtherDirective]
    * })
@@ -6473,6 +9304,13 @@ declare module ng {
   
 
     
+<<<<<<< HEAD
+=======
+  var workaround_empty_observable_list_diff: any;
+  
+
+    
+>>>>>>> upstream/master
   /**
    * Omitting from external API doc as this is really an abstract internal concept.
    */
@@ -6722,8 +9560,13 @@ declare module ng {
    * changes.
    * 
    *  ```
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *        <form #f="form" (submit)='onLogIn(f.value)'>
@@ -6744,8 +9587,13 @@ declare module ng {
    * We can also use ng-model to bind a domain model to the form.
    * 
    *  ```
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *        <form (submit)='onLogIn()'>
@@ -6806,9 +9654,13 @@ declare module ng {
    * 
    *  ```typescript
    * @Component({
+<<<<<<< HEAD
    *   selector: 'my-app'
    * })
    * @View({
+=======
+   *   selector: 'my-app',
+>>>>>>> upstream/master
    *   template: `
    *     <div>
    *       <h2>NgFormControl Example</h2>
@@ -6833,8 +9685,13 @@ declare module ng {
    * ### Example ([live demo](http://plnkr.co/edit/yHMLuHO7DNgT8XvtjTDH?p=preview))
    * 
    *  ```typescript
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: "<input type='text' [ng-form-control]='loginControl' [(ng-model)]='login'>"
    *      })
@@ -6882,8 +9739,13 @@ declare module ng {
    * 
    * ### Example ([live demo](http://plnkr.co/edit/R3UX5qDaUqFO2VYR0UzH?p=preview))
    *  ```typescript
+<<<<<<< HEAD
    * @Component({selector: "search-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "search-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `<input type='text' [(ng-model)]="searchQuery">`
    *      })
@@ -6947,8 +9809,13 @@ declare module ng {
    * We can work with each group separately: check its validity, get its value, listen to its changes.
    * 
    *  ```
+<<<<<<< HEAD
    * @Component({selector: "signup-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "signup-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *              <form #f="form" (submit)='onSignUp(f.value)'>
@@ -7002,9 +9869,13 @@ declare module ng {
    * 
    *  ```typescript
    * @Component({
+<<<<<<< HEAD
    *   selector: 'my-app'
    * })
    * @View({
+=======
+   *   selector: 'my-app',
+>>>>>>> upstream/master
    *   template: `
    *     <div>
    *       <h2>NgFormModel Example</h2>
@@ -7037,8 +9908,13 @@ declare module ng {
    * We can also use ng-model to bind a domain model to the form.
    * 
    *  ```typescript
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *        <form [ng-form-model]='loginForm'>
@@ -7113,9 +9989,15 @@ declare module ng {
    * 
    * # Structure
    * 
+<<<<<<< HEAD
    * An Angular form is a collection of {@link Control}s in some hierarchy.
    * `Control`s can be at the top level or can be organized in {@link ControlGroups}
    * or {@link ControlArray}s. This hierarchy is reflected in the form's `value`, a
+=======
+   * An Angular form is a collection of `Control`s in some hierarchy.
+   * `Control`s can be at the top level or can be organized in `ControlGroup`s
+   * or `ControlArray`s. This hierarchy is reflected in the form's `value`, a
+>>>>>>> upstream/master
    * JSON object that mirrors the form structure.
    * 
    * # Submission
@@ -7126,9 +10008,13 @@ declare module ng {
    * 
    *  ```typescript
    * @Component({
+<<<<<<< HEAD
    *   selector: 'my-app'
    * })
    * @View({
+=======
+   *   selector: 'my-app',
+>>>>>>> upstream/master
    *   template: `
    *     <div>
    *       <p>Submit the form to see the data object Angular builds</p>
@@ -7328,11 +10214,17 @@ declare module ng {
    * ### Example:
    * 
    * ```typescript
+<<<<<<< HEAD
    * @View({
    *   directives: [FORM_DIRECTIVES]
    * })
    * @Component({
    *   selector: 'my-app'
+=======
+   * @Component({
+   *   selector: 'my-app',
+   *   directives: [FORM_DIRECTIVES]
+>>>>>>> upstream/master
    * })
    * class MyApp {}
    * ```
@@ -7358,6 +10250,13 @@ declare module ng {
     
     static required(control:Control): {[key: string]: boolean};
     
+<<<<<<< HEAD
+=======
+    static minLength(minLength: number): Function;
+    
+    static maxLength(maxLength: number): Function;
+    
+>>>>>>> upstream/master
     static nullValidator(c: any): {[key: string]: boolean};
     
     static compose(validators: Function[]): Function;
@@ -7369,7 +10268,29 @@ declare module ng {
   }
 
     
+<<<<<<< HEAD
   class DefaultValidators {
+=======
+  class RequiredValidator {
+    
+  }
+
+    
+  class MinLengthValidator {
+    
+    constructor(minLength: string);
+    
+    minLength: number;
+    
+  }
+
+    
+  class MaxLengthValidator {
+    
+    constructor(maxLength: string);
+    
+    maxLength: number;
+>>>>>>> upstream/master
     
   }
 
@@ -7380,14 +10301,22 @@ declare module ng {
    * # Example
    * 
    * ```
+<<<<<<< HEAD
    * import {Component, View, bootstrap} from 'angular2/angular2';
+=======
+   * import {Component, bootstrap} from 'angular2/angular2';
+>>>>>>> upstream/master
    * import {FormBuilder, Validators, FORM_DIRECTIVES, ControlGroup} from 'angular2/core';
    * 
    * @Component({
    *   selector: 'login-comp',
+<<<<<<< HEAD
    *   viewBindings: [FormBuilder]
    * })
    * @View({
+=======
+   *   viewProviders: [FormBuilder],
+>>>>>>> upstream/master
    *   template: `
    *     <form [control-group]="loginForm">
    *       Login <input control="login">
@@ -7446,11 +10375,16 @@ declare module ng {
 
     
   /**
+<<<<<<< HEAD
    * Shorthand set of bindings used for building Angular forms.
+=======
+   * Shorthand set of providers used for building Angular forms.
+>>>>>>> upstream/master
    * 
    * ### Example:
    * 
    * ```typescript
+<<<<<<< HEAD
    * bootstrap(MyApp, [FORM_BINDINGS]);
    * ```
    */
@@ -7463,6 +10397,19 @@ declare module ng {
 
     
   let ELEMENT_PROBE_BINDINGS: any[];
+=======
+   * bootstrap(MyApp, [FORM_PROVIDERS]);
+   * ```
+   */
+  let FORM_PROVIDERS: Type[];
+  
+
+    
+  /**
+   * @deprecated
+   */
+  let FORM_BINDINGS: any;
+>>>>>>> upstream/master
   
 
     
@@ -7471,7 +10418,11 @@ declare module ng {
    * element and provides access to the corresponding ElementInjector and
    * underlying DOM Element, as well as a way to query for children.
    */
+<<<<<<< HEAD
   interface DebugElement {
+=======
+  abstract class DebugElement {
+>>>>>>> upstream/master
     
     componentInstance: any;
     
@@ -7529,6 +10480,7 @@ declare module ng {
   }
 
     
+<<<<<<< HEAD
   /**
    * Returns a DebugElement for a ElementRef.
    * 
@@ -7541,6 +10493,21 @@ declare module ng {
     
   function asNativeElements(arr: DebugElement[]): any[];
   
+=======
+  function asNativeElements(arr: DebugElement[]): any[];
+  
+
+    
+  class By {
+    
+    static all(): Function;
+    
+    static css(selector: string): Predicate<DebugElement>;
+    
+    static directive(type: Type): Predicate<DebugElement>;
+    
+  }
+>>>>>>> upstream/master
 
     
   class Scope {
@@ -7554,6 +10521,7 @@ declare module ng {
   }
 
     
+<<<<<<< HEAD
   class By {
     
     static all(): Function;
@@ -7563,6 +10531,28 @@ declare module ng {
     static directive(type: Type): Predicate<DebugElement>;
     
   }
+=======
+  /**
+   * Returns a DebugElement for a ElementRef.
+   * 
+   * @param {ElementRef}: elementRef
+   * @return {DebugElement}
+   */
+  function inspectElement(elementRef: ElementRef): DebugElement;
+  
+
+    
+  function inspectNativeElement(element: any): DebugElement;
+  
+
+    
+  let ELEMENT_PROBE_PROVIDERS: any[];
+  
+
+    
+  let ELEMENT_PROBE_BINDINGS: any;
+  
+>>>>>>> upstream/master
 
     
   enum ChangeDetectionStrategy {
@@ -7619,8 +10609,13 @@ declare module ng {
    * ### Example
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'parent'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'parent',
+>>>>>>> upstream/master
    *   template: `
    *     <child [prop]="parentProp"></child>
    *   `,
@@ -7664,9 +10659,13 @@ declare module ng {
    * }
    * 
    * @Component({
+<<<<<<< HEAD
    *   selector: 'app'
    * })
    * @View({
+=======
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <child [prop]="field.first"></child>
    *   `,
@@ -7694,6 +10693,7 @@ declare module ng {
   }
 
     
+<<<<<<< HEAD
   /**
    * Reference to a component's change detection object.
    */
@@ -7701,14 +10701,28 @@ declare module ng {
     
     /**
      * Marks all {@link OnPush} ancestors as to be checked.
+=======
+  abstract class ChangeDetectorRef {
+    
+    /**
+     * Marks all {@link ChangeDetectionStrategy#OnPush} ancestors as to be checked.
+>>>>>>> upstream/master
      * 
      * <!-- TODO: Add a link to a chapter on OnPush components -->
      * 
      * ### Example ([live demo](http://plnkr.co/edit/GC512b?p=preview))
      * 
      * ```typescript
+<<<<<<< HEAD
      * @Component({selector: 'cmp', changeDetection: ChangeDetectionStrategy.OnPush})
      * @View({template: `Number of ticks: {{numberOfTicks}}`})
+=======
+     * @Component({
+     *   selector: 'cmp',
+     *   changeDetection: ChangeDetectionStrategy.OnPush,
+     *   template: `Number of ticks: {{numberOfTicks}}`
+     * })
+>>>>>>> upstream/master
      * class Cmp {
      *   numberOfTicks = 0;
      * 
@@ -7723,9 +10737,13 @@ declare module ng {
      * 
      * @Component({
      *   selector: 'app',
+<<<<<<< HEAD
      *   changeDetection: ChangeDetectionStrategy.OnPush
      * })
      * @View({
+=======
+     *   changeDetection: ChangeDetectionStrategy.OnPush,
+>>>>>>> upstream/master
      *   template: `
      *     <cmp><cmp>
      *   `,
@@ -7744,7 +10762,12 @@ declare module ng {
      * 
      * The detached change detector will not be checked until it is reattached.
      * 
+<<<<<<< HEAD
      * This can also be used in combination with {@link detectChanges} to implement local change
+=======
+     * This can also be used in combination with {@link ChangeDetectorRef#detectChanges} to implement
+     * local change
+>>>>>>> upstream/master
      * detection checks.
      * 
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
@@ -7765,8 +10788,13 @@ declare module ng {
      *   }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'giant-list'})
      * @View({
+=======
+     * @Component({
+     *   selector: 'giant-list',
+>>>>>>> upstream/master
      *   template: `
      *     <li *ng-for="#d of dataProvider.data">Data {{d}}</lig>
      *   `,
@@ -7782,9 +10810,14 @@ declare module ng {
      * }
      * 
      * @Component({
+<<<<<<< HEAD
      *   selector: 'app', bindings: [DataProvider]
      * })
      * @View({
+=======
+     *   selector: 'app',
+     *   providers: [DataProvider],
+>>>>>>> upstream/master
      *   template: `
      *     <giant-list><giant-list>
      *   `,
@@ -7801,7 +10834,12 @@ declare module ng {
     /**
      * Checks the change detector and its children.
      * 
+<<<<<<< HEAD
      * This can also be used in combination with {@link detach} to implement local change detection
+=======
+     * This can also be used in combination with {@link ChangeDetectorRef#detach} to implement local
+     * change detection
+>>>>>>> upstream/master
      * checks.
      * 
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
@@ -7846,8 +10884,14 @@ declare module ng {
      *   }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'live-data', inputs: ['live']})
      * @View({
+=======
+     * @Component({
+     *   selector: 'live-data',
+     *   inputs: ['live'],
+>>>>>>> upstream/master
      *   template: `Data: {{dataProvider.data}}`
      * })
      * class LiveData {
@@ -7863,9 +10907,13 @@ declare module ng {
      * 
      * @Component({
      *   selector: 'app',
+<<<<<<< HEAD
      *   bindings: [DataProvider]
      * })
      * @View({
+=======
+     *   providers: [DataProvider],
+>>>>>>> upstream/master
      *   template: `
      *     Live Update: <input type="checkbox" [(ng-model)]="live">
      *     <live-data [live]="live"><live-data>
@@ -8029,7 +11077,11 @@ declare module ng {
     static create(factories: IterableDifferFactory[], parent?: IterableDiffers): IterableDiffers;
     
     /**
+<<<<<<< HEAD
      * Takes an array of {@link IterableDifferFactory} and returns a binding used to extend the
+=======
+     * Takes an array of {@link IterableDifferFactory} and returns a provider used to extend the
+>>>>>>> upstream/master
      * inherited {@link IterableDiffers} instance with the provided factories and return a new
      * {@link IterableDiffers} instance.
      * 
@@ -8041,13 +11093,21 @@ declare module ng {
      * 
      * ```
      * @Component({
+<<<<<<< HEAD
      *   viewBindings: [
+=======
+     *   viewProviders: [
+>>>>>>> upstream/master
      *     IterableDiffers.extend([new ImmutableListDiffer()])
      *   ]
      * })
      * ```
      */
+<<<<<<< HEAD
     static extend(factories: IterableDifferFactory[]): Binding;
+=======
+    static extend(factories: IterableDifferFactory[]): Provider;
+>>>>>>> upstream/master
     
     factories: IterableDifferFactory[];
     
@@ -8087,7 +11147,11 @@ declare module ng {
     static create(factories: KeyValueDifferFactory[], parent?: KeyValueDiffers): KeyValueDiffers;
     
     /**
+<<<<<<< HEAD
      * Takes an array of {@link KeyValueDifferFactory} and returns a binding used to extend the
+=======
+     * Takes an array of {@link KeyValueDifferFactory} and returns a provider used to extend the
+>>>>>>> upstream/master
      * inherited {@link KeyValueDiffers} instance with the provided factories and return a new
      * {@link KeyValueDiffers} instance.
      * 
@@ -8099,13 +11163,21 @@ declare module ng {
      * 
      * ```
      * @Component({
+<<<<<<< HEAD
      *   viewBindings: [
+=======
+     *   viewProviders: [
+>>>>>>> upstream/master
      *     KeyValueDiffers.extend([new ImmutableMapDiffer()])
      *   ]
      * })
      * ```
      */
+<<<<<<< HEAD
     static extend(factories: KeyValueDifferFactory[]): Binding;
+=======
+    static extend(factories: KeyValueDifferFactory[]): Provider;
+>>>>>>> upstream/master
     
     factories: KeyValueDifferFactory[];
     
@@ -8210,6 +11282,7 @@ declare module ng {
     
   }
 
+<<<<<<< HEAD
     
   var ResolvedBinding: InjectableReference;
   
@@ -8286,6 +11359,8 @@ declare module ng {
   var ChangeDetectorRef: InjectableReference;
   
 
+=======
+>>>>>>> upstream/master
   
 }
 
@@ -8332,7 +11407,11 @@ declare module ngWorker {
    * 
    * The default Renderer implementation is {@link DomRenderer}. Also see {@link WebWorkerRenderer}.
    */
+<<<<<<< HEAD
   interface Renderer {
+=======
+  abstract class Renderer {
+>>>>>>> upstream/master
     
     /**
      * Registers a component template represented as arrays of {@link RenderTemplateCmd}s and styles
@@ -8503,6 +11582,7 @@ declare module ngWorker {
      */
     renderView: RenderViewRef;
     
+<<<<<<< HEAD
     /**
      * Index of the Element (in the depth-first order) inside the Render View.
      * 
@@ -8510,6 +11590,8 @@ declare module ngWorker {
      */
     boundElementIndex: number;
     
+=======
+>>>>>>> upstream/master
   }
 
     
@@ -8543,7 +11625,11 @@ declare module ngWorker {
    * 
    * <!-- TODO: this is created by Renderer#createProtoView in the new compiler -->
    */
+<<<<<<< HEAD
   interface RenderProtoViewRef {
+=======
+  class RenderProtoViewRef {
+>>>>>>> upstream/master
     
   }
 
@@ -8620,6 +11706,11 @@ declare module ngWorker {
     
   interface RenderNgContentCmd {
     
+<<<<<<< HEAD
+=======
+    index: number;
+    
+>>>>>>> upstream/master
     ngContentIndex: number;
     
   }
@@ -8629,6 +11720,11 @@ declare module ngWorker {
     
     name: string;
     
+<<<<<<< HEAD
+    attrNameAndValues: string[];
+    
+    eventTargetAndNames: string[];
+=======
     attrNameAndValues: string[];
     
     eventTargetAndNames: string[];
@@ -8663,6 +11759,102 @@ declare module ngWorker {
   }
 
     
+  abstract class ClientMessageBroker {
+    
+    runOnService(args: UiArguments, returnType: Type): Promise<any>;
+    
+  }
+
+    
+  abstract class ClientMessageBrokerFactory {
+    
+    /**
+     * Initializes the given channel and attaches a new {@link ClientMessageBroker} to it.
+     */
+    createMessageBroker(channel: string, runInZone?: boolean): ClientMessageBroker;
+    
+  }
+
+    
+  class FnArg {
+    
+    constructor(value: any, type: Type);
+    
+    value: any;
+    
+    type: Type;
+    
+  }
+
+    
+  class UiArguments {
+    
+    constructor(method: string, args?: FnArg[]);
+    
+    method: string;
+    
+    args: FnArg[];
+>>>>>>> upstream/master
+    
+  }
+
+    
+<<<<<<< HEAD
+  interface RenderBeginComponentCmd extends RenderBeginElementCmd {
+    
+    nativeShadow: boolean;
+    
+    templateId: number;
+=======
+  class ReceivedMessage {
+    
+    constructor(data: {[key: string]: any});
+    
+    method: string;
+    
+    args: any[];
+    
+    id: string;
+    
+    type: string;
+>>>>>>> upstream/master
+    
+  }
+
+    
+<<<<<<< HEAD
+  interface RenderEmbeddedTemplateCmd extends RenderBeginElementCmd {
+    
+    isMerged: boolean;
+    
+    children: RenderTemplateCmd[];
+=======
+  abstract class ServiceMessageBroker {
+    
+    registerMethod(methodName: string, signature: Type[], method: Function, returnType?: Type): void;
+>>>>>>> upstream/master
+    
+  }
+
+    
+<<<<<<< HEAD
+  interface RenderBeginCmd extends RenderTemplateCmd {
+    
+    ngContentIndex: number;
+    
+    isBound: boolean;
+=======
+  abstract class ServiceMessageBrokerFactory {
+    
+    /**
+     * Initializes the given channel and attaches a new {@link ServiceMessageBroker} to it.
+     */
+    createMessageBroker(channel: string, runInZone?: boolean): ServiceMessageBroker;
+>>>>>>> upstream/master
+    
+  }
+
+    
   let PRIMITIVE: Type;
   
 
@@ -8674,6 +11866,7 @@ declare module ngWorker {
    * ### Example ([live demo](http://plnkr.co/edit/plamXUpsLQbIXpViZhUO?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -8682,6 +11875,20 @@ declare module ngWorker {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({template: `<ng-content></ng-content>`})
+=======
+   * @Component({
+   *   selector: 'child-cmp',
+   *   template: `{{where}} child`
+   * })
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+   *   template: `<ng-content></ng-content>`
+   * })
+>>>>>>> upstream/master
    * class ParentComponent implements AfterContentInit {
    *   @ContentChild(ChildComponent) contentChild: ChildComponent;
    * 
@@ -8700,8 +11907,13 @@ declare module ngWorker {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <parent-cmp>
    *       <child-cmp where="content"></child-cmp>
@@ -8727,6 +11939,7 @@ declare module ngWorker {
    * ### Example ([live demo](http://plnkr.co/edit/tGdrytNEKQnecIPkD7NU?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -8735,6 +11948,14 @@ declare module ngWorker {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({template: `<ng-content></ng-content>`})
+=======
+   * @Component({selector: 'child-cmp', template: `{{where}} child`})
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({selector: 'parent-cmp', template: `<ng-content></ng-content>`})
+>>>>>>> upstream/master
    * class ParentComponent implements AfterContentChecked {
    *   @ContentChild(ChildComponent) contentChild: ChildComponent;
    * 
@@ -8753,8 +11974,13 @@ declare module ngWorker {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <parent-cmp>
    *       <button (click)="hasContent = !hasContent">Toggle content child</button>
@@ -8782,6 +12008,7 @@ declare module ngWorker {
    * ### Example ([live demo](http://plnkr.co/edit/LhTKVMEM0fkJgyp4CI1W?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -8790,6 +12017,15 @@ declare module ngWorker {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({
+=======
+   * @Component({selector: 'child-cmp', template: `{{where}} child`})
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+>>>>>>> upstream/master
    *   template: `<child-cmp where="view"></child-cmp>`,
    *   directives: [ChildComponent]
    * })
@@ -8811,8 +12047,13 @@ declare module ngWorker {
    *   }
    * }
    * 
+<<<<<<< HEAD
    * @Component({selector: 'app'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `<parent-cmp></parent-cmp>`,
    *   directives: [ParentComponent]
    * })
@@ -8835,6 +12076,7 @@ declare module ngWorker {
    * ### Example ([live demo](http://plnkr.co/edit/0qDGHcPQkc25CXhTNzKU?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'child-cmp'})
    * @View({template: `{{where}} child`})
    * class ChildComponent {
@@ -8843,6 +12085,15 @@ declare module ngWorker {
    * 
    * @Component({selector: 'parent-cmp'})
    * @View({
+=======
+   * @Component({selector: 'child-cmp', template: `{{where}} child`})
+   * class ChildComponent {
+   *   @Input() where: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'parent-cmp',
+>>>>>>> upstream/master
    *   template: `
    *     <button (click)="showView = !showView">Toggle view child</button>
    *     <child-cmp *ng-if="showView" where="view"></child-cmp>`,
@@ -8862,6 +12113,7 @@ declare module ngWorker {
    *     console.log('AfterViewChecked: ' + this.getMessage(this.viewChild));
    *   }
    * 
+<<<<<<< HEAD
    *   private getMessage(cmp: ChildComponent): string {
    *     return cmp ? cmp.where + ' child' : 'no child';
    *   }
@@ -8881,11 +12133,253 @@ declare module ngWorker {
   interface AfterViewChecked {
     
     afterViewChecked(): void;
+=======
+   *   private getMessage(cmp: ChildComponent): string {
+   *     return cmp ? cmp.where + ' child' : 'no child';
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `<parent-cmp></parent-cmp>`,
+   *   directives: [ParentComponent]
+   * })
+   * export class App {
+   * }
+   * 
+   * bootstrap(App).catch(err => console.error(err));
+   * ```
+   */
+  interface AfterViewChecked {
+    
+    afterViewChecked(): void;
     
   }
 
     
   /**
+   * Lifecycle hooks are guaranteed to be called in the following order:
+   * - `OnChanges` (if any bindings have changed),
+   * - `OnInit` (after the first check only),
+   * - `DoCheck`,
+   * - `AfterContentInit`,
+   * - `AfterContentChecked`,
+   * - `AfterViewInit`,
+   * - `AfterViewChecked`,
+   * - `OnDestroy` (at the very end before destruction)
+   * Implement this interface to get notified when any data-bound property of your directive changes.
+   * 
+   * `onChanges` is called right after the data-bound properties have been checked and before view
+   * and content children are checked if at least one of them has changed.
+   * 
+   * The `changes` parameter contains an entry for each of the changed data-bound property. The key is
+   * the property name and the value is an instance of {@link SimpleChange}.
+   * 
+   * ### Example ([live example](http://plnkr.co/edit/AHrB6opLqHDBPkt4KpdT?p=preview)):
+   * 
+   * ```typescript
+   * @Component({
+   *   selector: 'my-cmp',
+   *   template: `<p>myProp = {{myProp}}</p>`
+   * })
+   * class MyComponent implements OnChanges {
+   *   @Input() myProp: any;
+   * 
+   *   onChanges(changes: {[propName: string]: SimpleChange}) {
+   *     console.log('onChanges - myProp = ' + changes['myProp'].currentValue);
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <button (click)="value = value + 1">Change MyComponent</button>
+   *     <my-cmp [my-prop]="value"></my-cmp>`,
+   *   directives: [MyComponent]
+   * })
+   * export class App {
+   *   value = 0;
+   * }
+   * 
+   * bootstrap(App).catch(err => console.error(err));
+   * ```
+   */
+  interface OnChanges {
+    
+    onChanges(changes: {[key: string]: SimpleChange}): void;
+    
+  }
+
+    
+  /**
+   * Implement this interface to get notified when your directive is destroyed.
+   * 
+   * `onDestroy` callback is typically used for any custom cleanup that needs to occur when the
+   * instance is destroyed
+   * 
+   * ### Example ([live example](http://plnkr.co/edit/1MBypRryXd64v4pV03Yn?p=preview))
+   * 
+   * ```typesript
+   * @Component({
+   *   selector: 'my-cmp',
+   *   template: `<p>my-component</p>`
+   * })
+   * class MyComponent implements OnInit, OnDestroy {
+   *   onInit() {
+   *     console.log('onInit');
+   *   }
+   * 
+   *   onDestroy() {
+   *     console.log('onDestroy');
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <button (click)="hasChild = !hasChild">
+   *       {{hasChild ? 'Destroy' : 'Create'}} MyComponent
+   *     </button>
+   *     <my-cmp *ng-if="hasChild"></my-cmp>`,
+   *   directives: [MyComponent, NgIf]
+   * })
+   * export class App {
+   *   hasChild = true;
+   * }
+   * 
+   * bootstrap(App).catch(err => console.error(err));
+   * * ```
+   */
+  interface OnDestroy {
+    
+    onDestroy(): void;
+    
+  }
+
+    
+  /**
+   * Implement this interface to execute custom initialization logic after your directive's
+   * data-bound properties have been initialized.
+   * 
+   * `onInit` is called right after the directive's data-bound properties have been checked for the
+   * first time, and before any of its children have been checked. It is invoked only once when the
+   * directive is instantiated.
+   * 
+   * ### Example ([live example](http://plnkr.co/edit/1MBypRryXd64v4pV03Yn?p=preview))
+   * 
+   * ```typescript
+   * @Component({
+   *   selector: 'my-cmp',
+   *   template: `<p>my-component</p>`
+   * })
+   * class MyComponent implements OnInit, OnDestroy {
+   *   onInit() {
+   *     console.log('onInit');
+   *   }
+   * 
+   *   onDestroy() {
+   *     console.log('onDestroy');
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <button (click)="hasChild = !hasChild">
+   *       {{hasChild ? 'Destroy' : 'Create'}} MyComponent
+   *     </button>
+   *     <my-cmp *ng-if="hasChild"></my-cmp>`,
+   *   directives: [MyComponent, NgIf]
+   * })
+   * export class App {
+   *   hasChild = true;
+   * }
+   * 
+   * bootstrap(App).catch(err => console.error(err));
+   *  ```
+   */
+  interface OnInit {
+    
+    onInit(): void;
+    
+  }
+
+    
+  /**
+   * Implement this interface to override the default change detection algorithm for your directive.
+   * 
+   * `doCheck` gets called to check the changes in the directives instead of the default algorithm.
+   * 
+   * The default change detection algorithm looks for differences by comparing bound-property values
+   * by reference across change detection runs. When `DoCheck` is implemented, the default algorithm
+   * is disabled and `doCheck` is responsible for checking for changes.
+   * 
+   * Implementing this interface allows improving performance by using insights about the component,
+   * its implementation and data types of its properties.
+   * 
+   * Note that a directive should not implement both `DoCheck` and {@link OnChanges} at the same time.
+   * `onChanges` would not be called when a directive implements `DoCheck`. Reaction to the changes
+   * have to be handled from within the `doCheck` callback.
+   * 
+   * Use {@link KeyValueDiffers} and {@link IterableDiffers} to add your custom check mechanisms.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/QpnIlF0CR2i5bcYbHEUJ?p=preview))
+   * 
+   * In the following example `doCheck` uses an {@link IterableDiffers} to detect the updates to the
+   * array `list`:
+   * 
+   * ```typescript
+   * @Component({
+   *   selector: 'custom-check',
+   *   template: `
+   *     <p>Changes:</p>
+   *     <ul>
+   *       <li *ng-for="#line of logs">{{line}}</li>
+   *     </ul>`,
+   *   directives: [NgFor]
+   * })
+   * class CustomCheckComponent implements DoCheck {
+   *   @Input() list: any[];
+   *   differ: any;
+   *   logs = [];
+   * 
+   *   constructor(differs: IterableDiffers) {
+   *     this.differ = differs.find([]).create(null);
+   *   }
+   * 
+   *   doCheck() {
+   *     var changes = this.differ.diff(this.list);
+   * 
+   *     if (changes) {
+   *       changes.forEachAddedItem(r => this.logs.push('added ' + r.item));
+   *       changes.forEachRemovedItem(r => this.logs.push('removed ' + r.item))
+   *     }
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <button (click)="list.push(list.length)">Push</button>
+   *     <button (click)="list.pop()">Pop</button>
+   *     <custom-check [list]="list"></custom-check>`,
+   *   directives: [CustomCheckComponent]
+   * })
+   * export class App {
+   *   list = [];
+   * }
+   * ```
+   */
+  interface DoCheck {
+    
+    doCheck(): void;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
    * Lifecycle hooks are guaranteed to be called in the following order:
    * - `OnChanges` (if any bindings have changed),
    * - `OnInit` (after the first check only),
@@ -8933,11 +12427,154 @@ declare module ngWorker {
   interface OnChanges {
     
     onChanges(changes: {[key: string]: SimpleChange}): void;
+=======
+   * Declares an injectable parameter to be a live list of directives or variable
+   * bindings from the content children of a directive.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/lY9m8HLy7z06vDoUaSN2?p=preview))
+   * 
+   * Assume that `<tabs>` component would like to get a list its children `<pane>`
+   * components as shown in this example:
+   * 
+   * ```html
+   * <tabs>
+   *   <pane title="Overview">...</pane>
+   *   <pane *ng-for="#o of objects" [title]="o.title">{{o.text}}</pane>
+   * </tabs>
+   * ```
+   * 
+   * The preferred solution is to query for `Pane` directives using this decorator.
+   * 
+   * ```javascript
+   * @Component({
+   *   selector: 'pane',
+   *   inputs: ['title']
+   * })
+   * class Pane {
+   *   title:string;
+   * }
+   * 
+   * @Component({
+   *  selector: 'tabs',
+   *  template: `
+   *    <ul>
+   *      <li *ng-for="#pane of panes">{{pane.title}}</li>
+   *    </ul>
+   *    <content></content>
+   *  `
+   * })
+   * class Tabs {
+   *   panes: QueryList<Pane>;
+   *   constructor(@Query(Pane) panes:QueryList<Pane>) {
+   *    this.panes = panes;
+   *  }
+   * }
+   * ```
+   * 
+   * A query can look for variable bindings by passing in a string with desired binding symbol.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/sT2j25cH1dURAyBRCKx1?p=preview))
+   * ```html
+   * <seeker>
+   *   <div #findme>...</div>
+   * </seeker>
+   * 
+   * @Component({ selector: 'foo' })
+   * class seeker {
+   *   constructor(@Query('findme') elList: QueryList<ElementRef>) {...}
+   * }
+   * ```
+   * 
+   * In this case the object that is injected depend on the type of the variable
+   * binding. It can be an ElementRef, a directive or a component.
+   * 
+   * Passing in a comma separated list of variable bindings will query for all of them.
+   * 
+   * ```html
+   * <seeker>
+   *   <div #find-me>...</div>
+   *   <div #find-me-too>...</div>
+   * </seeker>
+   * 
+   *  @Component({
+   *   selector: 'foo'
+   * })
+   * class Seeker {
+   *   constructor(@Query('findMe, findMeToo') elList: QueryList<ElementRef>) {...}
+   * }
+   * ```
+   * 
+   * Configure whether query looks for direct children or all descendants
+   * of the querying element, by using the `descendants` parameter.
+   * It is set to `false` by default.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/wtGeB977bv7qvA5FTYl9?p=preview))
+   * ```html
+   * <container #first>
+   *   <item>a</item>
+   *   <item>b</item>
+   *   <container #second>
+   *     <item>c</item>
+   *   </container>
+   * </container>
+   * ```
+   * 
+   * When querying for items, the first container will see only `a` and `b` by default,
+   * but with `Query(TextDirective, {descendants: true})` it will see `c` too.
+   * 
+   * The queried directives are kept in a depth-first pre-order with respect to their
+   * positions in the DOM.
+   * 
+   * Query does not look deep into any subcomponent views.
+   * 
+   * Query is updated as part of the change-detection cycle. Since change detection
+   * happens after construction of a directive, QueryList will always be empty when observed in the
+   * constructor.
+   * 
+   * The injected object is an unmodifiable live list.
+   * See {@link QueryList} for more details.
+   */
+  class QueryMetadata extends DependencyMetadata {
+    
+    constructor(_selector: Type | string, {descendants, first}?: {descendants?: boolean, first?: boolean});
+    
+    /**
+     * whether we want to query only direct children (false) or all
+     * children (true).
+     */
+    descendants: boolean;
+    
+    first: boolean;
+    
+    /**
+     * always `false` to differentiate it with {@link ViewQueryMetadata}.
+     */
+    isViewQuery: boolean;
+    
+    /**
+     * what this is querying for.
+     */
+    selector: any;
+    
+    /**
+     * whether this is querying for a variable binding or a directive.
+     */
+    isVarBindingQuery: boolean;
+    
+    /**
+     * returns a list of variable bindings this is querying for.
+     * Only applicable if this is a variable bindings query.
+     */
+    varBindings: string[];
+    
+    toString(): string;
+>>>>>>> upstream/master
     
   }
 
     
   /**
+<<<<<<< HEAD
    * Implement this interface to get notified when your directive is destroyed.
    * 
    * `onDestroy` callback is typically used for any custom cleanup that needs to occur when the
@@ -8977,11 +12614,36 @@ declare module ngWorker {
   interface OnDestroy {
     
     onDestroy(): void;
+=======
+   * Configures a content query.
+   * 
+   * Content queries are set before the `afterContentInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Directive({
+   *   selector: 'someDir'
+   * })
+   * class SomeDir {
+   *   @ContentChildren(ChildDirective) contentChildren: QueryList<ChildDirective>;
+   * 
+   *   afterContentInit() {
+   *     // contentChildren is set
+   *   }
+   * }
+   * ```
+   */
+  class ContentChildrenMetadata extends QueryMetadata {
+    
+    constructor(_selector: Type | string, {descendants}?: {descendants?: boolean});
+>>>>>>> upstream/master
     
   }
 
     
   /**
+<<<<<<< HEAD
    * Implement this interface to execute custom initialization logic after your directive's
    * data-bound properties have been initialized.
    * 
@@ -9023,11 +12685,36 @@ declare module ngWorker {
   interface OnInit {
     
     onInit(): void;
+=======
+   * Configures a content query.
+   * 
+   * Content queries are set before the `afterContentInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Directive({
+   *   selector: 'someDir'
+   * })
+   * class SomeDir {
+   *   @ContentChild(ChildDirective) contentChild;
+   * 
+   *   afterContentInit() {
+   *     // contentChild is set
+   *   }
+   * }
+   * ```
+   */
+  class ContentChildMetadata extends QueryMetadata {
+    
+    constructor(_selector: Type | string);
+>>>>>>> upstream/master
     
   }
 
     
   /**
+<<<<<<< HEAD
    * Implement this interface to override the default change detection algorithm for your directive.
    * 
    * `doCheck` gets called to check the changes in the directives instead of the default algorithm.
@@ -9095,11 +12782,87 @@ declare module ngWorker {
   interface DoCheck {
     
     doCheck(): void;
+=======
+   * Configures a view query.
+   * 
+   * View queries are set before the `afterViewInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+   * class SomeDir {
+   *   @ViewChildren(ItemDirective) viewChildren: QueryList<ItemDirective>;
+   * 
+   *   afterViewInit() {
+   *     // viewChildren is set
+   *   }
+   * }
+   * ```
+   */
+  class ViewChildrenMetadata extends ViewQueryMetadata {
+    
+    constructor(_selector: Type | string);
     
   }
 
     
   /**
+   * Similar to {@link QueryMetadata}, but querying the component view, instead of
+   * the content children.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/eNsFHDf7YjyM6IzKxM1j?p=preview))
+   * 
+   * ```javascript
+   * @Component({...})
+   * @View({
+   *   template: `
+   *     <item> a </item>
+   *     <item> b </item>
+   *     <item> c </item>
+   *   `
+   * })
+   * class MyComponent {
+   *   shown: boolean;
+   * 
+   *   constructor(private @Query(Item) items:QueryList<Item>) {
+   *     items.onChange(() => console.log(items.length));
+   *   }
+   * }
+   * ```
+   * 
+   * Supports the same querying parameters as {@link QueryMetadata}, except
+   * `descendants`. This always queries the whole view.
+   * 
+   * As `shown` is flipped between true and false, items will contain zero of one
+   * items.
+   * 
+   * Specifies that a {@link QueryList} should be injected.
+   * 
+   * The injected object is an iterable and observable live list.
+   * See {@link QueryList} for more details.
+   */
+  class ViewQueryMetadata extends QueryMetadata {
+    
+    constructor(_selector: Type | string, {descendants, first}?: {descendants?: boolean, first?: boolean});
+    
+    /**
+     * always `true` to differentiate it with {@link QueryMetadata}.
+     */
+    isViewQuery: any;
+    
+    toString(): string;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
    * Declares an injectable parameter to be a live list of directives or variable
    * bindings from the content children of a directive.
    * 
@@ -9247,11 +13010,214 @@ declare module ngWorker {
     varBindings: string[];
     
     toString(): string;
+=======
+   * Configures a view query.
+   * 
+   * View queries are set before the `afterViewInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+   * class SomeDir {
+   *   @ViewChild(ItemDirective) viewChild:ItemDirective;
+   * 
+   *   afterViewInit() {
+   *     // viewChild is set
+   *   }
+   * }
+   * ```
+   */
+  class ViewChildMetadata extends ViewQueryMetadata {
+    
+    constructor(_selector: Type | string);
     
   }
 
     
   /**
+   * Specifies that a constant attribute value should be injected.
+   * 
+   * The directive can inject constant string literals of host element attributes.
+   * 
+   * ## Example
+   * 
+   * Suppose we have an `<input>` element and want to know its `type`.
+   * 
+   * ```html
+   * <input type="text">
+   * ```
+   * 
+   * A decorator can inject string literal `text` like so:
+   * 
+   * ```javascript
+   * @Directive({
+   *   selector: `input'
+   * })
+   * class InputDirective {
+   *   constructor(@Attribute('type') type) {
+   *     // type would be `text` in this example
+   *   }
+   * }
+   * ```
+   */
+  class AttributeMetadata extends DependencyMetadata {
+    
+    constructor(attributeName: string);
+    
+    attributeName: string;
+    
+    token: any;
+    
+    toString(): string;
+    
+  }
+
+    
+  /**
+   * Declare reusable UI building blocks for an application.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@Component`
+   * annotation specifies when a component is instantiated, and which properties and hostListeners it
+   * binds to.
+   * 
+   * When a component is instantiated, Angular
+   * - creates a shadow DOM for the component.
+   * - loads the selected template into the shadow DOM.
+   * - creates all the injectable objects configured with `providers` and `viewProviders`.
+   * 
+   * All template expressions and statements are then evaluated against the component instance.
+   * 
+   * For details on the `@View` annotation, see {@link ViewMetadata}.
+   * 
+   * ## Lifecycle hooks
+   * 
+   * When the component class implements some {@link angular2/lifecycle_hooks} the callbacks are
+   * called by the change detection at defined points in time during the life of the component.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!'
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+   */
+  class ComponentMetadata extends DirectiveMetadata {
+    
+    constructor({selector, inputs, outputs, properties, events, host, exportAs, moduleId, bindings,
+                   providers, viewBindings, viewProviders,
+                   changeDetection, queries, templateUrl, template,
+                   styleUrls, styles, directives, pipes, encapsulation}?: {
+        selector?: string,
+        inputs?: string[],
+        outputs?: string[],
+        properties?: string[],
+        events?: string[],
+        host?: {[key: string]: string},
+        /** @deprecated */ bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        /** @deprecated */ viewBindings?: any[],
+        viewProviders?: any[],
+        queries?: {[key: string]: any},
+        changeDetection?: ChangeDetectionStrategy,
+        templateUrl?: string,
+        template?: string,
+        styleUrls?: string[],
+        styles?: string[],
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation
+      });
+    
+    /**
+     * Defines the used change detection strategy.
+     * 
+     * When a component is instantiated, Angular creates a change detector, which is responsible for
+     * propagating the component's bindings.
+     * 
+     * The `changeDetection` property defines, whether the change detection will be checked every time
+     * or only when the component tells it to do so.
+     */
+    changeDetection: ChangeDetectionStrategy;
+    
+    /**
+     * Defines the set of injectable objects that are visible to its view DOM children.
+     * 
+     * ## Simple Example
+     * 
+     * Here is an example of a class that can be injected:
+     * 
+     * ```
+     * class Greeter {
+     *    greet(name:string) {
+     *      return 'Hello ' + name + '!';
+     *    }
+     * }
+     * 
+     * @Directive({
+     *   selector: 'needs-greeter'
+     * })
+     * class NeedsGreeter {
+     *   greeter:Greeter;
+     * 
+     *   constructor(greeter:Greeter) {
+     *     this.greeter = greeter;
+     *   }
+     * }
+     * 
+     * @Component({
+     *   selector: 'greet',
+     *   viewProviders: [
+     *     Greeter
+     *   ],
+     *   template: `<needs-greeter></needs-greeter>`,
+     *   directives: [NeedsGreeter]
+     * })
+     * class HelloWorld {
+     * }
+     * 
+     * ```
+     */
+    viewProviders: any[];
+    
+    viewBindings: any[];
+    
+    templateUrl: string;
+    
+    template: string;
+    
+    styleUrls: string[];
+    
+    styles: string[];
+    
+    directives: Array<Type | any[]>;
+    
+    pipes: Array<Type | any[]>;
+    
+    encapsulation: ViewEncapsulation;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
    * Configures a content query.
    * 
    * Content queries are set before the `afterContentInit` callback is called.
@@ -9353,10 +13319,202 @@ declare module ngWorker {
    * 
    *   constructor(private @Query(Item) items:QueryList<Item>) {
    *     items.onChange(() => console.log(items.length));
+=======
+   * Directives allow you to attach behavior to elements in the DOM.
+   * 
+   * {@link DirectiveMetadata}s with an embedded view are called {@link ComponentMetadata}s.
+   * 
+   * A directive consists of a single directive annotation and a controller class. When the
+   * directive's `selector` matches
+   * elements in the DOM, the following steps occur:
+   * 
+   * 1. For each directive, the `ElementInjector` attempts to resolve the directive's constructor
+   * arguments.
+   * 2. Angular instantiates directives for each matched element using `ElementInjector` in a
+   * depth-first order,
+   *    as declared in the HTML.
+   * 
+   * ## Understanding How Injection Works
+   * 
+   * There are three stages of injection resolution.
+   * - *Pre-existing Injectors*:
+   *   - The terminal {@link Injector} cannot resolve dependencies. It either throws an error or, if
+   * the dependency was
+   *     specified as `@Optional`, returns `null`.
+   *   - The platform injector resolves browser singleton resources, such as: cookies, title,
+   * location, and others.
+   * - *Component Injectors*: Each component instance has its own {@link Injector}, and they follow
+   * the same parent-child hierarchy
+   *     as the component instances in the DOM.
+   * - *Element Injectors*: Each component instance has a Shadow DOM. Within the Shadow DOM each
+   * element has an `ElementInjector`
+   *     which follow the same parent-child hierarchy as the DOM elements themselves.
+   * 
+   * When a template is instantiated, it also must instantiate the corresponding directives in a
+   * depth-first order. The
+   * current `ElementInjector` resolves the constructor dependencies for each directive.
+   * 
+   * Angular then resolves dependencies as follows, according to the order in which they appear in the
+   * {@link ViewMetadata}:
+   * 
+   * 1. Dependencies on the current element
+   * 2. Dependencies on element injectors and their parents until it encounters a Shadow DOM boundary
+   * 3. Dependencies on component injectors and their parents until it encounters the root component
+   * 4. Dependencies on pre-existing injectors
+   * 
+   * 
+   * The `ElementInjector` can inject other directives, element-specific special objects, or it can
+   * delegate to the parent
+   * injector.
+   * 
+   * To inject other directives, declare the constructor parameter as:
+   * - `directive:DirectiveType`: a directive on the current element only
+   * - `@Host() directive:DirectiveType`: any directive that matches the type between the current
+   * element and the
+   *    Shadow DOM root.
+   * - `@Query(DirectiveType) query:QueryList<DirectiveType>`: A live collection of direct child
+   * directives.
+   * - `@QueryDescendants(DirectiveType) query:QueryList<DirectiveType>`: A live collection of any
+   * child directives.
+   * 
+   * To inject element-specific special objects, declare the constructor parameter as:
+   * - `element: ElementRef` to obtain a reference to logical element in the view.
+   * - `viewContainer: ViewContainerRef` to control child template instantiation, for
+   * {@link DirectiveMetadata} directives only
+   * - `bindingPropagation: BindingPropagation` to control change detection in a more granular way.
+   * 
+   * ## Example
+   * 
+   * The following example demonstrates how dependency injection resolves constructor arguments in
+   * practice.
+   * 
+   * 
+   * Assume this HTML template:
+   * 
+   * ```
+   * <div dependency="1">
+   *   <div dependency="2">
+   *     <div dependency="3" my-directive>
+   *       <div dependency="4">
+   *         <div dependency="5"></div>
+   *       </div>
+   *       <div dependency="6"></div>
+   *     </div>
+   *   </div>
+   * </div>
+   * ```
+   * 
+   * With the following `dependency` decorator and `SomeService` injectable class.
+   * 
+   * ```
+   * @Injectable()
+   * class SomeService {
+   * }
+   * 
+   * @Directive({
+   *   selector: '[dependency]',
+   *   inputs: [
+   *     'id: dependency'
+   *   ]
+   * })
+   * class Dependency {
+   *   id:string;
+   * }
+   * ```
+   * 
+   * Let's step through the different ways in which `MyDirective` could be declared...
+   * 
+   * 
+   * ### No injection
+   * 
+   * Here the constructor is declared with no arguments, therefore nothing is injected into
+   * `MyDirective`.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor() {
    *   }
    * }
    * ```
    * 
+   * This directive would be instantiated with no dependencies.
+   * 
+   * 
+   * ### Component-level injection
+   * 
+   * Directives can inject any injectable instance from the closest component injector or any of its
+   * parents.
+   * 
+   * Here, the constructor declares a parameter, `someService`, and injects the `SomeService` type
+   * from the parent
+   * component's injector.
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(someService: SomeService) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a dependency on `SomeService`.
+   * 
+   * 
+   * ### Injecting a directive from the current element
+   * 
+   * Directives can inject other directives declared on the current element.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(dependency: Dependency) {
+   *     expect(dependency.id).toEqual(3);
+   *   }
+   * }
+   * ```
+   * This directive would be instantiated with `Dependency` declared at the same element, in this case
+   * `dependency="3"`.
+   * 
+   * ### Injecting a directive from any ancestor elements
+   * 
+   * Directives can inject other directives declared on any ancestor element (in the current Shadow
+   * DOM), i.e. on the current element, the
+   * parent element, or its parents.
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Host() dependency: Dependency) {
+   *     expect(dependency.id).toEqual(2);
+   *   }
+   * }
+   * ```
+   * 
+   * `@Host` checks the current element, the parent, as well as its parents recursively. If
+   * `dependency="2"` didn't
+   * exist on the direct parent, this injection would
+   * have returned
+   * `dependency="1"`.
+   * 
+   * 
+   * ### Injecting a live collection of direct child directives
+   * 
+   * 
+   * A directive can also query for other child directives. Since parent directives are instantiated
+   * before child directives, a directive can't simply inject the list of child directives. Instead,
+   * the directive injects a {@link QueryList}, which updates its contents as children are added,
+   * removed, or moved by a directive that uses a {@link ViewContainerRef} such as a `ng-for`, an
+   * `ng-if`, or an `ng-switch`.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Query(Dependency) dependencies:QueryList<Dependency>) {
+>>>>>>> upstream/master
+   *   }
+   * }
+   * ```
+   * 
+<<<<<<< HEAD
    * Supports the same querying parameters as {@link QueryMetadata}, except
    * `descendants`. This always queries the whole view.
    * 
@@ -9493,12 +13651,203 @@ declare module ngWorker {
     
     constructor({selector, inputs, outputs, properties, events, host, exportAs, moduleId, bindings,
                    viewBindings, changeDetection, queries}?: {
+=======
+   * This directive would be instantiated with a {@link QueryList} which contains `Dependency` 4 and
+   * 6. Here, `Dependency` 5 would not be included, because it is not a direct child.
+   * 
+   * ### Injecting a live collection of descendant directives
+   * 
+   * By passing the descendant flag to `@Query` above, we can include the children of the child
+   * elements.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Query(Dependency, {descendants: true}) dependencies:QueryList<Dependency>) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a Query which would contain `Dependency` 4, 5 and 6.
+   * 
+   * ### Optional injection
+   * 
+   * The normal behavior of directives is to return an error when a specified dependency cannot be
+   * resolved. If you
+   * would like to inject `null` on unresolved dependency instead, you can annotate that dependency
+   * with `@Optional()`.
+   * This explicitly permits the author of a template to treat some of the surrounding directives as
+   * optional.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Optional() dependency:Dependency) {
+   *   }
+   * }
+   * ```
+   * 
+   * This directive would be instantiated with a `Dependency` directive found on the current element.
+   * If none can be
+   * found, the injector supplies `null` instead of throwing an error.
+   * 
+   * ## Example
+   * 
+   * Here we use a decorator directive to simply define basic tool-tip behavior.
+   * 
+   * ```
+   * @Directive({
+   *   selector: '[tooltip]',
+   *   inputs: [
+   *     'text: tooltip'
+   *   ],
+   *   host: {
+   *     '(mouseenter)': 'onMouseEnter()',
+   *     '(mouseleave)': 'onMouseLeave()'
+   *   }
+   * })
+   * class Tooltip{
+   *   text:string;
+   *   overlay:Overlay; // NOT YET IMPLEMENTED
+   *   overlayManager:OverlayManager; // NOT YET IMPLEMENTED
+   * 
+   *   constructor(overlayManager:OverlayManager) {
+   *     this.overlay = overlay;
+   *   }
+   * 
+   *   onMouseEnter() {
+   *     // exact signature to be determined
+   *     this.overlay = this.overlayManager.open(text, ...);
+   *   }
+   * 
+   *   onMouseLeave() {
+   *     this.overlay.close();
+   *     this.overlay = null;
+   *   }
+   * }
+   * ```
+   * In our HTML template, we can then add this behavior to a `<div>` or any other element with the
+   * `tooltip` selector,
+   * like so:
+   * 
+   * ```
+   * <div tooltip="some text here"></div>
+   * ```
+   * 
+   * Directives can also control the instantiation, destruction, and positioning of inline template
+   * elements:
+   * 
+   * A directive uses a {@link ViewContainerRef} to instantiate, insert, move, and destroy views at
+   * runtime.
+   * The {@link ViewContainerRef} is created as a result of `<template>` element, and represents a
+   * location in the current view
+   * where these actions are performed.
+   * 
+   * Views are always created as children of the current {@link ViewMetadata}, and as siblings of the
+   * `<template>` element. Thus a
+   * directive in a child view cannot inject the directive that created it.
+   * 
+   * Since directives that create views via ViewContainers are common in Angular, and using the full
+   * `<template>` element syntax is wordy, Angular
+   * also supports a shorthand notation: `<li *foo="bar">` and `<li template="foo: bar">` are
+   * equivalent.
+   * 
+   * Thus,
+   * 
+   * ```
+   * <ul>
+   *   <li *foo="bar" title="text"></li>
+   * </ul>
+   * ```
+   * 
+   * Expands in use to:
+   * 
+   * ```
+   * <ul>
+   *   <template [foo]="bar">
+   *     <li title="text"></li>
+   *   </template>
+   * </ul>
+   * ```
+   * 
+   * Notice that although the shorthand places `*foo="bar"` within the `<li>` element, the binding for
+   * the directive
+   * controller is correctly instantiated on the `<template>` element rather than the `<li>` element.
+   * 
+   * ## Lifecycle hooks
+   * 
+   * When the directive class implements some {@link angular2/lifecycle_hooks} the callbacks are
+   * called by the change detection at defined points in time during the life of the directive.
+   * 
+   * ## Example
+   * 
+   * Let's suppose we want to implement the `unless` behavior, to conditionally include a template.
+   * 
+   * Here is a simple directive that triggers on an `unless` selector:
+   * 
+   * ```
+   * @Directive({
+   *   selector: '[unless]',
+   *   inputs: ['unless']
+   * })
+   * export class Unless {
+   *   viewContainer: ViewContainerRef;
+   *   templateRef: TemplateRef;
+   *   prevCondition: boolean;
+   * 
+   *   constructor(viewContainer: ViewContainerRef, templateRef: TemplateRef) {
+   *     this.viewContainer = viewContainer;
+   *     this.templateRef = templateRef;
+   *     this.prevCondition = null;
+   *   }
+   * 
+   *   set unless(newCondition) {
+   *     if (newCondition && (isBlank(this.prevCondition) || !this.prevCondition)) {
+   *       this.prevCondition = true;
+   *       this.viewContainer.clear();
+   *     } else if (!newCondition && (isBlank(this.prevCondition) || this.prevCondition)) {
+   *       this.prevCondition = false;
+   *       this.viewContainer.create(this.templateRef);
+   *     }
+   *   }
+   * }
+   * ```
+   * 
+   * We can then use this `unless` selector in a template:
+   * ```
+   * <ul>
+   *   <li *unless="expr"></li>
+   * </ul>
+   * ```
+   * 
+   * Once the directive instantiates the child view, the shorthand notation for the template expands
+   * and the result is:
+   * 
+   * ```
+   * <ul>
+   *   <template [unless]="exp">
+   *     <li></li>
+   *   </template>
+   *   <li></li>
+   * </ul>
+   * ```
+   * 
+   * Note also that although the `<li></li>` template still exists inside the `<template></template>`,
+   * the instantiated
+   * view occurs on the second `<li></li>` which is a sibling to the `<template>` element.
+   */
+  class DirectiveMetadata extends InjectableMetadata {
+    
+    constructor({selector, inputs, outputs, properties, events, host, bindings, providers, exportAs,
+                   moduleId, queries}?: {
+>>>>>>> upstream/master
         selector?: string,
         inputs?: string[],
         outputs?: string[],
         properties?: string[],
         events?: string[],
         host?: {[key: string]: string},
+<<<<<<< HEAD
         bindings?: any[],
         exportAs?: string,
         moduleId?: string,
@@ -9520,6 +13869,257 @@ declare module ngWorker {
     
     /**
      * Defines the set of injectable objects that are visible to its view DOM children.
+=======
+        providers?: any[],
+        /** @deprecated */ bindings?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        queries?: {[key: string]: any}
+      });
+    
+    /**
+     * The CSS selector that triggers the instantiation of a directive.
+     * 
+     * Angular only allows directives to trigger on CSS selectors that do not cross element
+     * boundaries.
+     * 
+     * `selector` may be declared as one of the following:
+     * 
+     * - `element-name`: select by element name.
+     * - `.class`: select by class name.
+     * - `[attribute]`: select by attribute name.
+     * - `[attribute=value]`: select by attribute name and value.
+     * - `:not(sub_selector)`: select only if the element does not match the `sub_selector`.
+     * - `selector1, selector2`: select if either `selector1` or `selector2` matches.
+     * 
+     * 
+     * ## Example
+     * 
+     * Suppose we have a directive with an `input[type=text]` selector.
+     * 
+     * And the following HTML:
+     * 
+     * ```html
+     * <form>
+     *   <input type="text">
+     *   <input type="radio">
+     * <form>
+     * ```
+     * 
+     * The directive would only be instantiated on the `<input type="text">` element.
+     */
+    selector: string;
+    
+    /**
+     * Enumerates the set of data-bound input properties for a directive
+     * 
+     * Angular automatically updates input properties during change detection.
+     * 
+     * The `inputs` property defines a set of `directiveProperty` to `bindingProperty`
+     * configuration:
+     * 
+     * - `directiveProperty` specifies the component property where the value is written.
+     * - `bindingProperty` specifies the DOM property where the value is read from.
+     * 
+     * When `bindingProperty` is not provided, it is assumed to be equal to `directiveProperty`.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/ivhfXY?p=preview))
+     * 
+     * The following example creates a component with two data-bound properties.
+     * 
+     * ```typescript
+     * @Component({
+     *   selector: 'bank-account',
+     *   inputs: ['bankName', 'id: account-id'],
+     *   template: `
+     *     Bank Name: {{bankName}}
+     *     Account Id: {{id}}
+     *   `
+     * })
+     * class BankAccount {
+     *   bankName: string;
+     *   id: string;
+     * 
+     *   // this property is not bound, and won't be automatically updated by Angular
+     *   normalizedBankName: string;
+     * }
+     * 
+     * @Component({
+     *   selector: 'app',
+     *   template: `
+     *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
+     *   `,
+     *   directives: [BankAccount]
+     * })
+     * class App {}
+     * 
+     * bootstrap(App);
+     * ```
+     */
+    inputs: string[];
+    
+    properties: string[];
+    
+    /**
+     * Enumerates the set of event-bound output properties.
+     * 
+     * When an output property emits an event, an event handler attached to that event
+     * the template is invoked.
+     * 
+     * The `outputs` property defines a set of `directiveProperty` to `bindingProperty`
+     * configuration:
+     * 
+     * - `directiveProperty` specifies the component property that emits events.
+     * - `bindingProperty` specifies the DOM property the event handler is attached to.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/d5CNq7?p=preview))
+     * 
+     * ```typescript
+     * @Directive({
+     *   selector: 'interval-dir',
+     *   outputs: ['everySecond', 'five5Secs: everyFiveSeconds']
+     * })
+     * class IntervalDir {
+     *   everySecond = new EventEmitter();
+     *   five5Secs = new EventEmitter();
+     * 
+     *   constructor() {
+     *     setInterval(() => this.everySecond.next("event"), 1000);
+     *     setInterval(() => this.five5Secs.next("event"), 5000);
+     *   }
+     * }
+     * 
+     * @Component({
+     *   selector: 'app',
+     *   template: `
+     *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
+     *     </interval-dir>
+     *   `,
+     *   directives: [IntervalDir]
+     * })
+     * class App {
+     *   everySecond() { console.log('second'); }
+     *   everyFiveSeconds() { console.log('five seconds'); }
+     * }
+     * bootstrap(App);
+     * ```
+     */
+    outputs: string[];
+    
+    events: string[];
+    
+    /**
+     * Specify the events, actions, properties and attributes related to the host element.
+     * 
+     * ## Host Listeners
+     * 
+     * Specifies which DOM events a directive listens to via a set of `(event)` to `method`
+     * key-value pairs:
+     * 
+     * - `event1`: the DOM event that the directive listens to.
+     * - `statement`: the statement to execute when the event occurs.
+     * If the evaluation of the statement returns `false`, then `preventDefault`is applied on the DOM
+     * event.
+     * 
+     * To listen to global events, a target must be added to the event name.
+     * The target can be `window`, `document` or `body`.
+     * 
+     * When writing a directive event binding, you can also refer to the $event local variable.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/DlA5KU?p=preview))
+     * 
+     * The following example declares a directive that attaches a click listener to the button and
+     * counts clicks.
+     * 
+     * ```typescript
+     * @Directive({
+     *   selector: 'button[counting]',
+     *   host: {
+     *     '(click)': 'onClick($event.target)'
+     *   }
+     * })
+     * class CountClicks {
+     *   numberOfClicks = 0;
+     * 
+     *   onClick(btn) {
+     *     console.log("button", btn, "number of clicks:", this.numberOfClicks++);
+     *   }
+     * }
+     * 
+     * @Component({
+     *   selector: 'app',
+     *   template: `<button counting>Increment</button>`,
+     *   directives: [CountClicks]
+     * })
+     * class App {}
+     * 
+     * bootstrap(App);
+     * ```
+     * 
+     * ## Host Property Bindings
+     * 
+     * Specifies which DOM properties a directive updates.
+     * 
+     * Angular automatically checks host property bindings during change detection.
+     * If a binding changes, it will update the host element of the directive.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/gNg0ED?p=preview))
+     * 
+     * The following example creates a directive that sets the `valid` and `invalid` classes
+     * on the DOM element that has ng-model directive on it.
+     * 
+     * ```typescript
+     * @Directive({
+     *   selector: '[ng-model]',
+     *   host: {
+     *     '[class.valid]': 'valid',
+     *     '[class.invalid]': 'invalid'
+     *   }
+     * })
+     * class NgModelStatus {
+     *   constructor(public control:NgModel) {}
+     *   get valid { return this.control.valid; }
+     *   get invalid { return this.control.invalid; }
+     * }
+     * 
+     * @Component({
+     *   selector: 'app',
+     *   template: `<input [(ng-model)]="prop">`,
+     *   directives: [FORM_DIRECTIVES, NgModelStatus]
+     * })
+     * class App {
+     *   prop;
+     * }
+     * 
+     * bootstrap(App);
+     * ```
+     * 
+     * ## Attributes
+     * 
+     * Specifies static attributes that should be propagated to a host element.
+     * 
+     * ### Example
+     * 
+     * In this example using `my-button` directive (ex.: `<div my-button></div>`) on a host element
+     * (here: `<div>` ) will ensure that this element will get the "button" role.
+     * 
+     * ```typescript
+     * @Directive({
+     *   selector: '[my-button]',
+     *   host: {
+     *     'role': 'button'
+     *   }
+     * })
+     * class MyButton {
+     * }
+     * ```
+     */
+    host: {[key: string]: string};
+    
+    /**
+     * Defines the set of injectable objects that are visible to a Directive and its light DOM
+     * children.
+>>>>>>> upstream/master
      * 
      * ## Simple Example
      * 
@@ -9533,15 +14133,25 @@ declare module ngWorker {
      * }
      * 
      * @Directive({
+<<<<<<< HEAD
      *   selector: 'needs-greeter'
      * })
      * class NeedsGreeter {
+=======
+     *   selector: 'greet',
+     *   bindings: [
+     *     Greeter
+     *   ]
+     * })
+     * class HelloWorld {
+>>>>>>> upstream/master
      *   greeter:Greeter;
      * 
      *   constructor(greeter:Greeter) {
      *     this.greeter = greeter;
      *   }
      * }
+<<<<<<< HEAD
      * 
      * @Component({
      *   selector: 'greet',
@@ -9554,10 +14164,41 @@ declare module ngWorker {
      *   directives: [NeedsGreeter]
      * })
      * class HelloWorld {
+=======
+     * ```
+     */
+    providers: any[];
+    
+    /**
+     * @deprecated
+     */
+    bindings: any[];
+    
+    /**
+     * Defines the name that can be used in the template to assign this directive to a variable.
+     * 
+     * ## Simple Example
+     * 
+     * ```
+     * @Directive({
+     *   selector: 'child-dir',
+     *   exportAs: 'child'
+     * })
+     * class ChildDir {
+     * }
+     * 
+     * @Component({
+     *   selector: 'main',
+     *   template: `<child-dir #c="child"></child-dir>`,
+     *   directives: [ChildDir]
+     * })
+     * class MainComponent {
+>>>>>>> upstream/master
      * }
      * 
      * ```
      */
+<<<<<<< HEAD
     viewBindings: any[];
     
   }
@@ -10345,6 +14986,87 @@ declare module ngWorker {
     name: string;
     
     pure: boolean;
+=======
+    exportAs: string;
+    
+    /**
+     * The module id of the module that contains the directive.
+     * Needed to be able to resolve relative urls for templates and styles.
+     * In Dart, this can be determined automatically and does not need to be set.
+     * In CommonJS, this can always be set to `module.id`.
+     * 
+     * ## Simple Example
+     * 
+     * ```
+     * @Directive({
+     *   selector: 'someDir',
+     *   moduleId: module.id
+     * })
+     * class SomeDir {
+     * }
+     * 
+     * ```
+     */
+    moduleId: string;
+    
+    /**
+     * Configures the queries that will be injected into the directive.
+     * 
+     * Content queries are set before the `afterContentInit` callback is called.
+     * View queries are set before the `afterViewInit` callback is called.
+     * 
+     * ### Example
+     * 
+     * ```
+     * @Component({
+     *   selector: 'someDir',
+     *   queries: {
+     *     contentChildren: new ContentChildren(ChildDirective),
+     *     viewChildren: new ViewChildren(ChildDirective)
+     *   },
+     *   template: '<child-directive></child-directive>',
+     *   directives: [ChildDirective]
+     * })
+     * class SomeDir {
+     *   contentChildren: QueryList<ChildDirective>,
+     *   viewChildren: QueryList<ChildDirective>
+     * 
+     *   afterContentInit() {
+     *     // contentChildren is set
+     *   }
+     * 
+     *   afterViewInit() {
+     *     // viewChildren is set
+     *   }
+     * }
+     * ```
+     */
+    queries: {[key: string]: any};
+    
+  }
+
+    
+  /**
+   * Declare reusable pipe function.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Pipe({
+   *   name: 'lowercase'
+   * })
+   * class Lowercase {
+   *   transform(v, args) { return v.toLowerCase(); }
+   * }
+   * ```
+   */
+  class PipeMetadata extends InjectableMetadata {
+    
+    constructor({name, pure}: {name: string, pure: boolean});
+    
+    name: string;
+    
+    pure: boolean;
     
   }
 
@@ -10363,8 +15085,8 @@ declare module ngWorker {
    * The following example creates a component with two input properties.
    * 
    * ```typescript
-   * @Component({selector: 'bank-account'})
-   * @View({
+   * @Component({
+   *   selector: 'bank-account',
    *   template: `
    *     Bank Name: {{bankName}}
    *     Account Id: {{id}}
@@ -10378,8 +15100,8 @@ declare module ngWorker {
    *   normalizedBankName: string;
    * }
    * 
-   * @Component({selector: 'app'})
-   * @View({
+   * @Component({
+   *   selector: 'app',
    *   template: `
    *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
    *   `,
@@ -10428,8 +15150,8 @@ declare module ngWorker {
    *   }
    * }
    * 
-   * @Component({selector: 'app'})
-   * @View({
+   * @Component({
+   *   selector: 'app',
    *   template: `
    *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
    *     </interval-dir>
@@ -10475,8 +15197,8 @@ declare module ngWorker {
    *   @HostBinding('[class.invalid]') get invalid { return this.control.invalid; }
    * }
    * 
-   * @Component({selector: 'app'})
-   * @View({
+   * @Component({
+   *   selector: 'app',
    *   template: `<input [(ng-model)]="prop">`,
    *   directives: [FORM_DIRECTIVES, NgModelStatus]
    * })
@@ -10520,8 +15242,8 @@ declare module ngWorker {
    *   }
    * }
    * 
-   * @Component({selector: 'app'})
-   * @View({
+   * @Component({
+   *   selector: 'app',
    *   template: `<button counting>Increment</button>`,
    *   directives: [CountClicks]
    * })
@@ -10557,9 +15279,7 @@ declare module ngWorker {
    * 
    * ```
    * @Component({
-   *   selector: 'greet'
-   * })
-   * @View({
+   *   selector: 'greet',
    *   template: 'Hello {{name}}!',
    *   directives: [GreetUser, Bold]
    * })
@@ -10621,9 +15341,7 @@ declare module ngWorker {
      * 
      * ```javascript
      * @Component({
-     *     selector: 'my-component'
-     *   })
-     * @View({
+     *   selector: 'my-component',
      *   directives: [NgFor]
      *   template: '
      *   <ul>
@@ -10788,6 +15506,1000 @@ declare module ngWorker {
         events?: string[],
         host?: {[key: string]: string},
         bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        queries?: {[key: string]: any}
+      }): DirectiveMetadata;
+    
+    (obj: {
+        selector?: string,
+        inputs?: string[],
+        outputs?: string[],
+        properties?: string[],
+        events?: string[],
+        host?: {[key: string]: string},
+        bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        queries?: {[key: string]: any}
+      }): DirectiveDecorator;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Declares a data-bound input property.
+   * 
+   * Angular automatically updates data-bound properties during change detection.
+   * 
+   * `InputMetadata` takes an optional parameter that specifies the name
+   * used when instantiating a component in the template. When not provided,
+   * the name of the decorated property is used.
+   * 
+   * ### Example
+   * 
+   * The following example creates a component with two input properties.
+   * 
+   * ```typescript
+   * @Component({selector: 'bank-account'})
+   * @View({
+   *   template: `
+   *     Bank Name: {{bankName}}
+   *     Account Id: {{id}}
+   *   `
+   * })
+   * class BankAccount {
+   *   @Input() bankName: string;
+   *   @Input('account-id') id: string;
+   * 
+   *   // this property is not bound, and won't be automatically updated by Angular
+   *   normalizedBankName: string;
+   * }
+   * 
+   * @Component({selector: 'app'})
+   * @View({
+   *   template: `
+   *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
+   *   `,
+   *   directives: [BankAccount]
+   * })
+   * class App {}
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  class InputMetadata {
+    
+    constructor(bindingPropertyName?: string);
+    
+    /**
+     * Name used when instantiating a component in the temlate.
+     */
+    bindingPropertyName: string;
+=======
+   * {@link ComponentMetadata} factory for creating annotations, decorators or DSL.
+   * 
+   * ## Example as TypeScript Decorator
+   * 
+   * ```
+   * import {Component} from "angular2/angular2";
+   * 
+   * @Component({...})
+   * class MyComponent {
+   *   constructor() {
+   *     ...
+   *   }
+   * }
+   * ```
+   * 
+   * ## Example as ES5 DSL
+   * 
+   * ```
+   * var MyComponent = ng
+   *   .Component({...})
+   *   .Class({
+   *     constructor: function() {
+   *       ...
+   *     }
+   *   })
+   * ```
+   * 
+   * ## Example as ES5 annotation
+   * 
+   * ```
+   * var MyComponent = function() {
+   *   ...
+   * };
+   * 
+   * MyComponent.annotations = [
+   *   new ng.Component({...})
+   * ]
+   * ```
+   */
+  interface ComponentFactory {
+    
+    new(obj: {
+        selector?: string,
+        inputs?: string[],
+        outputs?: string[],
+        properties?: string[],
+        events?: string[],
+        host?: {[key: string]: string},
+        /* @deprecated */
+        bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        queries?: {[key: string]: any},
+        /* @deprecated */
+        viewBindings?: any[],
+        viewProviders?: any[],
+        changeDetection?: ChangeDetectionStrategy,
+        templateUrl?: string,
+        template?: string,
+        styleUrls?: string[],
+        styles?: string[],
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation
+      }): ComponentMetadata;
+    
+    (obj: {
+        selector?: string,
+        inputs?: string[],
+        outputs?: string[],
+        properties?: string[],
+        events?: string[],
+        host?: {[key: string]: string},
+        /* @deprecated */
+        bindings?: any[],
+        providers?: any[],
+        exportAs?: string,
+        moduleId?: string,
+        queries?: {[key: string]: any},
+        viewBindings?: any[],
+        viewProviders?: any[],
+        changeDetection?: ChangeDetectionStrategy,
+        templateUrl?: string,
+        template?: string,
+        styleUrls?: string[],
+        styles?: string[],
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation
+      }): ComponentDecorator;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Declares an event-bound output property.
+   * 
+   * When an output property emits an event, an event handler attached to that event
+   * the template is invoked.
+   * 
+   * `OutputMetadata` takes an optional parameter that specifies the name
+   * used when instantiating a component in the template. When not provided,
+   * the name of the decorated property is used.
+   * 
+   * ### Example
+   * 
+   * ```typescript
+   * @Directive({
+   *   selector: 'interval-dir',
+   * })
+   * class IntervalDir {
+   *   @Output() everySecond = new EventEmitter();
+   *   @Output('everyFiveSeconds') five5Secs = new EventEmitter();
+   * 
+   *   constructor() {
+   *     setInterval(() => this.everySecond.next("event"), 1000);
+   *     setInterval(() => this.five5Secs.next("event"), 5000);
+   *   }
+   * }
+   * 
+   * @Component({selector: 'app'})
+   * @View({
+   *   template: `
+   *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
+   *     </interval-dir>
+   *   `,
+   *   directives: [IntervalDir]
+   * })
+   * class App {
+   *   everySecond() { console.log('second'); }
+   *   everyFiveSeconds() { console.log('five seconds'); }
+   * }
+   * bootstrap(App);
+   * ```
+   */
+  class OutputMetadata {
+    
+    constructor(bindingPropertyName?: string);
+    
+    bindingPropertyName: string;
+=======
+   * {@link ViewMetadata} factory for creating annotations, decorators or DSL.
+   * 
+   * ## Example as TypeScript Decorator
+   * 
+   * ```
+   * import {Component, View} from "angular2/angular2";
+   * 
+   * @Component({...})
+   * @View({...})
+   * class MyComponent {
+   *   constructor() {
+   *     ...
+   *   }
+   * }
+   * ```
+   * 
+   * ## Example as ES5 DSL
+   * 
+   * ```
+   * var MyComponent = ng
+   *   .Component({...})
+   *   .View({...})
+   *   .Class({
+   *     constructor: function() {
+   *       ...
+   *     }
+   *   })
+   * ```
+   * 
+   * ## Example as ES5 annotation
+   * 
+   * ```
+   * var MyComponent = function() {
+   *   ...
+   * };
+   * 
+   * MyComponent.annotations = [
+   *   new ng.Component({...}),
+   *   new ng.View({...})
+   * ]
+   * ```
+   */
+  interface ViewFactory {
+    
+    new(obj: {
+        templateUrl?: string,
+        template?: string,
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation,
+        styles?: string[],
+        styleUrls?: string[],
+      }): ViewMetadata;
+    
+    (obj: {
+        templateUrl?: string,
+        template?: string,
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation,
+        styles?: string[],
+        styleUrls?: string[],
+      }): ViewDecorator;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Declares a host property binding.
+   * 
+   * Angular automatically checks host property bindings during change detection.
+   * If a binding changes, it will update the host element of the directive.
+   * 
+   * `HostBindingMetadata` takes an optional parameter that specifies the property
+   * name of the host element that will be updated. When not provided,
+   * the class property name is used.
+   * 
+   * ### Example
+   * 
+   * The following example creates a directive that sets the `valid` and `invalid` classes
+   * on the DOM element that has ng-model directive on it.
+   * 
+   * ```typescript
+   * @Directive({selector: '[ng-model]'})
+   * class NgModelStatus {
+   *   constructor(public control:NgModel) {}
+   *   @HostBinding('[class.valid]') get valid { return this.control.valid; }
+   *   @HostBinding('[class.invalid]') get invalid { return this.control.invalid; }
+   * }
+   * 
+   * @Component({selector: 'app'})
+   * @View({
+   *   template: `<input [(ng-model)]="prop">`,
+   *   directives: [FORM_DIRECTIVES, NgModelStatus]
+   * })
+   * class App {
+   *   prop;
+   * }
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  class HostBindingMetadata {
+    
+    constructor(hostPropertyName?: string);
+    
+    hostPropertyName: string;
+=======
+   * {@link AttributeMetadata} factory for creating annotations, decorators or DSL.
+   * 
+   * ## Example as TypeScript Decorator
+   * 
+   * ```
+   * import {Attribute, Component} from "angular2/angular2";
+   * 
+   * @Component({...})
+   * class MyComponent {
+   *   constructor(@Attribute('title') title: string) {
+   *     ...
+   *   }
+   * }
+   * ```
+   * 
+   * ## Example as ES5 DSL
+   * 
+   * ```
+   * var MyComponent = ng
+   *   .Component({...})
+   *   .Class({
+   *     constructor: [new ng.Attribute('title'), function(title) {
+   *       ...
+   *     }]
+   *   })
+   * ```
+   * 
+   * ## Example as ES5 annotation
+   * 
+   * ```
+   * var MyComponent = function(title) {
+   *   ...
+   * };
+   * 
+   * MyComponent.annotations = [
+   *   new ng.Component({...})
+   * ]
+   * MyComponent.parameters = [
+   *   [new ng.Attribute('title')]
+   * ]
+   * ```
+   */
+  interface AttributeFactory {
+    
+    new(name: string): AttributeMetadata;
+    
+    (name: string): TypeDecorator;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Declares a host listener.
+   * 
+   * Angular will invoke the decorated method when the host element emits the specified event.
+   * 
+   * If the decorated method returns `false`, then `preventDefault` is applied on the DOM
+   * event.
+   * 
+   * ### Example
+   * 
+   * The following example declares a directive that attaches a click listener to the button and
+   * counts clicks.
+   * 
+   * ```typescript
+   * @Directive({selector: 'button[counting]'})
+   * class CountClicks {
+   *   numberOfClicks = 0;
+   * 
+   *   @HostListener('click', ['$event.target'])
+   *   onClick(btn) {
+   *     console.log("button", btn, "number of clicks:", this.numberOfClicks++);
+   *   }
+   * }
+   * 
+   * @Component({selector: 'app'})
+   * @View({
+   *   template: `<button counting>Increment</button>`,
+   *   directives: [CountClicks]
+   * })
+   * class App {}
+   * 
+   * bootstrap(App);
+   * ```
+   */
+  class HostListenerMetadata {
+    
+    constructor(eventName: string, args?: string[]);
+    
+    eventName: string;
+    
+    args: string[];
+=======
+   * {@link QueryMetadata} factory for creating annotations, decorators or DSL.
+   * 
+   * ### Example as TypeScript Decorator
+   * 
+   * ```
+   * import {Query, QueryList, Component} from "angular2/angular2";
+   * 
+   * @Component({...})
+   * class MyComponent {
+   *   constructor(@Query(SomeType) queryList: QueryList<SomeType>) {
+   *     ...
+   *   }
+   * }
+   * ```
+   * 
+   * ### Example as ES5 DSL
+   * 
+   * ```
+   * var MyComponent = ng
+   *   .Component({...})
+   *   .Class({
+   *     constructor: [new ng.Query(SomeType), function(queryList) {
+   *       ...
+   *     }]
+   *   })
+   * ```
+   * 
+   * ### Example as ES5 annotation
+   * 
+   * ```
+   * var MyComponent = function(queryList) {
+   *   ...
+   * };
+   * 
+   * MyComponent.annotations = [
+   *   new ng.Component({...})
+   * ]
+   * MyComponent.parameters = [
+   *   [new ng.Query(SomeType)]
+   * ]
+   * ```
+   */
+  interface QueryFactory {
+    
+    new(selector: Type | string, {descendants}?: {descendants?: boolean}): QueryMetadata;
+    
+    (selector: Type | string, {descendants}?: {descendants?: boolean}): ParameterDecorator;
+    
+  }
+
+    
+  interface ContentChildrenFactory {
+    
+    new(selector: Type | string, {descendants}?: {descendants?: boolean}): ContentChildrenMetadata;
+    
+    (selector: Type | string, {descendants}?: {descendants?: boolean}): any;
+    
+  }
+
+    
+  interface ContentChildFactory {
+    
+    new(selector: Type | string): ContentChildFactory;
+    
+    (selector: Type | string): any;
+    
+  }
+
+    
+  interface ViewChildrenFactory {
+    
+    new(selector: Type | string): ViewChildrenMetadata;
+    
+    (selector: Type | string): any;
+    
+  }
+
+    
+  interface ViewChildFactory {
+    
+    new(selector: Type | string): ViewChildFactory;
+    
+    (selector: Type | string): any;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Metadata properties available for configuring Views.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@View` annotation specifies the HTML template to use, and lists the directives that are active
+   * within the template.
+   * 
+   * When a component is instantiated, the template is loaded into the component's shadow root, and
+   * the expressions and statements in the template are evaluated against the component.
+   * 
+   * For details on the `@Component` annotation, see {@link ComponentMetadata}.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet'
+   * })
+   * @View({
+   *   template: 'Hello {{name}}!',
+   *   directives: [GreetUser, Bold]
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+   */
+  class ViewMetadata {
+    
+    constructor({templateUrl, template, directives, pipes, encapsulation, styles, styleUrls}?: {
+        templateUrl?: string,
+        template?: string,
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        encapsulation?: ViewEncapsulation,
+        styles?: string[],
+        styleUrls?: string[],
+      });
+    
+    /**
+     * Specifies a template URL for an Angular component.
+     * 
+     * NOTE: Only one of `templateUrl` or `template` can be defined per View.
+     * 
+     * <!-- TODO: what's the url relative to? -->
+     */
+    templateUrl: string;
+    
+    /**
+     * Specifies an inline template for an Angular component.
+     * 
+     * NOTE: Only one of `templateUrl` or `template` can be defined per View.
+     */
+    template: string;
+    
+    /**
+     * Specifies stylesheet URLs for an Angular component.
+     * 
+     * <!-- TODO: what's the url relative to? -->
+     */
+    styleUrls: string[];
+    
+    /**
+     * Specifies an inline stylesheet for an Angular component.
+     */
+    styles: string[];
+    
+    /**
+     * Specifies a list of directives that can be used within a template.
+     * 
+     * Directives must be listed explicitly to provide proper component encapsulation.
+     * 
+     * ## Example
+     * 
+     * ```javascript
+     * @Component({
+     *     selector: 'my-component'
+     *   })
+     * @View({
+     *   directives: [NgFor]
+     *   template: '
+     *   <ul>
+     *     <li *ng-for="#item of items">{{item}}</li>
+     *   </ul>'
+     * })
+     * class MyComponent {
+     * }
+     * ```
+     */
+    directives: Array<Type | any[]>;
+    
+    pipes: Array<Type | any[]>;
+    
+    /**
+     * Specify how the template and the styles should be encapsulated.
+     * The default is {@link ViewEncapsulation#Emulated `ViewEncapsulation.Emulated`} if the view
+     * has styles,
+     * otherwise {@link ViewEncapsulation#None `ViewEncapsulation.None`}.
+     */
+    encapsulation: ViewEncapsulation;
+=======
+   * {@link PipeMetadata} factory for creating decorators.
+   * 
+   * ## Example as TypeScript Decorator
+   * 
+   * ```
+   * import {Pipe} from "angular2/angular2";
+   * 
+   * @Pipe({...})
+   * class MyPipe {
+   *   constructor() {
+   *     ...
+   *   }
+   * 
+   *   transform(v, args) {}
+   * }
+   * ```
+   */
+  interface PipeFactory {
+    
+    new(obj: {name: string, pure?: boolean}): any;
+    
+    (obj: {name: string, pure?: boolean}): any;
+    
+  }
+
+    
+  /**
+   * {@link InputMetadata} factory for creating decorators.
+   * 
+   * See {@link InputMetadata}.
+   */
+  interface InputFactory {
+    
+    new(bindingPropertyName?: string): any;
+    
+    (bindingPropertyName?: string): any;
+    
+  }
+
+    
+  /**
+   * {@link OutputMetadata} factory for creating decorators.
+   * 
+   * See {@link OutputMetadata}.
+   */
+  interface OutputFactory {
+    
+    new(bindingPropertyName?: string): any;
+    
+    (bindingPropertyName?: string): any;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Defines template and style encapsulation options available for Component's {@link View}.
+   * 
+   * See {@link ViewMetadata#encapsulation}.
+   */
+  enum ViewEncapsulation {
+    
+    /**
+     * Emulate `Native` scoping of styles by adding an attribute containing surrogate id to the Host
+     * Element and pre-processing the style rules provided via
+     * {@link ViewMetadata#styles} or {@link ViewMetadata#stylesUrls}, and adding the new Host Element
+     * attribute to all selectors.
+     * 
+     * This is the default option.
+     */
+    Emulated,
+    
+    /**
+     * Use the native encapsulation mechanism of the renderer.
+     * 
+     * For the DOM this means using [Shadow DOM](https://w3c.github.io/webcomponents/spec/shadow/) and
+     * creating a ShadowRoot for Component's Host Element.
+     */
+    Native,
+    
+    /**
+     * Don't provide any template or style encapsulation.
+     */
+    None
+  }
+  
+
+    
+  /**
+   * Interface for the {@link DirectiveMetadata} decorator function.
+   * 
+   * See {@link DirectiveFactory}.
+   */
+  interface DirectiveDecorator extends TypeDecorator {
+=======
+   * {@link HostBindingMetadata} factory function.
+   */
+  interface HostBindingFactory {
+    
+    new(hostPropertyName?: string): any;
+    
+    (hostPropertyName?: string): any;
+    
+  }
+
+    
+  /**
+   * {@link HostListenerMetadata} factory function.
+   */
+  interface HostListenerFactory {
+    
+    new(eventName: string, args?: string[]): any;
+    
+    (eventName: string, args?: string[]): any;
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
+   * Interface for the {@link ComponentMetadata} decorator function.
+   * 
+   * See {@link ComponentFactory}.
+   */
+  interface ComponentDecorator extends TypeDecorator {
+    
+    /**
+     * Chain {@link ViewMetadata} annotation.
+     */
+    View(obj: {
+        templateUrl?: string,
+        template?: string,
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        renderer?: string,
+        styles?: string[],
+        styleUrls?: string[],
+      }): ViewDecorator;
+    
+  }
+
+    
+  /**
+   * Interface for the {@link ViewMetadata} decorator function.
+   * 
+   * See {@link ViewFactory}.
+   */
+  interface ViewDecorator extends TypeDecorator {
+    
+    /**
+     * Chain {@link ViewMetadata} annotation.
+     */
+    View(obj: {
+        templateUrl?: string,
+        template?: string,
+        directives?: Array<Type | any[]>,
+        pipes?: Array<Type | any[]>,
+        renderer?: string,
+        styles?: string[],
+        styleUrls?: string[],
+      }): ViewDecorator;
+    
+  }
+
+    
+  /**
+   * {@link DirectiveMetadata} factory for creating annotations, decorators or DSL.
+   * 
+   * ## Example as TypeScript Decorator
+   * 
+   * ```
+   * import {Directive} from "angular2/angular2";
+   * 
+   * @Directive({...})
+   * class MyDirective {
+   *   constructor() {
+   *     ...
+=======
+   * Declare reusable UI building blocks for an application.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@Component`
+   * annotation specifies when a component is instantiated, and which properties and hostListeners it
+   * binds to.
+   * 
+   * When a component is instantiated, Angular
+   * - creates a shadow DOM for the component.
+   * - loads the selected template into the shadow DOM.
+   * - creates all the injectable objects configured with `providers` and `viewProviders`.
+   * 
+   * All template expressions and statements are then evaluated against the component instance.
+   * 
+   * For details on the `@View` annotation, see {@link ViewMetadata}.
+   * 
+   * ## Lifecycle hooks
+   * 
+   * When the component class implements some {@link angular2/lifecycle_hooks} the callbacks are
+   * called by the change detection at defined points in time during the life of the component.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!'
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+   */
+  var Component: ComponentFactory;
+  
+
+    
+  /**
+   * Directives allow you to attach behavior to elements in the DOM.
+   * 
+   * {@link DirectiveMetadata}s with an embedded view are called {@link ComponentMetadata}s.
+   * 
+   * A directive consists of a single directive annotation and a controller class. When the
+   * directive's `selector` matches
+   * elements in the DOM, the following steps occur:
+   * 
+   * 1. For each directive, the `ElementInjector` attempts to resolve the directive's constructor
+   * arguments.
+   * 2. Angular instantiates directives for each matched element using `ElementInjector` in a
+   * depth-first order,
+   *    as declared in the HTML.
+   * 
+   * ## Understanding How Injection Works
+   * 
+   * There are three stages of injection resolution.
+   * - *Pre-existing Injectors*:
+   *   - The terminal {@link Injector} cannot resolve dependencies. It either throws an error or, if
+   * the dependency was
+   *     specified as `@Optional`, returns `null`.
+   *   - The platform injector resolves browser singleton resources, such as: cookies, title,
+   * location, and others.
+   * - *Component Injectors*: Each component instance has its own {@link Injector}, and they follow
+   * the same parent-child hierarchy
+   *     as the component instances in the DOM.
+   * - *Element Injectors*: Each component instance has a Shadow DOM. Within the Shadow DOM each
+   * element has an `ElementInjector`
+   *     which follow the same parent-child hierarchy as the DOM elements themselves.
+   * 
+   * When a template is instantiated, it also must instantiate the corresponding directives in a
+   * depth-first order. The
+   * current `ElementInjector` resolves the constructor dependencies for each directive.
+   * 
+   * Angular then resolves dependencies as follows, according to the order in which they appear in the
+   * {@link ViewMetadata}:
+   * 
+   * 1. Dependencies on the current element
+   * 2. Dependencies on element injectors and their parents until it encounters a Shadow DOM boundary
+   * 3. Dependencies on component injectors and their parents until it encounters the root component
+   * 4. Dependencies on pre-existing injectors
+   * 
+   * 
+   * The `ElementInjector` can inject other directives, element-specific special objects, or it can
+   * delegate to the parent
+   * injector.
+   * 
+   * To inject other directives, declare the constructor parameter as:
+   * - `directive:DirectiveType`: a directive on the current element only
+   * - `@Host() directive:DirectiveType`: any directive that matches the type between the current
+   * element and the
+   *    Shadow DOM root.
+   * - `@Query(DirectiveType) query:QueryList<DirectiveType>`: A live collection of direct child
+   * directives.
+   * - `@QueryDescendants(DirectiveType) query:QueryList<DirectiveType>`: A live collection of any
+   * child directives.
+   * 
+   * To inject element-specific special objects, declare the constructor parameter as:
+   * - `element: ElementRef` to obtain a reference to logical element in the view.
+   * - `viewContainer: ViewContainerRef` to control child template instantiation, for
+   * {@link DirectiveMetadata} directives only
+   * - `bindingPropagation: BindingPropagation` to control change detection in a more granular way.
+   * 
+   * ## Example
+   * 
+   * The following example demonstrates how dependency injection resolves constructor arguments in
+   * practice.
+   * 
+   * 
+   * Assume this HTML template:
+   * 
+   * ```
+   * <div dependency="1">
+   *   <div dependency="2">
+   *     <div dependency="3" my-directive>
+   *       <div dependency="4">
+   *         <div dependency="5"></div>
+   *       </div>
+   *       <div dependency="6"></div>
+   *     </div>
+   *   </div>
+   * </div>
+   * ```
+   * 
+   * With the following `dependency` decorator and `SomeService` injectable class.
+   * 
+   * ```
+   * @Injectable()
+   * class SomeService {
+   * }
+   * 
+   * @Directive({
+   *   selector: '[dependency]',
+   *   inputs: [
+   *     'id: dependency'
+   *   ]
+   * })
+   * class Dependency {
+   *   id:string;
+   * }
+   * ```
+   * 
+   * Let's step through the different ways in which `MyDirective` could be declared...
+   * 
+   * 
+   * ### No injection
+   * 
+   * Here the constructor is declared with no arguments, therefore nothing is injected into
+   * `MyDirective`.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor() {
+>>>>>>> upstream/master
+   *   }
+   * }
+   * ```
+   * 
+<<<<<<< HEAD
+   * ## Example as ES5 DSL
+   * 
+   * ```
+   * var MyDirective = ng
+   *   .Directive({...})
+   *   .Class({
+   *     constructor: function() {
+   *       ...
+   *     }
+   *   })
+   * ```
+   * 
+   * ## Example as ES5 annotation
+   * 
+   * ```
+   * var MyDirective = function() {
+   *   ...
+   * };
+   * 
+   * MyDirective.annotations = [
+   *   new ng.Directive({...})
+   * ]
+   * ```
+   */
+  interface DirectiveFactory {
+    
+    new(obj: {
+        selector?: string,
+        inputs?: string[],
+        outputs?: string[],
+        properties?: string[],
+        events?: string[],
+        host?: {[key: string]: string},
+        bindings?: any[],
         exportAs?: string,
         moduleId?: string,
         queries?: {[key: string]: any}
@@ -10900,10 +16612,84 @@ declare module ngWorker {
    * class MyComponent {
    *   constructor() {
    *     ...
+=======
+   * This directive would be instantiated with no dependencies.
+   * 
+   * 
+   * ### Component-level injection
+   * 
+   * Directives can inject any injectable instance from the closest component injector or any of its
+   * parents.
+   * 
+   * Here, the constructor declares a parameter, `someService`, and injects the `SomeService` type
+   * from the parent
+   * component's injector.
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(someService: SomeService) {
    *   }
    * }
    * ```
    * 
+   * This directive would be instantiated with a dependency on `SomeService`.
+   * 
+   * 
+   * ### Injecting a directive from the current element
+   * 
+   * Directives can inject other directives declared on the current element.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(dependency: Dependency) {
+   *     expect(dependency.id).toEqual(3);
+   *   }
+   * }
+   * ```
+   * This directive would be instantiated with `Dependency` declared at the same element, in this case
+   * `dependency="3"`.
+   * 
+   * ### Injecting a directive from any ancestor elements
+   * 
+   * Directives can inject other directives declared on any ancestor element (in the current Shadow
+   * DOM), i.e. on the current element, the
+   * parent element, or its parents.
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Host() dependency: Dependency) {
+   *     expect(dependency.id).toEqual(2);
+   *   }
+   * }
+   * ```
+   * 
+   * `@Host` checks the current element, the parent, as well as its parents recursively. If
+   * `dependency="2"` didn't
+   * exist on the direct parent, this injection would
+   * have returned
+   * `dependency="1"`.
+   * 
+   * 
+   * ### Injecting a live collection of direct child directives
+   * 
+   * 
+   * A directive can also query for other child directives. Since parent directives are instantiated
+   * before child directives, a directive can't simply inject the list of child directives. Instead,
+   * the directive injects a {@link QueryList}, which updates its contents as children are added,
+   * removed, or moved by a directive that uses a {@link ViewContainerRef} such as a `ng-for`, an
+   * `ng-if`, or an `ng-switch`.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Query(Dependency) dependencies:QueryList<Dependency>) {
+>>>>>>> upstream/master
+   *   }
+   * }
+   * ```
+   * 
+<<<<<<< HEAD
    * ## Example as ES5 DSL
    * 
    * ```
@@ -10968,10 +16754,44 @@ declare module ngWorker {
    * class MyComponent {
    *   constructor(@Attribute('title') title: string) {
    *     ...
+=======
+   * This directive would be instantiated with a {@link QueryList} which contains `Dependency` 4 and
+   * 6. Here, `Dependency` 5 would not be included, because it is not a direct child.
+   * 
+   * ### Injecting a live collection of descendant directives
+   * 
+   * By passing the descendant flag to `@Query` above, we can include the children of the child
+   * elements.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Query(Dependency, {descendants: true}) dependencies:QueryList<Dependency>) {
    *   }
    * }
    * ```
    * 
+   * This directive would be instantiated with a Query which would contain `Dependency` 4, 5 and 6.
+   * 
+   * ### Optional injection
+   * 
+   * The normal behavior of directives is to return an error when a specified dependency cannot be
+   * resolved. If you
+   * would like to inject `null` on unresolved dependency instead, you can annotate that dependency
+   * with `@Optional()`.
+   * This explicitly permits the author of a template to treat some of the surrounding directives as
+   * optional.
+   * 
+   * ```
+   * @Directive({ selector: '[my-directive]' })
+   * class MyDirective {
+   *   constructor(@Optional() dependency:Dependency) {
+>>>>>>> upstream/master
+   *   }
+   * }
+   * ```
+   * 
+<<<<<<< HEAD
    * ## Example as ES5 DSL
    * 
    * ```
@@ -11189,101 +17009,713 @@ declare module ngWorker {
     
   /**
    * {@link DirectiveMetadata} factory function.
+=======
+   * This directive would be instantiated with a `Dependency` directive found on the current element.
+   * If none can be
+   * found, the injector supplies `null` instead of throwing an error.
+   * 
+   * ## Example
+   * 
+   * Here we use a decorator directive to simply define basic tool-tip behavior.
+   * 
+   * ```
+   * @Directive({
+   *   selector: '[tooltip]',
+   *   inputs: [
+   *     'text: tooltip'
+   *   ],
+   *   host: {
+   *     '(mouseenter)': 'onMouseEnter()',
+   *     '(mouseleave)': 'onMouseLeave()'
+   *   }
+   * })
+   * class Tooltip{
+   *   text:string;
+   *   overlay:Overlay; // NOT YET IMPLEMENTED
+   *   overlayManager:OverlayManager; // NOT YET IMPLEMENTED
+   * 
+   *   constructor(overlayManager:OverlayManager) {
+   *     this.overlay = overlay;
+   *   }
+   * 
+   *   onMouseEnter() {
+   *     // exact signature to be determined
+   *     this.overlay = this.overlayManager.open(text, ...);
+   *   }
+   * 
+   *   onMouseLeave() {
+   *     this.overlay.close();
+   *     this.overlay = null;
+   *   }
+   * }
+   * ```
+   * In our HTML template, we can then add this behavior to a `<div>` or any other element with the
+   * `tooltip` selector,
+   * like so:
+   * 
+   * ```
+   * <div tooltip="some text here"></div>
+   * ```
+   * 
+   * Directives can also control the instantiation, destruction, and positioning of inline template
+   * elements:
+   * 
+   * A directive uses a {@link ViewContainerRef} to instantiate, insert, move, and destroy views at
+   * runtime.
+   * The {@link ViewContainerRef} is created as a result of `<template>` element, and represents a
+   * location in the current view
+   * where these actions are performed.
+   * 
+   * Views are always created as children of the current {@link ViewMetadata}, and as siblings of the
+   * `<template>` element. Thus a
+   * directive in a child view cannot inject the directive that created it.
+   * 
+   * Since directives that create views via ViewContainers are common in Angular, and using the full
+   * `<template>` element syntax is wordy, Angular
+   * also supports a shorthand notation: `<li *foo="bar">` and `<li template="foo: bar">` are
+   * equivalent.
+   * 
+   * Thus,
+   * 
+   * ```
+   * <ul>
+   *   <li *foo="bar" title="text"></li>
+   * </ul>
+   * ```
+   * 
+   * Expands in use to:
+   * 
+   * ```
+   * <ul>
+   *   <template [foo]="bar">
+   *     <li title="text"></li>
+   *   </template>
+   * </ul>
+   * ```
+   * 
+   * Notice that although the shorthand places `*foo="bar"` within the `<li>` element, the binding for
+   * the directive
+   * controller is correctly instantiated on the `<template>` element rather than the `<li>` element.
+   * 
+   * ## Lifecycle hooks
+   * 
+   * When the directive class implements some {@link angular2/lifecycle_hooks} the callbacks are
+   * called by the change detection at defined points in time during the life of the directive.
+   * 
+   * ## Example
+   * 
+   * Let's suppose we want to implement the `unless` behavior, to conditionally include a template.
+   * 
+   * Here is a simple directive that triggers on an `unless` selector:
+   * 
+   * ```
+   * @Directive({
+   *   selector: '[unless]',
+   *   inputs: ['unless']
+   * })
+   * export class Unless {
+   *   viewContainer: ViewContainerRef;
+   *   templateRef: TemplateRef;
+   *   prevCondition: boolean;
+   * 
+   *   constructor(viewContainer: ViewContainerRef, templateRef: TemplateRef) {
+   *     this.viewContainer = viewContainer;
+   *     this.templateRef = templateRef;
+   *     this.prevCondition = null;
+   *   }
+   * 
+   *   set unless(newCondition) {
+   *     if (newCondition && (isBlank(this.prevCondition) || !this.prevCondition)) {
+   *       this.prevCondition = true;
+   *       this.viewContainer.clear();
+   *     } else if (!newCondition && (isBlank(this.prevCondition) || this.prevCondition)) {
+   *       this.prevCondition = false;
+   *       this.viewContainer.create(this.templateRef);
+   *     }
+   *   }
+   * }
+   * ```
+   * 
+   * We can then use this `unless` selector in a template:
+   * ```
+   * <ul>
+   *   <li *unless="expr"></li>
+   * </ul>
+   * ```
+   * 
+   * Once the directive instantiates the child view, the shorthand notation for the template expands
+   * and the result is:
+   * 
+   * ```
+   * <ul>
+   *   <template [unless]="exp">
+   *     <li></li>
+   *   </template>
+   *   <li></li>
+   * </ul>
+   * ```
+   * 
+   * Note also that although the `<li></li>` template still exists inside the `<template></template>`,
+   * the instantiated
+   * view occurs on the second `<li></li>` which is a sibling to the `<template>` element.
+>>>>>>> upstream/master
    */
   var Directive: DirectiveFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link ViewMetadata} factory function.
+=======
+   * Metadata properties available for configuring Views.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@View` annotation specifies the HTML template to use, and lists the directives that are active
+   * within the template.
+   * 
+   * When a component is instantiated, the template is loaded into the component's shadow root, and
+   * the expressions and statements in the template are evaluated against the component.
+   * 
+   * For details on the `@Component` annotation, see {@link ComponentMetadata}.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!',
+   *   directives: [GreetUser, Bold]
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var View: ViewFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link AttributeMetadata} factory function.
+=======
+   * Metadata properties available for configuring Views.
+   * 
+   * Each Angular component requires a single `@Component` and at least one `@View` annotation. The
+   * `@View` annotation specifies the HTML template to use, and lists the directives that are active
+   * within the template.
+   * 
+   * When a component is instantiated, the template is loaded into the component's shadow root, and
+   * the expressions and statements in the template are evaluated against the component.
+   * 
+   * For details on the `@Component` annotation, see {@link ComponentMetadata}.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'greet',
+   *   template: 'Hello {{name}}!',
+   *   directives: [GreetUser, Bold]
+   * })
+   * class Greet {
+   *   name: string;
+   * 
+   *   constructor() {
+   *     this.name = 'World';
+   *   }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var Attribute: AttributeFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link QueryMetadata} factory function.
+=======
+   * Declares an injectable parameter to be a live list of directives or variable
+   * bindings from the content children of a directive.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/lY9m8HLy7z06vDoUaSN2?p=preview))
+   * 
+   * Assume that `<tabs>` component would like to get a list its children `<pane>`
+   * components as shown in this example:
+   * 
+   * ```html
+   * <tabs>
+   *   <pane title="Overview">...</pane>
+   *   <pane *ng-for="#o of objects" [title]="o.title">{{o.text}}</pane>
+   * </tabs>
+   * ```
+   * 
+   * The preferred solution is to query for `Pane` directives using this decorator.
+   * 
+   * ```javascript
+   * @Component({
+   *   selector: 'pane',
+   *   inputs: ['title']
+   * })
+   * class Pane {
+   *   title:string;
+   * }
+   * 
+   * @Component({
+   *  selector: 'tabs',
+   *  template: `
+   *    <ul>
+   *      <li *ng-for="#pane of panes">{{pane.title}}</li>
+   *    </ul>
+   *    <content></content>
+   *  `
+   * })
+   * class Tabs {
+   *   panes: QueryList<Pane>;
+   *   constructor(@Query(Pane) panes:QueryList<Pane>) {
+   *     this.panes = panes;
+   *   }
+   * }
+   * ```
+   * 
+   * A query can look for variable bindings by passing in a string with desired binding symbol.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/sT2j25cH1dURAyBRCKx1?p=preview))
+   * ```html
+   * <seeker>
+   *   <div #findme>...</div>
+   * </seeker>
+   * 
+   * @Component({ selector: 'foo' })
+   * class seeker {
+   *   constructor(@Query('findme') elList: QueryList<ElementRef>) {...}
+   * }
+   * ```
+   * 
+   * In this case the object that is injected depend on the type of the variable
+   * binding. It can be an ElementRef, a directive or a component.
+   * 
+   * Passing in a comma separated list of variable bindings will query for all of them.
+   * 
+   * ```html
+   * <seeker>
+   *   <div #find-me>...</div>
+   *   <div #find-me-too>...</div>
+   * </seeker>
+   * 
+   *  @Component({
+   *   selector: 'foo'
+   * })
+   * class Seeker {
+   *   constructor(@Query('findMe, findMeToo') elList: QueryList<ElementRef>) {...}
+   * }
+   * ```
+   * 
+   * Configure whether query looks for direct children or all descendants
+   * of the querying element, by using the `descendants` parameter.
+   * It is set to `false` by default.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/wtGeB977bv7qvA5FTYl9?p=preview))
+   * ```html
+   * <container #first>
+   *   <item>a</item>
+   *   <item>b</item>
+   *   <container #second>
+   *     <item>c</item>
+   *   </container>
+   * </container>
+   * ```
+   * 
+   * When querying for items, the first container will see only `a` and `b` by default,
+   * but with `Query(TextDirective, {descendants: true})` it will see `c` too.
+   * 
+   * The queried directives are kept in a depth-first pre-order with respect to their
+   * positions in the DOM.
+   * 
+   * Query does not look deep into any subcomponent views.
+   * 
+   * Query is updated as part of the change-detection cycle. Since change detection
+   * happens after construction of a directive, QueryList will always be empty when observed in the
+   * constructor.
+   * 
+   * The injected object is an unmodifiable live list.
+   * See {@link QueryList} for more details.
+>>>>>>> upstream/master
    */
   var Query: QueryFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link ContentChildrenMetadata} factory function.
+=======
+   * Configures a content query.
+   * 
+   * Content queries are set before the `afterContentInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Directive({
+   *   selector: 'someDir'
+   * })
+   * class SomeDir {
+   *   @ContentChildren(ChildDirective) contentChildren: QueryList<ChildDirective>;
+   * 
+   *   afterContentInit() {
+   *     // contentChildren is set
+   *   }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var ContentChildren: ContentChildrenFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link ContentChildMetadata} factory function.
+=======
+   * Configures a content query.
+   * 
+   * Content queries are set before the `afterContentInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Directive({
+   *   selector: 'someDir'
+   * })
+   * class SomeDir {
+   *   @ContentChild(ChildDirective) contentChild;
+   * 
+   *   afterContentInit() {
+   *     // contentChild is set
+   *   }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var ContentChild: ContentChildFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link ViewChildrenMetadata} factory function.
+=======
+   * Configures a view query.
+   * 
+   * View queries are set before the `afterViewInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+   * class SomeDir {
+   *   @ViewChildren(ItemDirective) viewChildren: QueryList<ItemDirective>;
+   * 
+   *   afterViewInit() {
+   *     // viewChildren is set
+   *   }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var ViewChildren: ViewChildrenFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link ViewChildMetadata} factory function.
+=======
+   * Configures a view query.
+   * 
+   * View queries are set before the `afterViewInit` callback is called.
+   * 
+   * ### Example
+   * 
+   * ```
+   * @Component({
+   *   selector: 'someDir',
+   *   templateUrl: 'someTemplate',
+   *   directives: [ItemDirective]
+   * })
+   * class SomeDir {
+   *   @ViewChild(ItemDirective) viewChild:ItemDirective;
+   * 
+   *   afterViewInit() {
+   *     // viewChild is set
+   *   }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var ViewChild: ViewChildFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link di/ViewQueryMetadata} factory function.
+=======
+   * Similar to {@link QueryMetadata}, but querying the component view, instead of
+   * the content children.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/eNsFHDf7YjyM6IzKxM1j?p=preview))
+   * 
+   * ```javascript
+   * @Component({...})
+   * @View({
+   *   template: `
+   *     <item> a </item>
+   *     <item> b </item>
+   *     <item> c </item>
+   *   `
+   * })
+   * class MyComponent {
+   *   shown: boolean;
+   * 
+   *   constructor(private @Query(Item) items:QueryList<Item>) {
+   *     items.onChange(() => console.log(items.length));
+   *   }
+   * }
+   * ```
+   * 
+   * Supports the same querying parameters as {@link QueryMetadata}, except
+   * `descendants`. This always queries the whole view.
+   * 
+   * As `shown` is flipped between true and false, items will contain zero of one
+   * items.
+   * 
+   * Specifies that a {@link QueryList} should be injected.
+   * 
+   * The injected object is an iterable and observable live list.
+   * See {@link QueryList} for more details.
+>>>>>>> upstream/master
    */
   var ViewQuery: QueryFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link PipeMetadata} factory function.
+=======
+   * Declare reusable pipe function.
+   * 
+   * ## Example
+   * 
+   * ```
+   * @Pipe({
+   *   name: 'lowercase'
+   * })
+   * class Lowercase {
+   *   transform(v, args) { return v.toLowerCase(); }
+   * }
+   * ```
+>>>>>>> upstream/master
    */
   var Pipe: PipeFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link InputMetadata} factory function.
    * 
    * See {@link InputMetadata}.
+=======
+   * Declares a data-bound input property.
+   * 
+   * Angular automatically updates data-bound properties during change detection.
+   * 
+   * `InputMetadata` takes an optional parameter that specifies the name
+   * used when instantiating a component in the template. When not provided,
+   * the name of the decorated property is used.
+   * 
+   * ### Example
+   * 
+   * The following example creates a component with two input properties.
+   * 
+   * ```typescript
+   * @Component({
+   *   selector: 'bank-account',
+   *   template: `
+   *     Bank Name: {{bankName}}
+   *     Account Id: {{id}}
+   *   `
+   * })
+   * class BankAccount {
+   *   @Input() bankName: string;
+   *   @Input('account-id') id: string;
+   * 
+   *   // this property is not bound, and won't be automatically updated by Angular
+   *   normalizedBankName: string;
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <bank-account bank-name="RBC" account-id="4747"></bank-account>
+   *   `,
+   *   directives: [BankAccount]
+   * })
+   * class App {}
+   * 
+   * bootstrap(App);
+   * ```
+>>>>>>> upstream/master
    */
   var Input: InputFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link OutputMetadata} factory function.
    * 
    * See {@link OutputMetadatas}.
+=======
+   * Declares an event-bound output property.
+   * 
+   * When an output property emits an event, an event handler attached to that event
+   * the template is invoked.
+   * 
+   * `OutputMetadata` takes an optional parameter that specifies the name
+   * used when instantiating a component in the template. When not provided,
+   * the name of the decorated property is used.
+   * 
+   * ### Example
+   * 
+   * ```typescript
+   * @Directive({
+   *   selector: 'interval-dir',
+   * })
+   * class IntervalDir {
+   *   @Output() everySecond = new EventEmitter();
+   *   @Output('everyFiveSeconds') five5Secs = new EventEmitter();
+   * 
+   *   constructor() {
+   *     setInterval(() => this.everySecond.next("event"), 1000);
+   *     setInterval(() => this.five5Secs.next("event"), 5000);
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `
+   *     <interval-dir (every-second)="everySecond()" (every-five-seconds)="everyFiveSeconds()">
+   *     </interval-dir>
+   *   `,
+   *   directives: [IntervalDir]
+   * })
+   * class App {
+   *   everySecond() { console.log('second'); }
+   *   everyFiveSeconds() { console.log('five seconds'); }
+   * }
+   * bootstrap(App);
+   * ```
+>>>>>>> upstream/master
    */
   var Output: OutputFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link HostBindingMetadata} factory function.
+=======
+   * Declares a host property binding.
+   * 
+   * Angular automatically checks host property bindings during change detection.
+   * If a binding changes, it will update the host element of the directive.
+   * 
+   * `HostBindingMetadata` takes an optional parameter that specifies the property
+   * name of the host element that will be updated. When not provided,
+   * the class property name is used.
+   * 
+   * ### Example
+   * 
+   * The following example creates a directive that sets the `valid` and `invalid` classes
+   * on the DOM element that has ng-model directive on it.
+   * 
+   * ```typescript
+   * @Directive({selector: '[ng-model]'})
+   * class NgModelStatus {
+   *   constructor(public control:NgModel) {}
+   *   @HostBinding('[class.valid]') get valid { return this.control.valid; }
+   *   @HostBinding('[class.invalid]') get invalid { return this.control.invalid; }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `<input [(ng-model)]="prop">`,
+   *   directives: [FORM_DIRECTIVES, NgModelStatus]
+   * })
+   * class App {
+   *   prop;
+   * }
+   * 
+   * bootstrap(App);
+   * ```
+>>>>>>> upstream/master
    */
   var HostBinding: HostBindingFactory;
   
 
     
   /**
+<<<<<<< HEAD
    * {@link HostListenerMetadata} factory function.
+=======
+   * Declares a host listener.
+   * 
+   * Angular will invoke the decorated method when the host element emits the specified event.
+   * 
+   * If the decorated method returns `false`, then `preventDefault` is applied on the DOM
+   * event.
+   * 
+   * ### Example
+   * 
+   * The following example declares a directive that attaches a click listener to the button and
+   * counts clicks.
+   * 
+   * ```typescript
+   * @Directive({selector: 'button[counting]'})
+   * class CountClicks {
+   *   numberOfClicks = 0;
+   * 
+   *   @HostListener('click', ['$event.target'])
+   *   onClick(btn) {
+   *     console.log("button", btn, "number of clicks:", this.numberOfClicks++);
+   *   }
+   * }
+   * 
+   * @Component({
+   *   selector: 'app',
+   *   template: `<button counting>Increment</button>`,
+   *   directives: [CountClicks]
+   * })
+   * class App {}
+   * 
+   * bootstrap(App);
+   * ```
+>>>>>>> upstream/master
    */
   var HostListener: HostListenerFactory;
   
@@ -11370,7 +17802,11 @@ declare module ngWorker {
    * });
    * ```
    */
+<<<<<<< HEAD
   function Class(clsDef: ClassDefinition): Type;
+=======
+  function Class(clsDef: ClassDefinition): ConcreteType;
+>>>>>>> upstream/master
   
 
     
@@ -11437,7 +17873,11 @@ declare module ngWorker {
     /**
      * Generate a class from the definition and annotate it with {@link TypeDecorator#annotations}.
      */
+<<<<<<< HEAD
     Class(obj: ClassDefinition): Type;
+=======
+    Class(obj: ClassDefinition): ConcreteType;
+>>>>>>> upstream/master
     
   }
 
@@ -11459,7 +17899,11 @@ declare module ngWorker {
    * }
    * 
    * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
    *  bind("MyEngine").toClass(Engine),
+=======
+   *  provide("MyEngine", {useClass: Engine}),
+>>>>>>> upstream/master
    *  Car
    * ]);
    * 
@@ -11626,9 +18070,13 @@ declare module ngWorker {
    * 
    * @Component({
    *   selector: 'parent-cmp',
+<<<<<<< HEAD
    *   bindings: [HostService]
    * })
    * @View({
+=======
+   *   providers: [HostService],
+>>>>>>> upstream/master
    *   template: `
    *     Dir: <child-directive></child-directive>
    *   `,
@@ -11639,9 +18087,13 @@ declare module ngWorker {
    * 
    * @Component({
    *   selector: 'app',
+<<<<<<< HEAD
    *   bindings: [OtherService]
    * })
    * @View({
+=======
+   *   providers: [OtherService],
+>>>>>>> upstream/master
    *   template: `
    *     Parent: <parent-cmp></parent-cmp>
    *   `,
@@ -11810,10 +18262,17 @@ declare module ngWorker {
     constructor(_proto: any, _parent?: Injector, _depProvider?: any, _debugContext?: Function);
     
     /**
+<<<<<<< HEAD
      * Turns an array of binding definitions into an array of resolved bindings.
      * 
      * A resolution is a process of flattening multiple nested arrays and converting individual
      * bindings into an array of {@link ResolvedBinding}s.
+=======
+     * Turns an array of provider definitions into an array of resolved providers.
+     * 
+     * A resolution is a process of flattening multiple nested arrays and converting individual
+     * providers into an array of {@link ResolvedProvider}s.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/AiXTHi?p=preview))
      * 
@@ -11827,6 +18286,7 @@ declare module ngWorker {
      *   constructor(public engine:Engine) {}
      * }
      * 
+<<<<<<< HEAD
      * var bindings = Injector.resolve([Car, [[Engine]]]);
      * 
      * expect(bindings.length).toEqual(2);
@@ -11849,6 +18309,30 @@ declare module ngWorker {
      * 
      * The passed-in bindings can be an array of `Type`, {@link Binding},
      * or a recursive array of more bindings.
+=======
+     * var providers = Injector.resolve([Car, [[Engine]]]);
+     * 
+     * expect(providers.length).toEqual(2);
+     * 
+     * expect(providers[0] instanceof ResolvedProvider).toBe(true);
+     * expect(providers[0].key.displayName).toBe("Car");
+     * expect(providers[0].dependencies.length).toEqual(1);
+     * expect(providers[0].factory).toBeDefined();
+     * 
+     * expect(providers[1].key.displayName).toBe("Engine");
+     * });
+     * ```
+     * 
+     * See {@link Injector#fromResolvedProviders} for more info.
+     */
+    static resolve(providers: Array<Type | Provider | any[]>): ResolvedProvider[];
+    
+    /**
+     * Resolves an array of providers and creates an injector from those providers.
+     * 
+     * The passed-in providers can be an array of `Type`, {@link Provider},
+     * or a recursive array of more providers.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/ePOccA?p=preview))
      * 
@@ -11866,6 +18350,7 @@ declare module ngWorker {
      * expect(injector.get(Car) instanceof Car).toBe(true);
      * ```
      * 
+<<<<<<< HEAD
      * This function is slower than the corresponding `fromResolvedBindings`
      * because it needs to resolve the passed-in bindings first.
      * See {@link resolve} and {@link fromResolvedBindings}.
@@ -11874,6 +18359,16 @@ declare module ngWorker {
     
     /**
      * Creates an injector from previously resolved bindings.
+=======
+     * This function is slower than the corresponding `fromResolvedProviders`
+     * because it needs to resolve the passed-in providers first.
+     * See {@link Injector#resolve} and {@link Injector#fromResolvedProviders}.
+     */
+    static resolveAndCreate(providers: Array<Type | Provider | any[]>): Injector;
+    
+    /**
+     * Creates an injector from previously resolved providers.
+>>>>>>> upstream/master
      * 
      * This API is the recommended way to construct injectors in performance-sensitive parts.
      * 
@@ -11889,6 +18384,7 @@ declare module ngWorker {
      *   constructor(public engine:Engine) {}
      * }
      * 
+<<<<<<< HEAD
      * var bindings = Injector.resolve([Car, Engine]);
      * var injector = Injector.fromResolvedBindings(bindings);
      * expect(injector.get(Car) instanceof Car).toBe(true);
@@ -11899,12 +18395,33 @@ declare module ngWorker {
     /**
      * Retrieves an instance from the injector based on the provided token.
      * Throws {@link NoBindingError} if not found.
+=======
+     * var providers = Injector.resolve([Car, Engine]);
+     * var injector = Injector.fromResolvedProviders(providers);
+     * expect(injector.get(Car) instanceof Car).toBe(true);
+     * ```
+     */
+    static fromResolvedProviders(providers: ResolvedProvider[]): Injector;
+    
+    /**
+     * @deprecated
+     */
+    static fromResolvedBindings(providers: ResolvedProvider[]): Injector;
+    
+    /**
+     * Retrieves an instance from the injector based on the provided token.
+     * Throws {@link NoProviderError} if not found.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/HeXSHg?p=preview))
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   bind("validToken").toValue("Value")
+=======
+     *   provide("validToken", {useValue: "Value"})
+>>>>>>> upstream/master
      * ]);
      * expect(injector.get("validToken")).toEqual("Value");
      * expect(() => injector.get("invalidToken")).toThrowError();
@@ -11927,7 +18444,11 @@ declare module ngWorker {
      * 
      * ```typescript
      * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
      *   bind("validToken").toValue("Value")
+=======
+     *   provide("validToken", {useValue: "Value"})
+>>>>>>> upstream/master
      * ]);
      * expect(injector.getOptional("validToken")).toEqual("Value");
      * expect(injector.getOptional("invalidToken")).toBe(null);
@@ -11959,17 +18480,27 @@ declare module ngWorker {
     parent: Injector;
     
     /**
+<<<<<<< HEAD
      * Resolves an array of bindings and creates a child injector from those bindings.
+=======
+     * Resolves an array of providers and creates a child injector from those providers.
+>>>>>>> upstream/master
      * 
      * <!-- TODO: Add a link to the section of the user guide talking about hierarchical injection.
      * -->
      * 
+<<<<<<< HEAD
      * The passed-in bindings can be an array of `Type`, {@link Binding},
      * or a recursive array of more bindings.
+=======
+     * The passed-in providers can be an array of `Type`, {@link Provider},
+     * or a recursive array of more providers.
+>>>>>>> upstream/master
      * 
      * ### Example ([live demo](http://plnkr.co/edit/opB3T4?p=preview))
      * 
      * ```typescript
+<<<<<<< HEAD
      * class ParentBinding {}
      * class ChildBinding {}
      * 
@@ -11989,6 +18520,27 @@ declare module ngWorker {
     
     /**
      * Creates a child injector from previously resolved bindings.
+=======
+     * class ParentProvider {}
+     * class ChildProvider {}
+     * 
+     * var parent = Injector.resolveAndCreate([ParentProvider]);
+     * var child = parent.resolveAndCreateChild([ChildProvider]);
+     * 
+     * expect(child.get(ParentProvider) instanceof ParentProvider).toBe(true);
+     * expect(child.get(ChildProvider) instanceof ChildProvider).toBe(true);
+     * expect(child.get(ParentProvider)).toBe(parent.get(ParentProvider));
+     * ```
+     * 
+     * This function is slower than the corresponding `createChildFromResolved`
+     * because it needs to resolve the passed-in providers first.
+     * See {@link Injector#resolve} and {@link Injector#createChildFromResolved}.
+     */
+    resolveAndCreateChild(providers: Array<Type | Provider | any[]>): Injector;
+    
+    /**
+     * Creates a child injector from previously resolved providers.
+>>>>>>> upstream/master
      * 
      * <!-- TODO: Add a link to the section of the user guide talking about hierarchical injection.
      * -->
@@ -11998,6 +18550,7 @@ declare module ngWorker {
      * ### Example ([live demo](http://plnkr.co/edit/VhyfjN?p=preview))
      * 
      * ```typescript
+<<<<<<< HEAD
      * class ParentBinding {}
      * class ChildBinding {}
      * 
@@ -12016,6 +18569,26 @@ declare module ngWorker {
     
     /**
      * Resolves a binding and instantiates an object in the context of the injector.
+=======
+     * class ParentProvider {}
+     * class ChildProvider {}
+     * 
+     * var parentProviders = Injector.resolve([ParentProvider]);
+     * var childProviders = Injector.resolve([ChildProvider]);
+     * 
+     * var parent = Injector.fromResolvedProviders(parentProviders);
+     * var child = parent.createChildFromResolved(childProviders);
+     * 
+     * expect(child.get(ParentProvider) instanceof ParentProvider).toBe(true);
+     * expect(child.get(ChildProvider) instanceof ChildProvider).toBe(true);
+     * expect(child.get(ParentProvider)).toBe(parent.get(ParentProvider));
+     * ```
+     */
+    createChildFromResolved(providers: ResolvedProvider[]): Injector;
+    
+    /**
+     * Resolves a provider and instantiates an object in the context of the injector.
+>>>>>>> upstream/master
      * 
      * The created object does not get cached by the injector.
      * 
@@ -12038,10 +18611,17 @@ declare module ngWorker {
      * expect(car).not.toBe(injector.resolveAndInstantiate(Car));
      * ```
      */
+<<<<<<< HEAD
     resolveAndInstantiate(binding: Type | Binding): any;
     
     /**
      * Instantiates an object using a resolved binding in the context of the injector.
+=======
+    resolveAndInstantiate(provider: Type | Provider): any;
+    
+    /**
+     * Instantiates an object using a resolved provider in the context of the injector.
+>>>>>>> upstream/master
      * 
      * The created object does not get cached by the injector.
      * 
@@ -12058,6 +18638,7 @@ declare module ngWorker {
      * }
      * 
      * var injector = Injector.resolveAndCreate([Engine]);
+<<<<<<< HEAD
      * var carBinding = Injector.resolve([Car])[0];
      * var car = injector.instantiateResolved(carBinding);
      * expect(car.engine).toBe(injector.get(Engine));
@@ -12065,6 +18646,15 @@ declare module ngWorker {
      * ```
      */
     instantiateResolved(binding: ResolvedBinding): any;
+=======
+     * var carProvider = Injector.resolve([Car])[0];
+     * var car = injector.instantiateResolved(carProvider);
+     * expect(car.engine).toBe(injector.get(Engine));
+     * expect(car).not.toBe(injector.instantiateResolved(carProvider));
+     * ```
+     */
+    instantiateResolved(provider: ResolvedProvider): any;
+>>>>>>> upstream/master
     
     displayName: string;
     
@@ -12074,6 +18664,7 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Describes how the {@link Injector} should instantiate a given token.
    * 
    * See {@link bind}.
@@ -12089,11 +18680,17 @@ declare module ngWorker {
    * ```
    */
   class Binding {
+=======
+   * @deprecated
+   */
+  class Binding extends Provider {
+>>>>>>> upstream/master
     
     constructor(token: any, {toClass, toValue, toAlias, toFactory, deps, multi}: {
         toClass?: Type,
         toValue?: any,
         toAlias?: any,
+<<<<<<< HEAD
         toFactory?: Function,
         deps?: Object[],
         multi?: boolean
@@ -12112,6 +18709,50 @@ declare module ngWorker {
      * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
      * easy
      * comparison.
+=======
+        toFactory: Function, deps?: Object[], multi?: boolean
+      });
+    
+    /**
+     * @deprecated
+     */
+    toClass: any;
+    
+    /**
+     * @deprecated
+     */
+    toAlias: any;
+    
+    /**
+     * @deprecated
+     */
+    toFactory: any;
+    
+    /**
+     * @deprecated
+     */
+    toValue: any;
+    
+  }
+
+    
+  /**
+   * Helper class for the {@link bind} function.
+   */
+  class ProviderBuilder {
+    
+    constructor(token: any);
+    
+    token: any;
+    
+    /**
+     * Binds a DI token to a class.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/ZpBCSYqv6e2ud5KXLdxQ?p=preview))
+     * 
+     * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
+     * easy comparison.
+>>>>>>> upstream/master
      * 
      * ```typescript
      * class Vehicle {}
@@ -12120,11 +18761,19 @@ declare module ngWorker {
      * 
      * var injectorClass = Injector.resolveAndCreate([
      *   Car,
+<<<<<<< HEAD
      *   new Binding(Vehicle, { toClass: Car })
      * ]);
      * var injectorAlias = Injector.resolveAndCreate([
      *   Car,
      *   new Binding(Vehicle, { toAlias: Car })
+=======
+     *   provide(Vehicle, {useClass: Car})
+     * ]);
+     * var injectorAlias = Injector.resolveAndCreate([
+     *   Car,
+     *   provide(Vehicle, {useExisting: Car})
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injectorClass.get(Vehicle)).not.toBe(injectorClass.get(Car));
@@ -12134,11 +18783,16 @@ declare module ngWorker {
      * expect(injectorAlias.get(Vehicle) instanceof Car).toBe(true);
      * ```
      */
+<<<<<<< HEAD
     toClass: Type;
+=======
+    toClass(type: Type): Provider;
+>>>>>>> upstream/master
     
     /**
      * Binds a DI token to a value.
      * 
+<<<<<<< HEAD
      * ### Example ([live demo](http://plnkr.co/edit/UFVsMVQIDe7l4waWziES?p=preview))
      * 
      * ```javascript
@@ -12160,6 +18814,30 @@ declare module ngWorker {
      * ### Example ([live demo](http://plnkr.co/edit/QsatsOJJ6P8T2fMe9gr8?p=preview))
      * 
      * Because `toAlias` and `toClass` are often confused the example contains both use cases for easy
+=======
+     * ### Example ([live demo](http://plnkr.co/edit/G024PFHmDL0cJFgfZK8O?p=preview))
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   provide('message', {useValue: 'Hello'})
+     * ]);
+     * 
+     * expect(injector.get('message')).toEqual('Hello');
+     * ```
+     */
+    toValue(value: any): Provider;
+    
+    /**
+     * Binds a DI token to an existing token.
+     * 
+     * Angular will return the same instance as if the provided token was used. (This is
+     * in contrast to `useClass` where a separate instance of `useClass` will be returned.)
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/uBaoF2pN5cfc5AfZapNw?p=preview))
+     * 
+     * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
+     * easy
+>>>>>>> upstream/master
      * comparison.
      * 
      * ```typescript
@@ -12169,11 +18847,19 @@ declare module ngWorker {
      * 
      * var injectorAlias = Injector.resolveAndCreate([
      *   Car,
+<<<<<<< HEAD
      *   new Binding(Vehicle, { toAlias: Car })
      * ]);
      * var injectorClass = Injector.resolveAndCreate([
      *   Car,
      *   new Binding(Vehicle, { toClass: Car })
+=======
+     *   provide(Vehicle, {useExisting: Car})
+     * ]);
+     * var injectorClass = Injector.resolveAndCreate([
+     *   Car,
+     *   provide(Vehicle, {useClass: Car})
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injectorAlias.get(Vehicle)).toBe(injectorAlias.get(Car));
@@ -12183,11 +18869,16 @@ declare module ngWorker {
      * expect(injectorClass.get(Vehicle) instanceof Car).toBe(true);
      * ```
      */
+<<<<<<< HEAD
     toAlias: any;
+=======
+    toAlias(aliasToken: /*Type*/ any): Provider;
+>>>>>>> upstream/master
     
     /**
      * Binds a DI token to a function which computes the value.
      * 
+<<<<<<< HEAD
      * ### Example ([live demo](http://plnkr.co/edit/Scoxy0pJNqKGAPZY1VVC?p=preview))
      * 
      * ```typescript
@@ -12195,11 +18886,20 @@ declare module ngWorker {
      *   new Binding(Number, { toFactory: () => { return 1+2; }}),
      *   new Binding(String, { toFactory: (value) => { return "Value: " + value; },
      *                       deps: [Number] })
+=======
+     * ### Example ([live demo](http://plnkr.co/edit/OejNIfTT3zb1iBxaIYOb?p=preview))
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   provide(Number, {useFactory: () => { return 1+2; }}),
+     *   provide(String, {useFactory: (v) => { return "Value: " + v; }, deps: [Number]})
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injector.get(Number)).toEqual(3);
      * expect(injector.get(String)).toEqual('Value: 3');
      * ```
+<<<<<<< HEAD
      * 
      * Used in conjuction with dependencies.
      */
@@ -12256,11 +18956,63 @@ declare module ngWorker {
      * ```
      */
     multi: boolean;
+=======
+     */
+    toFactory(factory: Function, dependencies?: any[]): Provider;
     
   }
 
     
   /**
+   * @deprecated
+   */
+  interface ResolvedBinding extends ResolvedProvider {
+    
+  }
+
+    
+  /**
+   * An internal resolved representation of a factory function created by resolving {@link Provider}.
+   */
+  class ResolvedFactory {
+    
+    constructor(factory: Function, dependencies: Dependency[]);
+    
+    /**
+     * Factory function which can return an instance of an object represented by a key.
+     */
+    factory: Function;
+    
+    /**
+     * Arguments (dependencies) to the `factory` function.
+     */
+    dependencies: Dependency[];
+    
+  }
+
+    
+  class Dependency {
+    
+    constructor(key: Key, optional: boolean, lowerBoundVisibility: any, upperBoundVisibility: any, properties: any[]);
+    
+    static fromKey(key: Key): Dependency;
+    
+    key: Key;
+    
+    optional: boolean;
+    
+    lowerBoundVisibility: any;
+    
+    upperBoundVisibility: any;
+    
+    properties: any[];
+>>>>>>> upstream/master
+    
+  }
+
+    
+  /**
+<<<<<<< HEAD
    * Helper class for the {@link bind} function.
    */
   class BindingBuilder {
@@ -12276,6 +19028,62 @@ declare module ngWorker {
      * 
      * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
      * easy comparison.
+=======
+   * @deprecated
+   * Creates a {@link Provider}.
+   * 
+   * To construct a {@link Provider}, bind a `token` to either a class, a value, a factory function,
+   * or
+   * to an existing `token`.
+   * See {@link ProviderBuilder} for more details.
+   * 
+   * The `token` is most commonly a class or {@link angular2/di/OpaqueToken}.
+   */
+  function bind(token: any): ProviderBuilder;
+  
+
+    
+  /**
+   * Describes how the {@link Injector} should instantiate a given token.
+   * 
+   * See {@link provide}.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/GNAyj6K6PfYg2NBzgwZ5?p%3Dpreview&p=preview))
+   * 
+   * ```javascript
+   * var injector = Injector.resolveAndCreate([
+   *   new Provider("message", { useValue: 'Hello' })
+   * ]);
+   * 
+   * expect(injector.get("message")).toEqual('Hello');
+   * ```
+   */
+  class Provider {
+    
+    constructor(token: any, {useClass, useValue, useExisting, useFactory, deps, multi}: {
+        useClass?: Type,
+        useValue?: any,
+        useExisting?: any,
+        useFactory?: Function,
+        deps?: Object[],
+        multi?: boolean
+      });
+    
+    /**
+     * Token used when retrieving this provider. Usually, it is a type {@link Type}.
+     */
+    token: any;
+    
+    /**
+     * Binds a DI token to an implementation class.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/RSTG86qgmoxCyj9SWPwY?p=preview))
+     * 
+     * Because `useExisting` and `useClass` are often confused, the example contains both use cases
+     * for
+     * easy
+     * comparison.
+>>>>>>> upstream/master
      * 
      * ```typescript
      * class Vehicle {}
@@ -12284,11 +19092,19 @@ declare module ngWorker {
      * 
      * var injectorClass = Injector.resolveAndCreate([
      *   Car,
+<<<<<<< HEAD
      *   bind(Vehicle).toClass(Car)
      * ]);
      * var injectorAlias = Injector.resolveAndCreate([
      *   Car,
      *   bind(Vehicle).toAlias(Car)
+=======
+     *   new Provider(Vehicle, { useClass: Car })
+     * ]);
+     * var injectorAlias = Injector.resolveAndCreate([
+     *   Car,
+     *   new Provider(Vehicle, { useExisting: Car })
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injectorClass.get(Vehicle)).not.toBe(injectorClass.get(Car));
@@ -12298,11 +19114,16 @@ declare module ngWorker {
      * expect(injectorAlias.get(Vehicle) instanceof Car).toBe(true);
      * ```
      */
+<<<<<<< HEAD
     toClass(type: Type): Binding;
+=======
+    useClass: Type;
+>>>>>>> upstream/master
     
     /**
      * Binds a DI token to a value.
      * 
+<<<<<<< HEAD
      * ### Example ([live demo](http://plnkr.co/edit/G024PFHmDL0cJFgfZK8O?p=preview))
      * 
      * ```typescript
@@ -12324,6 +19145,29 @@ declare module ngWorker {
      * ### Example ([live demo](http://plnkr.co/edit/uBaoF2pN5cfc5AfZapNw?p=preview))
      * 
      * Because `toAlias` and `toClass` are often confused, the example contains both use cases for
+=======
+     * ### Example ([live demo](http://plnkr.co/edit/UFVsMVQIDe7l4waWziES?p=preview))
+     * 
+     * ```javascript
+     * var injector = Injector.resolveAndCreate([
+     *   new Provider("message", { useValue: 'Hello' })
+     * ]);
+     * 
+     * expect(injector.get("message")).toEqual('Hello');
+     * ```
+     */
+    useValue: any;
+    
+    /**
+     * Binds a DI token to an existing token.
+     * 
+     * {@link Injector} returns the same instance as if the provided token was used.
+     * This is in contrast to `useClass` where a separate instance of `useClass` is returned.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/QsatsOJJ6P8T2fMe9gr8?p=preview))
+     * 
+     * Because `useExisting` and `useClass` are often confused the example contains both use cases for
+>>>>>>> upstream/master
      * easy
      * comparison.
      * 
@@ -12334,11 +19178,19 @@ declare module ngWorker {
      * 
      * var injectorAlias = Injector.resolveAndCreate([
      *   Car,
+<<<<<<< HEAD
      *   bind(Vehicle).toAlias(Car)
      * ]);
      * var injectorClass = Injector.resolveAndCreate([
      *   Car,
      *   bind(Vehicle).toClass(Car)
+=======
+     *   new Provider(Vehicle, { useExisting: Car })
+     * ]);
+     * var injectorClass = Injector.resolveAndCreate([
+     *   Car,
+     *   new Provider(Vehicle, { useClass: Car })
+>>>>>>> upstream/master
      * ]);
      * 
      * expect(injectorAlias.get(Vehicle)).toBe(injectorAlias.get(Car));
@@ -12348,6 +19200,7 @@ declare module ngWorker {
      * expect(injectorClass.get(Vehicle) instanceof Car).toBe(true);
      * ```
      */
+<<<<<<< HEAD
     toAlias(aliasToken: /*Type*/ any): Binding;
     
     /**
@@ -12366,12 +19219,91 @@ declare module ngWorker {
      * ```
      */
     toFactory(factory: Function, dependencies?: any[]): Binding;
+=======
+    useExisting: any;
+    
+    /**
+     * Binds a DI token to a function which computes the value.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/Scoxy0pJNqKGAPZY1VVC?p=preview))
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   new Provider(Number, { useFactory: () => { return 1+2; }}),
+     *   new Provider(String, { useFactory: (value) => { return "Value: " + value; },
+     *                       deps: [Number] })
+     * ]);
+     * 
+     * expect(injector.get(Number)).toEqual(3);
+     * expect(injector.get(String)).toEqual('Value: 3');
+     * ```
+     * 
+     * Used in conjuction with dependencies.
+     */
+    useFactory: Function;
+    
+    /**
+     * Specifies a set of dependencies
+     * (as `token`s) which should be injected into the factory function.
+     * 
+     * ### Example ([live demo](http://plnkr.co/edit/Scoxy0pJNqKGAPZY1VVC?p=preview))
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   new Provider(Number, { useFactory: () => { return 1+2; }}),
+     *   new Provider(String, { useFactory: (value) => { return "Value: " + value; },
+     *                       deps: [Number] })
+     * ]);
+     * 
+     * expect(injector.get(Number)).toEqual(3);
+     * expect(injector.get(String)).toEqual('Value: 3');
+     * ```
+     * 
+     * Used in conjunction with `useFactory`.
+     */
+    dependencies: Object[];
+    
+    /**
+     * Creates multiple providers matching the same token (a multi-provider).
+     * 
+     * Multi-providers are used for creating pluggable service, where the system comes
+     * with some default providers, and the user can register additonal providers.
+     * The combination of the default providers and the additional providers will be
+     * used to drive the behavior of the system.
+     * 
+     * ### Example
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   new Provider("Strings", { useValue: "String1", multi: true}),
+     *   new Provider("Strings", { useValue: "String2", multi: true})
+     * ]);
+     * 
+     * expect(injector.get("Strings")).toEqual(["String1", "String2"]);
+     * ```
+     * 
+     * Multi-providers and regular providers cannot be mixed. The following
+     * will throw an exception:
+     * 
+     * ```typescript
+     * var injector = Injector.resolveAndCreate([
+     *   new Provider("Strings", { useValue: "String1", multi: true }),
+     *   new Provider("Strings", { useValue: "String2"})
+     * ]);
+     * ```
+     */
+    multi: boolean;
+>>>>>>> upstream/master
     
   }
 
     
   /**
+<<<<<<< HEAD
    * An internal resolved representation of a {@link Binding} used by the {@link Injector}.
+=======
+   * An internal resolved representation of a {@link Provider} used by the {@link Injector}.
+>>>>>>> upstream/master
    * 
    * It is usually created automatically by `Injector.resolveAndCreate`.
    * 
@@ -12380,19 +19312,29 @@ declare module ngWorker {
    * ### Example ([live demo](http://plnkr.co/edit/RfEnhh8kUEI0G3qsnIeT?p%3Dpreview&p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * var resolvedBindings = Injector.resolve([new Binding('message', {toValue: 'Hello'})]);
    * var injector = Injector.fromResolvedBindings(resolvedBindings);
+=======
+   * var resolvedProviders = Injector.resolve([new Provider('message', {useValue: 'Hello'})]);
+   * var injector = Injector.fromResolvedProviders(resolvedProviders);
+>>>>>>> upstream/master
    * 
    * expect(injector.get('message')).toEqual('Hello');
    * ```
    */
+<<<<<<< HEAD
   interface ResolvedBinding {
+=======
+  interface ResolvedProvider {
+>>>>>>> upstream/master
     
     /**
      * A key, usually a `Type`.
      */
     key: Key;
     
+<<<<<<< HEAD
   }
 
     
@@ -12413,11 +19355,23 @@ declare module ngWorker {
      * Arguments (dependencies) to the `factory` function.
      */
     dependencies: Dependency[];
+=======
+    /**
+     * Factory function which can return an instance of an object represented by a key.
+     */
+    resolvedFactories: ResolvedFactory[];
+    
+    /**
+     * Indicates if the provider is a multi-provider or a regular provider.
+     */
+    multiProvider: boolean;
+>>>>>>> upstream/master
     
   }
 
     
   /**
+<<<<<<< HEAD
    * @private
    */
   class Dependency {
@@ -12449,6 +19403,22 @@ declare module ngWorker {
    * The `token` is most commonly a class or {@link angular2/di/OpaqueToken}.
    */
   function bind(token: any): BindingBuilder;
+=======
+   * Creates a {@link Provider}.
+   * 
+   * See {@link Provider} for more details.
+   * 
+   * <!-- TODO: improve the docs -->
+   */
+  function provide(token: any, {useClass, useValue, useExisting, useFactory, deps, multi}: {
+    useClass?: Type,
+    useValue?: any,
+    useExisting?: any,
+    useFactory?: Function,
+    deps?: Object[],
+    multi?: boolean
+  }): Provider;
+>>>>>>> upstream/master
   
 
     
@@ -12463,7 +19433,11 @@ declare module ngWorker {
    * injector to store created objects in a more efficient way.
    * 
    * `Key` should not be created directly. {@link Injector} creates keys automatically when resolving
+<<<<<<< HEAD
    * bindings.
+=======
+   * providers.
+>>>>>>> upstream/master
    */
   class Key {
     
@@ -12495,7 +19469,10 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * @private
+=======
+>>>>>>> upstream/master
    * Type literals is a Dart-only feature. This is here only so we can x-compile
    * to multiple languages.
    */
@@ -12508,7 +19485,11 @@ declare module ngWorker {
     
   /**
    * Thrown when trying to retrieve a dependency by `Key` from {@link Injector}, but the
+<<<<<<< HEAD
    * {@link Injector} does not have a {@link Binding} for {@link Key}.
+=======
+   * {@link Injector} does not have a {@link Provider} for {@link Key}.
+>>>>>>> upstream/master
    * 
    * ### Example ([live demo](http://plnkr.co/edit/vq8D3FRB9aGbnWJqtEPE?p=preview))
    * 
@@ -12520,7 +19501,11 @@ declare module ngWorker {
    * expect(() => Injector.resolveAndCreate([A])).toThrowError();
    * ```
    */
+<<<<<<< HEAD
   class NoBindingError extends AbstractBindingError {
+=======
+  class NoProviderError extends AbstractProviderError {
+>>>>>>> upstream/master
     
     constructor(injector: Injector, key: Key);
     
@@ -12528,9 +19513,15 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Base class for all errors arising from misconfigured bindings.
    */
   class AbstractBindingError extends BaseException {
+=======
+   * Base class for all errors arising from misconfigured providers.
+   */
+  class AbstractProviderError extends BaseException {
+>>>>>>> upstream/master
     
     constructor(injector: Injector, key: Key, constructResolvingMessage: Function);
     
@@ -12548,8 +19539,13 @@ declare module ngWorker {
    * 
    * ```typescript
    * var injector = Injector.resolveAndCreate([
+<<<<<<< HEAD
    *   bind("one").toFactory((two) => "two", [[new Inject("two")]]),
    *   bind("two").toFactory((one) => "one", [[new Inject("one")]])
+=======
+   *   provide("one", {useFactory: (two) => "two", deps: [[new Inject("two")]]}),
+   *   provide("two", {useFactory: (one) => "one", deps: [[new Inject("one")]]})
+>>>>>>> upstream/master
    * ]);
    * 
    * expect(() => injector.get("one")).toThrowError();
@@ -12557,7 +19553,11 @@ declare module ngWorker {
    * 
    * Retrieving `A` or `B` throws a `CyclicDependencyError` as the graph above cannot be constructed.
    */
+<<<<<<< HEAD
   class CyclicDependencyError extends AbstractBindingError {
+=======
+  class CyclicDependencyError extends AbstractProviderError {
+>>>>>>> upstream/master
     
     constructor(injector: Injector, key: Key);
     
@@ -12590,7 +19590,13 @@ declare module ngWorker {
    * }
    * ```
    */
+<<<<<<< HEAD
   interface InstantiationError extends WrappedException {
+=======
+  class InstantiationError extends WrappedException {
+    
+    constructor(injector: Injector, originalException: any, originalStack: any, key: Key);
+>>>>>>> upstream/master
     
     addKey(injector: Injector, key: Key): void;
     
@@ -12604,7 +19610,11 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Thrown when an object other then {@link Binding} (or `Type`) is passed to {@link Injector}
+=======
+   * Thrown when an object other then {@link Provider} (or `Type`) is passed to {@link Injector}
+>>>>>>> upstream/master
    * creation.
    * 
    * ### Example ([live demo](http://plnkr.co/edit/YatCFbPAMCL0JSSQ4mvH?p=preview))
@@ -12613,9 +19623,15 @@ declare module ngWorker {
    * expect(() => Injector.resolveAndCreate(["not a type"])).toThrowError();
    * ```
    */
+<<<<<<< HEAD
   class InvalidBindingError extends BaseException {
     
     constructor(binding: any);
+=======
+  class InvalidProviderError extends BaseException {
+    
+    constructor(provider: any);
+>>>>>>> upstream/master
     
   }
 
@@ -12636,7 +19652,11 @@ declare module ngWorker {
    * expect(() => Injector.resolveAndCreate([A])).toThrowError();
    * ```
    * 
+<<<<<<< HEAD
    * This error is also thrown when the class not marked with {@link @Injectable} has parameter types.
+=======
+   * This error is also thrown when the class not marked with {@link Injectable} has parameter types.
+>>>>>>> upstream/master
    * 
    * ```typescript
    * class B {}
@@ -12676,22 +19696,37 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Creates a token that can be used in a DI Binding.
+=======
+   * Creates a token that can be used in a DI Provider.
+>>>>>>> upstream/master
    * 
    * ### Example ([live demo](http://plnkr.co/edit/Ys9ezXpj2Mnoy3Uc8KBp?p=preview))
    * 
    * ```typescript
+<<<<<<< HEAD
    * var t = new OpaqueToken("binding");
    * 
    * var injector = Injector.resolveAndCreate([
    *   bind(t).toValue("bindingValue")
+=======
+   * var t = new OpaqueToken("value");
+   * 
+   * var injector = Injector.resolveAndCreate([
+   *   provide(t, {useValue: "providedValue"})
+>>>>>>> upstream/master
    * ]);
    * 
    * expect(injector.get(t)).toEqual("bindingValue");
    * ```
    * 
    * Using an `OpaqueToken` is preferable to using strings as tokens because of possible collisions
+<<<<<<< HEAD
    * caused by multiple bindings using the same string as two different tokens.
+=======
+   * caused by multiple providers using the same string as two different tokens.
+>>>>>>> upstream/master
    * 
    * Using an `OpaqueToken` is preferable to using an `Object` as tokens because it provides better
    * error messages.
@@ -12831,9 +19866,13 @@ declare module ngWorker {
    * ```
    * import {Observable} from 'angular2/core';
    * @Component({
+<<<<<<< HEAD
    *   selector: "task-cmp"
    * })
    * @View({
+=======
+   *   selector: "task-cmp",
+>>>>>>> upstream/master
    *   template: "Time: {{ time | async }}"
    * })
    * class Task {
@@ -12921,7 +19960,11 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   let DEFAULT_PIPES: Binding;
+=======
+  let DEFAULT_PIPES: Provider;
+>>>>>>> upstream/master
   
 
     
@@ -12938,9 +19981,13 @@ declare module ngWorker {
    * 
    *  ```
    * @Component({
+<<<<<<< HEAD
    *   selector: "user-cmp"
    * })
    * @View({
+=======
+   *   selector: "user-cmp",
+>>>>>>> upstream/master
    *   template: "User: {{ user | json }}"
    * })
    * class Username {
@@ -13035,9 +20082,13 @@ declare module ngWorker {
    * 
    *  ```
    * @Component({
+<<<<<<< HEAD
    *   selector: "username-cmp"
    * })
    * @View({
+=======
+   *   selector: "username-cmp",
+>>>>>>> upstream/master
    *   template: "Username: {{ user | lowercase }}"
    * })
    * class Username {
@@ -13144,9 +20195,13 @@ declare module ngWorker {
    * 
    *  ```
    * @Component({
+<<<<<<< HEAD
    *   selector: "username-cmp"
    * })
    * @View({
+=======
+   *   selector: "username-cmp",
+>>>>>>> upstream/master
    *   template: "Username: {{ user | uppercase }}"
    * })
    * class Username {
@@ -13162,6 +20217,16 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
+=======
+  interface ConcreteType extends Type {
+    
+    new(...args: any[]): any;
+    
+  }
+
+    
+>>>>>>> upstream/master
   /**
    * 
    * Runtime representation a type that a Component or other object is instances of.
@@ -13171,8 +20236,11 @@ declare module ngWorker {
    */
   interface Type extends Function {
     
+<<<<<<< HEAD
     new(...args: any[]): any;
     
+=======
+>>>>>>> upstream/master
   }
 
     
@@ -13192,8 +20260,14 @@ declare module ngWorker {
    * title gets clicked:
    * 
    * ```
+<<<<<<< HEAD
    * @Component({selector: 'zippy'})
    * @View({template: `
+=======
+   * @Component({
+   *   selector: 'zippy',
+   *   template: `
+>>>>>>> upstream/master
    *   <div class="zippy">
    *     <div (click)="toggle()">Toggle</div>
    *     <div [hidden]="!visible">
@@ -13265,20 +20339,36 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Constructs the set of bindings meant for use at the platform level.
    * 
    * These are bindings that should be singletons shared among all Angular applications
    * running on the page.
    */
   function platformBindings(): Array<Type | Binding | any[]>;
+=======
+   * Constructs the set of providers meant for use at the platform level.
+   * 
+   * These are providers that should be singletons shared among all Angular applications
+   * running on the page.
+   */
+  function platformBindings(): Array<Type | Provider | any[]>;
+>>>>>>> upstream/master
   
 
     
   /**
+<<<<<<< HEAD
    * Construct a default set of bindings which should be included in any Angular
    * application, regardless of whether it runs on the UI thread or in a web worker.
    */
   function applicationCommonBindings(): Array<Type | Binding | any[]>;
+=======
+   * Construct a default set of providers which should be included in any Angular
+   * application, regardless of whether it runs on the UI thread or in a web worker.
+   */
+  function applicationCommonBindings(): Array<Type | Provider | any[]>;
+>>>>>>> upstream/master
   
 
     
@@ -13289,10 +20379,14 @@ declare module ngWorker {
   
 
     
+<<<<<<< HEAD
   /**
    * @private
    */
   function platformCommon(bindings?: Array<Type | Binding | any[]>, initializer?: () => void): PlatformRef;
+=======
+  function platformCommon(bindings?: Array<Type | Provider | any[]>, initializer?: () => void): PlatformRef;
+>>>>>>> upstream/master
   
 
     
@@ -13304,11 +20398,19 @@ declare module ngWorker {
    * A page's platform is initialized implicitly when {@link bootstrap}() is called, or
    * explicitly by calling {@link platform}().
    */
+<<<<<<< HEAD
   interface PlatformRef {
     
     /**
      * Retrieve the platform {@link Injector}, which is the parent injector for
      * every Angular application on the page and provides singleton bindings.
+=======
+  abstract class PlatformRef {
+    
+    /**
+     * Retrieve the platform {@link Injector}, which is the parent injector for
+     * every Angular application on the page and provides singleton providers.
+>>>>>>> upstream/master
      */
     injector: Injector;
     
@@ -13323,10 +20425,17 @@ declare module ngWorker {
      * 
      * # Application Bindings
      * 
+<<<<<<< HEAD
      * Angular applications require numerous bindings to be properly instantiated.
      * When using `application()` to create a new app on the page, these bindings
      * must be provided. Fortunately, there are helper functions to configure
      * typical bindings, as shown in the example below.
+=======
+     * Angular applications require numerous providers to be properly instantiated.
+     * When using `application()` to create a new app on the page, these providers
+     * must be provided. Fortunately, there are helper functions to configure
+     * typical providers, as shown in the example below.
+>>>>>>> upstream/master
      * 
      * # Example
      * ```
@@ -13340,22 +20449,37 @@ declare module ngWorker {
      * 
      * See the {@link bootstrap} documentation for more details.
      */
+<<<<<<< HEAD
     application(bindings: Array<Type | Binding | any[]>): ApplicationRef;
     
     /**
      * Instantiate a new Angular application on the page, using bindings which
+=======
+    application(bindings: Array<Type | Provider | any[]>): ApplicationRef;
+    
+    /**
+     * Instantiate a new Angular application on the page, using providers which
+>>>>>>> upstream/master
      * are only available asynchronously. One such use case is to initialize an
      * application running in a web worker.
      * 
      * # Usage
      * 
      * `bindingFn` is a function that will be called in the new application's zone.
+<<<<<<< HEAD
      * It should return a {@link Promise} to a list of bindings to be used for the
      * new application. Once this promise resolves, the application will be
      * constructed in the same manner as a normal `application()`.
      */
     asyncApplication(bindingFn: (zone: NgZone) =>
                            Promise<Array<Type | Binding | any[]>>): Promise<ApplicationRef>;
+=======
+     * It should return a `Promise` to a list of providers to be used for the
+     * new application. Once this promise resolves, the application will be
+     * constructed in the same manner as a normal `application()`.
+     */
+    asyncApplication(bindingFn: (zone: NgZone) => Promise<Array<Type | Provider | any[]>>): Promise<ApplicationRef>;
+>>>>>>> upstream/master
     
     /**
      * Destroy the Angular platform and all Angular applications on the page.
@@ -13365,12 +20489,35 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
+=======
+  class PlatformRef_ extends PlatformRef {
+    
+    constructor(_injector: Injector, _dispose: () => void);
+    
+    injector: Injector;
+    
+    application(bindings: Array<Type | Provider | any[]>): ApplicationRef;
+    
+    asyncApplication(bindingFn: (zone: NgZone) =>
+                           Promise<Array<Type | Provider | any[]>>): Promise<ApplicationRef>;
+    
+    dispose(): void;
+    
+  }
+
+    
+>>>>>>> upstream/master
   /**
    * A reference to an Angular application running on a page.
    * 
    * For more about Angular applications, see the documentation for {@link bootstrap}.
    */
+<<<<<<< HEAD
   interface ApplicationRef {
+=======
+  abstract class ApplicationRef {
+>>>>>>> upstream/master
     
     /**
      * Register a listener to be called each time `bootstrap()` is called to bootstrap
@@ -13389,18 +20536,30 @@ declare module ngWorker {
      * 
      * # Optional Bindings
      * 
+<<<<<<< HEAD
      * Bindings for the given component can optionally be overridden via the `bindings`
      * parameter. These bindings will only apply for the root component being added and any
+=======
+     * Bindings for the given component can optionally be overridden via the `providers`
+     * parameter. These providers will only apply for the root component being added and any
+>>>>>>> upstream/master
      * child components under it.
      * 
      * # Example
      * ```
      * var app = platform.application([applicationCommonBindings(), applicationDomBindings()];
      * app.bootstrap(FirstRootComponent);
+<<<<<<< HEAD
      * app.bootstrap(SecondRootComponent, [bind(OverrideBinding).toClass(OverriddenBinding)]);
      * ```
      */
     bootstrap(componentType: Type, bindings?: Array<Type | Binding | any[]>): Promise<ComponentRef>;
+=======
+     * app.bootstrap(SecondRootComponent, [provide(OverrideBinding, {useClass: OverriddenBinding})]);
+     * ```
+     */
+    bootstrap(componentType: Type, bindings?: Array<Type | Provider | any[]>): Promise<ComponentRef>;
+>>>>>>> upstream/master
     
     /**
      * Retrieve the application {@link Injector}.
@@ -13417,6 +20576,33 @@ declare module ngWorker {
      */
     dispose(): void;
     
+<<<<<<< HEAD
+=======
+    /**
+     * Get a list of component types registered to this application.
+     */
+    componentTypes: Type[];
+    
+  }
+
+    
+  class ApplicationRef_ extends ApplicationRef {
+    
+    constructor(_platform: PlatformRef_, _zone: NgZone, _injector: Injector);
+    
+    registerBootstrapListener(listener: (ref: ComponentRef) => void): void;
+    
+    bootstrap(componentType: Type, providers?: Array<Type | Provider | any[]>): Promise<ComponentRef>;
+    
+    injector: Injector;
+    
+    zone: NgZone;
+    
+    dispose(): void;
+    
+    componentTypes: any[];
+    
+>>>>>>> upstream/master
   }
 
     
@@ -13433,10 +20619,14 @@ declare module ngWorker {
     
     constructor(value: string);
     
+<<<<<<< HEAD
     /**
      * Returns the base URL of the currently running application.
      */
     value: any;
+=======
+    value: string;
+>>>>>>> upstream/master
     
   }
 
@@ -13509,7 +20699,11 @@ declare module ngWorker {
    * Most applications should instead use higher-level {@link DynamicComponentLoader} service, which
    * both compiles and instantiates a Component.
    */
+<<<<<<< HEAD
   interface Compiler {
+=======
+  abstract class Compiler {
+>>>>>>> upstream/master
     
     compileInHost(componentType: Type): Promise<ProtoViewRef>;
     
@@ -13524,7 +20718,11 @@ declare module ngWorker {
    * Most applications should use higher-level abstractions like {@link DynamicComponentLoader} and
    * {@link ViewContainerRef} instead.
    */
+<<<<<<< HEAD
   interface AppViewManager {
+=======
+  abstract class AppViewManager {
+>>>>>>> upstream/master
     
     /**
      * Returns a {@link ViewContainerRef} of the View Container at the specified location.
@@ -13640,7 +20838,11 @@ declare module ngWorker {
      * 
      * Use {@link AppViewManager#destroyViewInContainer} to destroy the created Host View.
      */
+<<<<<<< HEAD
     createHostViewInContainer(viewContainerLocation: ElementRef, index: number, protoViewRef: ProtoViewRef, imperativelyCreatedInjector: ResolvedBinding[]): HostViewRef;
+=======
+    createHostViewInContainer(viewContainerLocation: ElementRef, index: number, protoViewRef: ProtoViewRef, imperativelyCreatedInjector: ResolvedProvider[]): HostViewRef;
+>>>>>>> upstream/master
     
     /**
      * Destroys an Embedded or Host View attached to a View Container at the specified `index`.
@@ -13709,7 +20911,11 @@ declare module ngWorker {
   /**
    * Service for instantiating a Component and attaching it to a View at a specified location.
    */
+<<<<<<< HEAD
   interface DynamicComponentLoader {
+=======
+  abstract class DynamicComponentLoader {
+>>>>>>> upstream/master
     
     /**
      * Creates an instance of a Component `type` and attaches it to the first element in the
@@ -13781,7 +20987,11 @@ declare module ngWorker {
      * location within the Component View of this Component Instance is specified via `anchorName`
      * Template Variable Name.
      * 
+<<<<<<< HEAD
      * You can optionally provide `bindings` to configure the {@link Injector} provisioned for this
+=======
+     * You can optionally provide `providers` to configure the {@link Injector} provisioned for this
+>>>>>>> upstream/master
      * Component Instance.
      * 
      * Returns a promise for the {@link ComponentRef} representing the newly created Component.
@@ -13828,13 +21038,21 @@ declare module ngWorker {
      * </my-app>
      * ```
      */
+<<<<<<< HEAD
     loadIntoLocation(type: Type, hostLocation: ElementRef, anchorName: string, bindings?: ResolvedBinding[]): Promise<ComponentRef>;
+=======
+    loadIntoLocation(type: Type, hostLocation: ElementRef, anchorName: string, providers?: ResolvedProvider[]): Promise<ComponentRef>;
+>>>>>>> upstream/master
     
     /**
      * Creates an instance of a Component and attaches it to the View Container found at the
      * `location` specified as {@link ElementRef}.
      * 
+<<<<<<< HEAD
      * You can optionally provide `bindings` to configure the {@link Injector} provisioned for this
+=======
+     * You can optionally provide `providers` to configure the {@link Injector} provisioned for this
+>>>>>>> upstream/master
      * Component Instance.
      * 
      * Returns a promise for the {@link ComponentRef} representing the newly created Component.
@@ -13875,7 +21093,11 @@ declare module ngWorker {
      * <child-component>Child</child-component>
      * ```
      */
+<<<<<<< HEAD
     loadNextToLocation(type: Type, location: ElementRef, bindings?: ResolvedBinding[]): Promise<ComponentRef>;
+=======
+    loadNextToLocation(type: Type, location: ElementRef, providers?: ResolvedProvider[]): Promise<ComponentRef>;
+>>>>>>> upstream/master
     
   }
 
@@ -13890,7 +21112,11 @@ declare module ngWorker {
    * An `ElementRef` is backed by a render-specific element. In the browser, this is usually a DOM
    * element.
    */
+<<<<<<< HEAD
   interface ElementRef extends RenderElementRef {
+=======
+  abstract class ElementRef implements RenderElementRef {
+>>>>>>> upstream/master
     
     /**
      * The underlying native element or `null` if direct access to native elements is not supported
@@ -13913,6 +21139,11 @@ declare module ngWorker {
      */
     nativeElement: any;
     
+<<<<<<< HEAD
+=======
+    renderView: RenderViewRef;
+    
+>>>>>>> upstream/master
   }
 
     
@@ -13928,7 +21159,11 @@ declare module ngWorker {
    * {@link ViewContainerRef#createEmbeddedView}, which will create the View and attach it to the
    * View Container.
    */
+<<<<<<< HEAD
   interface TemplateRef {
+=======
+  abstract class TemplateRef {
+>>>>>>> upstream/master
     
     /**
      * The location in the View where the Embedded View logically belongs to.
@@ -14003,13 +21238,22 @@ declare module ngWorker {
    * <!-- /ViewRef: outer-0 -->
    * ```
    */
+<<<<<<< HEAD
   interface ViewRef extends HostViewRef {
+=======
+  abstract class ViewRef implements HostViewRef {
+>>>>>>> upstream/master
     
     /**
      * Sets `value` of local variable called `variableName` in this View.
      */
     setLocal(variableName: string, value: any): void;
     
+<<<<<<< HEAD
+=======
+    changeDetectorRef: ChangeDetectorRef;
+    
+>>>>>>> upstream/master
   }
 
     
@@ -14066,7 +21310,11 @@ declare module ngWorker {
    * 
    * Notice that the original template is broken down into two separate ProtoViews.
    */
+<<<<<<< HEAD
   interface ProtoViewRef {
+=======
+  abstract class ProtoViewRef {
+>>>>>>> upstream/master
     
   }
 
@@ -14091,7 +21339,11 @@ declare module ngWorker {
    * 
    * <!-- TODO(i): we are also considering ElementRef#viewContainer api -->
    */
+<<<<<<< HEAD
   interface ViewContainerRef {
+=======
+  abstract class ViewContainerRef {
+>>>>>>> upstream/master
     
     /**
      * Anchor element that specifies the location of this container in the containing View.
@@ -14133,12 +21385,20 @@ declare module ngWorker {
      * 
      * If `index` is not specified, the new View will be inserted as the last View in the container.
      * 
+<<<<<<< HEAD
      * You can optionally specify `dynamicallyCreatedBindings`, which configure the {@link Injector}
+=======
+     * You can optionally specify `dynamicallyCreatedProviders`, which configure the {@link Injector}
+>>>>>>> upstream/master
      * that will be created for the Host View.
      * 
      * Returns the {@link HostViewRef} of the Host View created for the newly instantiated Component.
      */
+<<<<<<< HEAD
     createHostView(protoViewRef?: ProtoViewRef, index?: number, dynamicallyCreatedBindings?: ResolvedBinding[]): HostViewRef;
+=======
+    createHostView(protoViewRef?: ProtoViewRef, index?: number, dynamicallyCreatedProviders?: ResolvedProvider[]): HostViewRef;
+>>>>>>> upstream/master
     
     /**
      * Inserts a View identified by a {@link ViewRef} into the container at the specified `index`.
@@ -14179,7 +21439,19 @@ declare module ngWorker {
    * Component Instance and allows you to destroy the Component Instance via the {@link #dispose}
    * method.
    */
+<<<<<<< HEAD
   interface ComponentRef {
+=======
+  abstract class ComponentRef {
+    
+    /**
+     * The injector provided {@link DynamicComponentLoader#loadAsRoot}.
+     * 
+     * TODO(i): this api is useless and should be replaced by an injector retrieved from
+     *     the HostElementRef, which is currently not possible.
+     */
+    injector: Injector;
+>>>>>>> upstream/master
     
     /**
      * Location of the Host Element of this Component Instance.
@@ -14239,7 +21511,11 @@ declare module ngWorker {
    * });
    * ```
    */
+<<<<<<< HEAD
   interface LifeCycle {
+=======
+  abstract class LifeCycle {
+>>>>>>> upstream/master
     
     /**
      * Invoke this method to explicitly process change detection and its side-effects.
@@ -14278,9 +21554,13 @@ declare module ngWorker {
    * import {Component, View, NgIf, NgZone} from 'angular2/angular2';
    * 
    * @Component({
+<<<<<<< HEAD
    *   selector: 'ng-zone-demo'
    * })
    * @View({
+=======
+   *   selector: 'ng-zone-demo'.
+>>>>>>> upstream/master
    *   template: `
    *     <h2>Demo: NgZone</h2>
    * 
@@ -14332,7 +21612,59 @@ declare module ngWorker {
    * }
    * ```
    */
+<<<<<<< HEAD
   interface NgZone {
+=======
+  class NgZone {
+    
+    /**
+     * @param {bool} enableLongStackTrace whether to enable long stack trace. They should only be
+     *               enabled in development mode as they significantly impact perf.
+     */
+    constructor({enableLongStackTrace}: any);
+    
+    /**
+     * Sets the zone hook that is called just before a browser task that is handled by Angular
+     * executes.
+     * 
+     * The hook is called once per browser task that is handled by Angular.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnTurnStart(onTurnStartHook: () => void): void;
+    
+    /**
+     * Sets the zone hook that is called immediately after Angular zone is done processing the current
+     * task and any microtasks scheduled from that task.
+     * 
+     * This is where we typically do change-detection.
+     * 
+     * The hook is called once per browser task that is handled by Angular.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnTurnDone(onTurnDoneHook: () => void): void;
+    
+    /**
+     * Sets the zone hook that is called immediately after the `onTurnDone` callback is called and any
+     * microstasks scheduled from within that callback are drained.
+     * 
+     * `onEventDoneFn` is executed outside Angular zone, which means that we will no longer attempt to
+     * sync the UI with any model changes that occur within this callback.
+     * 
+     * This hook is useful for validating application state (e.g. in a test).
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnEventDone(onEventDoneFn: () => void, opt_waitForAsync?: boolean): void;
+    
+    /**
+     * Sets the zone hook that is called when an error is thrown in the Angular zone.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnErrorHandler(errorHandler: (error: Error, stack: string) => void): void;
+>>>>>>> upstream/master
     
     /**
      * Executes the `fn` function synchronously within the Angular zone and returns value returned by
@@ -14364,6 +21696,7 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Adds and removes CSS classes based on an {expression} value.
    * 
    * The result of expression is used to add and remove CSS classes using the following logic,
@@ -14381,6 +21714,63 @@ declare module ngWorker {
    * <div class="message" [ng-class]="{error: errorCount > 0}">
    *     Please check errors.
    * </div>
+=======
+   * The `NgClass` directive conditionally adds and removes CSS classes on an HTML element based on
+   * an expression's evaluation result.
+   * 
+   * The result of an expression evaluation is interpreted differently depending on type of
+   * the expression evaluation result:
+   * - `string` - all the CSS classes listed in a string (space delimited) are added
+   * - `Array` - all the CSS classes (Array elements) are added
+   * - `Object` - each key corresponds to a CSS class name while values are interpreted as expressions
+   * evaluating to `Boolean`. If a given expression evaluates to `true` a corresponding CSS class
+   * is added - otherwise it is removed.
+   * 
+   * While the `NgClass` directive can interpret expressions evaluating to `string`, `Array`
+   * or `Object`, the `Object`-based version is the most often used and has an advantage of keeping
+   * all the CSS class names in a template.
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/a4YdtmWywhJ33uqfpPPn?p=preview)):
+   * 
+   * ```
+   * import {Component, NgClass} from 'angular2/angular2';
+   * 
+   * @Component({
+   *   selector: 'toggle-button',
+   *   inputs: ['isDisabled'],
+   *   template: `
+   *      <div class="button" [ng-class]="{active: isOn, disabled: isDisabled}"
+   *          (click)="toggle(!isOn)">
+   *          Click me!
+   *      </div>`,
+   *   styles: [`
+   *     .button {
+   *       width: 120px;
+   *       border: medium solid black;
+   *     }
+   * 
+   *     .active {
+   *       background-color: red;
+   *    }
+   * 
+   *     .disabled {
+   *       color: gray;
+   *       border: medium solid gray;
+   *     }
+   *   `]
+   *   directives: [NgClass]
+   * })
+   * class ToggleButton {
+   *   isOn = false;
+   *   isDisabled = false;
+   * 
+   *   toggle(newState) {
+   *     if (!this.isDisabled) {
+   *       this.isOn = newState;
+   *     }
+   *   }
+   * }
+>>>>>>> upstream/master
    * ```
    */
   class NgClass implements DoCheck,  OnDestroy {
@@ -14435,6 +21825,11 @@ declare module ngWorker {
     
     ngForOf: any;
     
+<<<<<<< HEAD
+=======
+    ngForTemplate: any;
+    
+>>>>>>> upstream/master
     doCheck(): void;
     
   }
@@ -14472,6 +21867,7 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Adds or removes styles based on an {expression}.
    * 
    * When the expression assigned to `ng-style` evaluates to an object, the corresponding element
@@ -14491,6 +21887,56 @@ declare module ngWorker {
    * 
    * - `<div [ng-style]="{'text-align': alignExp}"></div>`
    * - `<div [ng-style]="styleExp"></div>`
+=======
+   * The `NgStyle` directive changes styles based on a result of expression evaluation.
+   * 
+   * An expression assigned to the `ng-style` property must evaluate to an object and the
+   * corresponding element styles are updated based on changes to this object. Style names to update
+   * are taken from the object's keys, and values - from the corresponding object's values.
+   * 
+   * # Syntax
+   * 
+   * - `<div [ng-style]="{'font-style': style}"></div>`
+   * - `<div [ng-style]="styleExp"></div>` - here the `styleExp` must evaluate to an object
+   * 
+   * ### Example ([live demo](http://plnkr.co/edit/YamGS6GkUh9GqWNQhCyM?p=preview)):
+   * 
+   * ```
+   * import {Component, NgStyle} from 'angular2/angular2';
+   * 
+   * @Component({
+   *  selector: 'ng-style-example',
+   *  template: `
+   *    <h1 [ng-style]="{'font-style': style, 'font-size': size, 'font-weight': weight}">
+   *      Change style of this text!
+   *    </h1>
+   * 
+   *    <hr>
+   * 
+   *    <label>Italic: <input type="checkbox" (change)="changeStyle($event)"></label>
+   *    <label>Bold: <input type="checkbox" (change)="changeWeight($event)"></label>
+   *    <label>Size: <input type="text" [value]="size" (change)="size = $event.target.value"></label>
+   *  `,
+   *  directives: [NgStyle]
+   * })
+   * export class NgStyleExample {
+   *    style = 'normal';
+   *    weight = 'normal';
+   *    size = '20px';
+   * 
+   *    changeStyle($event: any) {
+   *      this.style = $event.target.checked ? 'italic' : 'normal';
+   *    }
+   * 
+   *    changeWeight($event: any) {
+   *      this.weight = $event.target.checked ? 'bold' : 'normal';
+   *    }
+   * }
+   * ```
+   * 
+   * In this example the `font-style`, `font-size` and `font-weight` styles will be updated
+   * based on the `style` property's value changes.
+>>>>>>> upstream/master
    */
   class NgStyle implements DoCheck {
     
@@ -14593,9 +22039,13 @@ declare module ngWorker {
    * import {OtherDirective} from './myDirectives';
    * 
    * @Component({
+<<<<<<< HEAD
    *  selector: 'my-component'
    * })
    * @View({
+=======
+   *   selector: 'my-component',
+>>>>>>> upstream/master
    *   templateUrl: 'myComponent.html',
    *   directives: [NgClass, NgIf, NgFor, NgSwitch, NgSwitchWhen, NgSwitchDefault, OtherDirective]
    * })
@@ -14610,9 +22060,13 @@ declare module ngWorker {
    * import {OtherDirective} from './myDirectives';
    * 
    * @Component({
+<<<<<<< HEAD
    *  selector: 'my-component'
    * })
    * @View({
+=======
+   *   selector: 'my-component',
+>>>>>>> upstream/master
    *   templateUrl: 'myComponent.html',
    *   directives: [CORE_DIRECTIVES, OtherDirective]
    * })
@@ -14625,6 +22079,13 @@ declare module ngWorker {
   
 
     
+<<<<<<< HEAD
+=======
+  var workaround_empty_observable_list_diff: any;
+  
+
+    
+>>>>>>> upstream/master
   /**
    * Omitting from external API doc as this is really an abstract internal concept.
    */
@@ -14874,8 +22335,13 @@ declare module ngWorker {
    * changes.
    * 
    *  ```
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *        <form #f="form" (submit)='onLogIn(f.value)'>
@@ -14896,8 +22362,13 @@ declare module ngWorker {
    * We can also use ng-model to bind a domain model to the form.
    * 
    *  ```
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *        <form (submit)='onLogIn()'>
@@ -14958,9 +22429,13 @@ declare module ngWorker {
    * 
    *  ```typescript
    * @Component({
+<<<<<<< HEAD
    *   selector: 'my-app'
    * })
    * @View({
+=======
+   *   selector: 'my-app',
+>>>>>>> upstream/master
    *   template: `
    *     <div>
    *       <h2>NgFormControl Example</h2>
@@ -14985,8 +22460,13 @@ declare module ngWorker {
    * ### Example ([live demo](http://plnkr.co/edit/yHMLuHO7DNgT8XvtjTDH?p=preview))
    * 
    *  ```typescript
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: "<input type='text' [ng-form-control]='loginControl' [(ng-model)]='login'>"
    *      })
@@ -15034,8 +22514,13 @@ declare module ngWorker {
    * 
    * ### Example ([live demo](http://plnkr.co/edit/R3UX5qDaUqFO2VYR0UzH?p=preview))
    *  ```typescript
+<<<<<<< HEAD
    * @Component({selector: "search-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "search-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `<input type='text' [(ng-model)]="searchQuery">`
    *      })
@@ -15099,8 +22584,13 @@ declare module ngWorker {
    * We can work with each group separately: check its validity, get its value, listen to its changes.
    * 
    *  ```
+<<<<<<< HEAD
    * @Component({selector: "signup-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "signup-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *              <form #f="form" (submit)='onSignUp(f.value)'>
@@ -15154,9 +22644,13 @@ declare module ngWorker {
    * 
    *  ```typescript
    * @Component({
+<<<<<<< HEAD
    *   selector: 'my-app'
    * })
    * @View({
+=======
+   *   selector: 'my-app',
+>>>>>>> upstream/master
    *   template: `
    *     <div>
    *       <h2>NgFormModel Example</h2>
@@ -15189,8 +22683,13 @@ declare module ngWorker {
    * We can also use ng-model to bind a domain model to the form.
    * 
    *  ```typescript
+<<<<<<< HEAD
    * @Component({selector: "login-comp"})
    * @View({
+=======
+   * @Component({
+   *      selector: "login-comp",
+>>>>>>> upstream/master
    *      directives: [FORM_DIRECTIVES],
    *      template: `
    *        <form [ng-form-model]='loginForm'>
@@ -15265,9 +22764,15 @@ declare module ngWorker {
    * 
    * # Structure
    * 
+<<<<<<< HEAD
    * An Angular form is a collection of {@link Control}s in some hierarchy.
    * `Control`s can be at the top level or can be organized in {@link ControlGroups}
    * or {@link ControlArray}s. This hierarchy is reflected in the form's `value`, a
+=======
+   * An Angular form is a collection of `Control`s in some hierarchy.
+   * `Control`s can be at the top level or can be organized in `ControlGroup`s
+   * or `ControlArray`s. This hierarchy is reflected in the form's `value`, a
+>>>>>>> upstream/master
    * JSON object that mirrors the form structure.
    * 
    * # Submission
@@ -15278,9 +22783,13 @@ declare module ngWorker {
    * 
    *  ```typescript
    * @Component({
+<<<<<<< HEAD
    *   selector: 'my-app'
    * })
    * @View({
+=======
+   *   selector: 'my-app',
+>>>>>>> upstream/master
    *   template: `
    *     <div>
    *       <p>Submit the form to see the data object Angular builds</p>
@@ -15480,11 +22989,17 @@ declare module ngWorker {
    * ### Example:
    * 
    * ```typescript
+<<<<<<< HEAD
    * @View({
    *   directives: [FORM_DIRECTIVES]
    * })
    * @Component({
    *   selector: 'my-app'
+=======
+   * @Component({
+   *   selector: 'my-app',
+   *   directives: [FORM_DIRECTIVES]
+>>>>>>> upstream/master
    * })
    * class MyApp {}
    * ```
@@ -15510,6 +23025,13 @@ declare module ngWorker {
     
     static required(control:Control): {[key: string]: boolean};
     
+<<<<<<< HEAD
+=======
+    static minLength(minLength: number): Function;
+    
+    static maxLength(maxLength: number): Function;
+    
+>>>>>>> upstream/master
     static nullValidator(c: any): {[key: string]: boolean};
     
     static compose(validators: Function[]): Function;
@@ -15521,7 +23043,29 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   class DefaultValidators {
+=======
+  class RequiredValidator {
+    
+  }
+
+    
+  class MinLengthValidator {
+    
+    constructor(minLength: string);
+    
+    minLength: number;
+    
+  }
+
+    
+  class MaxLengthValidator {
+    
+    constructor(maxLength: string);
+    
+    maxLength: number;
+>>>>>>> upstream/master
     
   }
 
@@ -15532,14 +23076,22 @@ declare module ngWorker {
    * # Example
    * 
    * ```
+<<<<<<< HEAD
    * import {Component, View, bootstrap} from 'angular2/angular2';
+=======
+   * import {Component, bootstrap} from 'angular2/angular2';
+>>>>>>> upstream/master
    * import {FormBuilder, Validators, FORM_DIRECTIVES, ControlGroup} from 'angular2/core';
    * 
    * @Component({
    *   selector: 'login-comp',
+<<<<<<< HEAD
    *   viewBindings: [FormBuilder]
    * })
    * @View({
+=======
+   *   viewProviders: [FormBuilder],
+>>>>>>> upstream/master
    *   template: `
    *     <form [control-group]="loginForm">
    *       Login <input control="login">
@@ -15598,11 +23150,16 @@ declare module ngWorker {
 
     
   /**
+<<<<<<< HEAD
    * Shorthand set of bindings used for building Angular forms.
+=======
+   * Shorthand set of providers used for building Angular forms.
+>>>>>>> upstream/master
    * 
    * ### Example:
    * 
    * ```typescript
+<<<<<<< HEAD
    * bootstrap(MyApp, [FORM_BINDINGS]);
    * ```
    */
@@ -15615,6 +23172,19 @@ declare module ngWorker {
 
     
   let ELEMENT_PROBE_BINDINGS: any[];
+=======
+   * bootstrap(MyApp, [FORM_PROVIDERS]);
+   * ```
+   */
+  let FORM_PROVIDERS: Type[];
+  
+
+    
+  /**
+   * @deprecated
+   */
+  let FORM_BINDINGS: any;
+>>>>>>> upstream/master
   
 
     
@@ -15623,7 +23193,11 @@ declare module ngWorker {
    * element and provides access to the corresponding ElementInjector and
    * underlying DOM Element, as well as a way to query for children.
    */
+<<<<<<< HEAD
   interface DebugElement {
+=======
+  abstract class DebugElement {
+>>>>>>> upstream/master
     
     componentInstance: any;
     
@@ -15681,6 +23255,7 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   /**
    * Returns a DebugElement for a ElementRef.
    * 
@@ -15693,6 +23268,21 @@ declare module ngWorker {
     
   function asNativeElements(arr: DebugElement[]): any[];
   
+=======
+  function asNativeElements(arr: DebugElement[]): any[];
+  
+
+    
+  class By {
+    
+    static all(): Function;
+    
+    static css(selector: string): Predicate<DebugElement>;
+    
+    static directive(type: Type): Predicate<DebugElement>;
+    
+  }
+>>>>>>> upstream/master
 
     
   class Scope {
@@ -15706,6 +23296,7 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   class By {
     
     static all(): Function;
@@ -15715,6 +23306,28 @@ declare module ngWorker {
     static directive(type: Type): Predicate<DebugElement>;
     
   }
+=======
+  /**
+   * Returns a DebugElement for a ElementRef.
+   * 
+   * @param {ElementRef}: elementRef
+   * @return {DebugElement}
+   */
+  function inspectElement(elementRef: ElementRef): DebugElement;
+  
+
+    
+  function inspectNativeElement(element: any): DebugElement;
+  
+
+    
+  let ELEMENT_PROBE_PROVIDERS: any[];
+  
+
+    
+  let ELEMENT_PROBE_BINDINGS: any;
+  
+>>>>>>> upstream/master
 
     
   enum ChangeDetectionStrategy {
@@ -15771,8 +23384,13 @@ declare module ngWorker {
    * ### Example
    * 
    * ```typescript
+<<<<<<< HEAD
    * @Component({selector: 'parent'})
    * @View({
+=======
+   * @Component({
+   *   selector: 'parent',
+>>>>>>> upstream/master
    *   template: `
    *     <child [prop]="parentProp"></child>
    *   `,
@@ -15816,9 +23434,13 @@ declare module ngWorker {
    * }
    * 
    * @Component({
+<<<<<<< HEAD
    *   selector: 'app'
    * })
    * @View({
+=======
+   *   selector: 'app',
+>>>>>>> upstream/master
    *   template: `
    *     <child [prop]="field.first"></child>
    *   `,
@@ -15846,6 +23468,7 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   /**
    * Reference to a component's change detection object.
    */
@@ -15853,14 +23476,28 @@ declare module ngWorker {
     
     /**
      * Marks all {@link OnPush} ancestors as to be checked.
+=======
+  abstract class ChangeDetectorRef {
+    
+    /**
+     * Marks all {@link ChangeDetectionStrategy#OnPush} ancestors as to be checked.
+>>>>>>> upstream/master
      * 
      * <!-- TODO: Add a link to a chapter on OnPush components -->
      * 
      * ### Example ([live demo](http://plnkr.co/edit/GC512b?p=preview))
      * 
      * ```typescript
+<<<<<<< HEAD
      * @Component({selector: 'cmp', changeDetection: ChangeDetectionStrategy.OnPush})
      * @View({template: `Number of ticks: {{numberOfTicks}}`})
+=======
+     * @Component({
+     *   selector: 'cmp',
+     *   changeDetection: ChangeDetectionStrategy.OnPush,
+     *   template: `Number of ticks: {{numberOfTicks}}`
+     * })
+>>>>>>> upstream/master
      * class Cmp {
      *   numberOfTicks = 0;
      * 
@@ -15875,9 +23512,13 @@ declare module ngWorker {
      * 
      * @Component({
      *   selector: 'app',
+<<<<<<< HEAD
      *   changeDetection: ChangeDetectionStrategy.OnPush
      * })
      * @View({
+=======
+     *   changeDetection: ChangeDetectionStrategy.OnPush,
+>>>>>>> upstream/master
      *   template: `
      *     <cmp><cmp>
      *   `,
@@ -15896,7 +23537,12 @@ declare module ngWorker {
      * 
      * The detached change detector will not be checked until it is reattached.
      * 
+<<<<<<< HEAD
      * This can also be used in combination with {@link detectChanges} to implement local change
+=======
+     * This can also be used in combination with {@link ChangeDetectorRef#detectChanges} to implement
+     * local change
+>>>>>>> upstream/master
      * detection checks.
      * 
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
@@ -15917,8 +23563,13 @@ declare module ngWorker {
      *   }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'giant-list'})
      * @View({
+=======
+     * @Component({
+     *   selector: 'giant-list',
+>>>>>>> upstream/master
      *   template: `
      *     <li *ng-for="#d of dataProvider.data">Data {{d}}</lig>
      *   `,
@@ -15934,9 +23585,14 @@ declare module ngWorker {
      * }
      * 
      * @Component({
+<<<<<<< HEAD
      *   selector: 'app', bindings: [DataProvider]
      * })
      * @View({
+=======
+     *   selector: 'app',
+     *   providers: [DataProvider],
+>>>>>>> upstream/master
      *   template: `
      *     <giant-list><giant-list>
      *   `,
@@ -15953,7 +23609,12 @@ declare module ngWorker {
     /**
      * Checks the change detector and its children.
      * 
+<<<<<<< HEAD
      * This can also be used in combination with {@link detach} to implement local change detection
+=======
+     * This can also be used in combination with {@link ChangeDetectorRef#detach} to implement local
+     * change detection
+>>>>>>> upstream/master
      * checks.
      * 
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
@@ -15998,8 +23659,14 @@ declare module ngWorker {
      *   }
      * }
      * 
+<<<<<<< HEAD
      * @Component({selector: 'live-data', inputs: ['live']})
      * @View({
+=======
+     * @Component({
+     *   selector: 'live-data',
+     *   inputs: ['live'],
+>>>>>>> upstream/master
      *   template: `Data: {{dataProvider.data}}`
      * })
      * class LiveData {
@@ -16015,9 +23682,13 @@ declare module ngWorker {
      * 
      * @Component({
      *   selector: 'app',
+<<<<<<< HEAD
      *   bindings: [DataProvider]
      * })
      * @View({
+=======
+     *   providers: [DataProvider],
+>>>>>>> upstream/master
      *   template: `
      *     Live Update: <input type="checkbox" [(ng-model)]="live">
      *     <live-data [live]="live"><live-data>
@@ -16181,7 +23852,11 @@ declare module ngWorker {
     static create(factories: IterableDifferFactory[], parent?: IterableDiffers): IterableDiffers;
     
     /**
+<<<<<<< HEAD
      * Takes an array of {@link IterableDifferFactory} and returns a binding used to extend the
+=======
+     * Takes an array of {@link IterableDifferFactory} and returns a provider used to extend the
+>>>>>>> upstream/master
      * inherited {@link IterableDiffers} instance with the provided factories and return a new
      * {@link IterableDiffers} instance.
      * 
@@ -16193,13 +23868,21 @@ declare module ngWorker {
      * 
      * ```
      * @Component({
+<<<<<<< HEAD
      *   viewBindings: [
+=======
+     *   viewProviders: [
+>>>>>>> upstream/master
      *     IterableDiffers.extend([new ImmutableListDiffer()])
      *   ]
      * })
      * ```
      */
+<<<<<<< HEAD
     static extend(factories: IterableDifferFactory[]): Binding;
+=======
+    static extend(factories: IterableDifferFactory[]): Provider;
+>>>>>>> upstream/master
     
     factories: IterableDifferFactory[];
     
@@ -16239,7 +23922,11 @@ declare module ngWorker {
     static create(factories: KeyValueDifferFactory[], parent?: KeyValueDiffers): KeyValueDiffers;
     
     /**
+<<<<<<< HEAD
      * Takes an array of {@link KeyValueDifferFactory} and returns a binding used to extend the
+=======
+     * Takes an array of {@link KeyValueDifferFactory} and returns a provider used to extend the
+>>>>>>> upstream/master
      * inherited {@link KeyValueDiffers} instance with the provided factories and return a new
      * {@link KeyValueDiffers} instance.
      * 
@@ -16251,13 +23938,21 @@ declare module ngWorker {
      * 
      * ```
      * @Component({
+<<<<<<< HEAD
      *   viewBindings: [
+=======
+     *   viewProviders: [
+>>>>>>> upstream/master
      *     KeyValueDiffers.extend([new ImmutableMapDiffer()])
      *   ]
      * })
      * ```
      */
+<<<<<<< HEAD
     static extend(factories: KeyValueDifferFactory[]): Binding;
+=======
+    static extend(factories: KeyValueDifferFactory[]): Provider;
+>>>>>>> upstream/master
     
     factories: KeyValueDifferFactory[];
     
@@ -16372,7 +24067,11 @@ declare module ngWorker {
    * application
    * See the bootstrap() docs for more details.
    */
+<<<<<<< HEAD
   function bootstrapWebWorker(appComponentType: Type, componentInjectableBindings?: Array<Type | Binding | any[]>): Promise<ComponentRef>;
+=======
+  function bootstrapWebWorker(appComponentType: Type, componentInjectableProviders?: Array<Type | Provider | any[]>): Promise<ComponentRef>;
+>>>>>>> upstream/master
   
 
     
@@ -16382,7 +24081,11 @@ declare module ngWorker {
    * given channel to one MessageBusSink are received on the same channel
    * by the corresponding MessageBusSource.
    */
+<<<<<<< HEAD
   class MessageBus implements MessageBusSource,  MessageBusSink {
+=======
+  abstract class MessageBus implements MessageBusSource,  MessageBusSink {
+>>>>>>> upstream/master
     
     /**
      * Sets up a new channel on the MessageBus.
@@ -16467,6 +24170,7 @@ declare module ngWorker {
     
   }
 
+<<<<<<< HEAD
     
   interface ClientMessageBrokerFactory {
     
@@ -16474,15 +24178,39 @@ declare module ngWorker {
      * Initializes the given channel and attaches a new {@link ClientMessageBroker} to it.
      */
     createMessageBroker(channel: string, runInZone?: boolean): ClientMessageBroker;
+=======
+  
+}
+
+declare module "angular2/web_worker/worker" {
+  export = ngWorker;
+}
+
+
+
+declare module ngUi {  
+  abstract class ClientMessageBroker {
+    
+    runOnService(args: UiArguments, returnType: Type): Promise<any>;
+>>>>>>> upstream/master
     
   }
 
     
+<<<<<<< HEAD
   interface ClientMessageBroker {
     
     channel: any;
     
     runOnService(args: UiArguments, returnType: Type): Promise<any>;
+=======
+  abstract class ClientMessageBrokerFactory {
+    
+    /**
+     * Initializes the given channel and attaches a new {@link ClientMessageBroker} to it.
+     */
+    createMessageBroker(channel: string, runInZone?: boolean): ClientMessageBroker;
+>>>>>>> upstream/master
     
   }
 
@@ -16509,6 +24237,7 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   interface ServiceMessageBrokerFactory {
     
     /**
@@ -16534,6 +24263,8 @@ declare module ngWorker {
   }
 
     
+=======
+>>>>>>> upstream/master
   class ReceivedMessage {
     
     constructor(data: {[key: string]: any});
@@ -16549,6 +24280,7 @@ declare module ngWorker {
   }
 
     
+<<<<<<< HEAD
   var Renderer: InjectableReference;
   
 
@@ -16652,6 +24384,34 @@ declare module "angular2/web_worker/worker" {
 declare module ngUi {  
   let PRIMITIVE: Type;
   
+=======
+  abstract class ServiceMessageBroker {
+    
+    registerMethod(methodName: string, signature: Type[], method: Function, returnType?: Type): void;
+    
+  }
+
+    
+  abstract class ServiceMessageBrokerFactory {
+    
+    /**
+     * Initializes the given channel and attaches a new {@link ServiceMessageBroker} to it.
+     */
+    createMessageBroker(channel: string, runInZone?: boolean): ServiceMessageBroker;
+    
+  }
+
+    
+  let PRIMITIVE: Type;
+  
+
+    
+  interface ConcreteType extends Type {
+    
+    new(...args: any[]): any;
+    
+  }
+>>>>>>> upstream/master
 
     
   /**
@@ -16663,8 +24423,11 @@ declare module ngUi {
    */
   interface Type extends Function {
     
+<<<<<<< HEAD
     new(...args: any[]): any;
     
+=======
+>>>>>>> upstream/master
   }
 
     
@@ -16684,8 +24447,14 @@ declare module ngUi {
    * title gets clicked:
    * 
    * ```
+<<<<<<< HEAD
    * @Component({selector: 'zippy'})
    * @View({template: `
+=======
+   * @Component({
+   *   selector: 'zippy',
+   *   template: `
+>>>>>>> upstream/master
    *   <div class="zippy">
    *     <div (click)="toggle()">Toggle</div>
    *     <div [hidden]="!visible">
@@ -16774,9 +24543,13 @@ declare module ngUi {
    * import {Component, View, NgIf, NgZone} from 'angular2/angular2';
    * 
    * @Component({
+<<<<<<< HEAD
    *   selector: 'ng-zone-demo'
    * })
    * @View({
+=======
+   *   selector: 'ng-zone-demo'.
+>>>>>>> upstream/master
    *   template: `
    *     <h2>Demo: NgZone</h2>
    * 
@@ -16828,7 +24601,59 @@ declare module ngUi {
    * }
    * ```
    */
+<<<<<<< HEAD
   interface NgZone {
+=======
+  class NgZone {
+    
+    /**
+     * @param {bool} enableLongStackTrace whether to enable long stack trace. They should only be
+     *               enabled in development mode as they significantly impact perf.
+     */
+    constructor({enableLongStackTrace}: any);
+    
+    /**
+     * Sets the zone hook that is called just before a browser task that is handled by Angular
+     * executes.
+     * 
+     * The hook is called once per browser task that is handled by Angular.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnTurnStart(onTurnStartHook: () => void): void;
+    
+    /**
+     * Sets the zone hook that is called immediately after Angular zone is done processing the current
+     * task and any microtasks scheduled from that task.
+     * 
+     * This is where we typically do change-detection.
+     * 
+     * The hook is called once per browser task that is handled by Angular.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnTurnDone(onTurnDoneHook: () => void): void;
+    
+    /**
+     * Sets the zone hook that is called immediately after the `onTurnDone` callback is called and any
+     * microstasks scheduled from within that callback are drained.
+     * 
+     * `onEventDoneFn` is executed outside Angular zone, which means that we will no longer attempt to
+     * sync the UI with any model changes that occur within this callback.
+     * 
+     * This hook is useful for validating application state (e.g. in a test).
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnEventDone(onEventDoneFn: () => void, opt_waitForAsync?: boolean): void;
+    
+    /**
+     * Sets the zone hook that is called when an error is thrown in the Angular zone.
+     * 
+     * Setting the hook overrides any previously set hook.
+     */
+    overrideOnErrorHandler(errorHandler: (error: Error, stack: string) => void): void;
+>>>>>>> upstream/master
     
     /**
      * Executes the `fn` function synchronously within the Angular zone and returns value returned by
@@ -16909,7 +24734,11 @@ declare module ngUi {
    * given channel to one MessageBusSink are received on the same channel
    * by the corresponding MessageBusSource.
    */
+<<<<<<< HEAD
   class MessageBus implements MessageBusSource,  MessageBusSink {
+=======
+  abstract class MessageBus implements MessageBusSource,  MessageBusSink {
+>>>>>>> upstream/master
     
     /**
      * Sets up a new channel on the MessageBus.
@@ -16994,6 +24823,7 @@ declare module ngUi {
     
   }
 
+<<<<<<< HEAD
     
   interface ClientMessageBrokerFactory {
     
@@ -17095,6 +24925,8 @@ declare module ngUi {
   var ServiceMessageBroker: InjectableReference;
   
 
+=======
+>>>>>>> upstream/master
   
 }
 
